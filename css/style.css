@@ -3,7 +3,11 @@
 	--chistyy-zheltyy: #fae042;
 	--sero-zheltyy: #e5d47c;
 	--seryy: #757575;
-}
+   
+        --second-family: "Roboto", sans-serif;
+        --third-family: "Roboto Condensed", sans-serif;
+      }
+
 html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -46,4 +50,94 @@ img {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.site-btn{
+
+}
+
+/* Header */
+
+.header {
+    padding-top: 32px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.header__content {
+}
+.header__nav {
+    background: rgba(7, 7, 7, 0.77);
+    width: 694px;
+    border-radius: 10px;
+}
+.header__list {
+    display: flex;
+    gap: 18px;
+    padding: 28px 37px;
+}
+
+.header__list-item {
+    font-weight: 700;
+font-size: 20px;
+text-transform: uppercase;
+color: #fff;
+font-family: var(--third-family);
+}
+.header__list-select {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    color: white;
+    
+
+}
+.header__list-link::before {
+   content: '';
+   background-image: url('../img/header/gear.svg');
+   width: 20px;
+   height: 20px;
+   display: inline-block;
+}
+.header__contacts {
+}
+.heder__contacts-link {
+}
+.header__contacts-social {
+}
+.header__contacts-icon {
+}
+
+/* Hero */
+
+.hero {
+    background-image: url('../img/hero/hero-bg.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero__content {
+}
+.hero__title {
+}
+.hero__text {
+}
+.hero__button {
+}
+.site-btn {
+}
+.hero__box {
+}
+.hero__list {
+}
+.hero__list-item {
+}
+.hero__img {
+}
+.hero__list-text {
 }
