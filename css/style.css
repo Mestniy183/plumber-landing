@@ -54,6 +54,13 @@ color: #1b1b1b;
     width: 100%;
     margin: 0 auto;
 }
+.btn-reset {
+    padding: 0;
+    background-color:transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
 
 .list-reset {
     margin: 0;
@@ -270,8 +277,9 @@ color: #1b1b1b;
 .about__inner {
 }
 .about__title {
-    border-bottom:  10px solid var(--chistyy-zheltyy);
+    border-bottom:  10px  solid var(--chistyy-zheltyy);
     margin-bottom: 33px;
+    width: 247px;
 }
 
 .about__caption {
@@ -282,6 +290,7 @@ font-size: 26px;
 line-height: 125%;
 color: #272727;
 margin-bottom: 35px;
+width: 606px;
 }
 .about__text {
     font-family: var(--second-family);
@@ -289,7 +298,114 @@ font-weight: 400;
 font-size: 20px;
 line-height: 129%;
 color: #323232;
+width: 573px;
+margin-top: 21px;
 }
 .about__text:first-child{
+    
     margin-bottom: 30px;
+}
+
+/* Services */
+
+
+.services {
+    padding-bottom: 114px;
+}
+
+.services__title {
+    margin-bottom: 49px;
+}
+
+.services__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.service {
+    background: #e7e7e7;
+    border-radius: 11px;
+   
+}
+.service__btn {
+     padding: 28px 27px;
+     position: relative;
+     display: flex;
+     width: 100%;
+}
+
+.service__text {
+    font-family: var(--second-family);
+font-weight: 400;
+font-size: 30px;
+color: #000;
+}
+.service__icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.service__icon::before, .service__icon::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+}
+.service__icon::before{
+    width: 24px;
+    height: 2px;
+}
+.service__icon::after{
+    height:24px;
+    width: 2px;
+}
+
+
+/* Advantages */
+
+.advantages {
+    padding-bottom: 114px;
+}
+
+.advantages__title {
+    margin-bottom: 36px;
+
+}
+.advantages__item-title {
+    font-family: var(--third-family);
+font-weight: 600;
+font-size: 30px;
+text-transform: uppercase;
+color: #000;
+margin-bottom: 15px;
+text-align: center;
+}
+
+.advantages__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 78px 59px;
+    justify-content: center;
+    
+}
+
+.advantages__item {
+    width: 349px;
+}
+.advantages__img {
+}
+.advantages__text {
+    font-family: var(--second-family);
+font-weight: 400;
+font-size: 18px;
+text-align: center;
+color: var(--seryy);
 }
