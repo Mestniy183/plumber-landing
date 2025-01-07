@@ -509,3 +509,76 @@ img {
 .questions__title {
     margin-bottom: 48px;
 }
+
+/* Comment */
+
+.comment {
+    padding-bottom: 126px;
+}
+
+.comment__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 59px;
+}
+
+.comment__buttons {
+    border-radius: 68px;
+width: 160px;
+height: 68px;
+background: #bcbcbc;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 50px;
+
+}
+.comment__button {
+
+}
+.comment__list {
+    display: flex;
+    gap: 33px;
+}
+
+.comment__item {
+    border-radius: 22px;
+padding: 20px 22px;
+width: 380px;
+min-height: 608px;
+background: #efefef;
+display: flex;
+flex-direction: column;
+}
+.comment__item-content {
+    padding-top: 25px;
+    margin-bottom: auto;
+}
+.comment__item-title {
+    font-family: var(--second-family);
+font-weight: 600;
+font-size: 24px;
+color: #282828;
+margin-bottom: 13px;
+}
+.comment__item-text {
+    font-family: var(--second-family);
+font-weight: 400;
+font-size: 16px;
+color: #505050;
+}
+.comment__item-address {
+}
+.comment__item-name, .comment__item-city {
+    font-family: var(--second-family);
+font-weight: 400;
+font-size: 20px;
+color: #202020;
+display: inline-block;
+}
+
+.comment__item-img{
+    border-radius: 22px;
+}
+
