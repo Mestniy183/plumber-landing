@@ -582,3 +582,47 @@ display: inline-block;
     border-radius: 22px;
 }
 
+/* Request */
+
+.request {
+    height: 668px;
+    background-image: url('../img/request/request.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 90%;
+}
+
+.request__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.request__content {
+    max-width: 550px;
+    margin: 0 auto;
+}
+.reqest__title {
+    font-family: var(--third-family);
+font-weight: 700;
+font-size: 104px;
+line-height: 101%;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+color: #fff;
+margin-bottom: 18px;
+}
+.request__subtitle {
+    font-family: var(--third-family);
+font-weight: 700;
+font-size: 40px;
+line-height: 101%;
+letter-spacing: -0.03em;
+text-transform: uppercase;
+color: #fff;
+margin-bottom: 30px;
+}
+.request__btn {
+}
+
+
