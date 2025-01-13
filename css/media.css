@@ -1,0 +1,45 @@
+@media(max-width:1200px){
+    .container{
+        padding: 0 50px;
+    }
+    .header__list {
+        display: flex;
+        gap: 8px;
+        padding: 28px 10px 25px;
+    }
+
+    .header__list-item {
+        font-size: 18px;
+    }
+
+    .header__contacts {
+        width: 380px;
+        padding: 22px 10px 21px 10px;
+    }
+
+    .heder__contacts-link {
+        font-size: 25px; 
+    }
+
+    .gear::before {
+      
+        width: 15px;
+        height: 15px;
+       background-size: cover;
+        margin-right: 8px;
+    }
+
+    .hero__list-item {
+        width: 230px;
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero__img {
+        width: 100px;
+    }
+    
+}
