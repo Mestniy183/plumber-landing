@@ -2,6 +2,8 @@
     .container{
         padding: 0 50px;
     }
+
+  
     .header__list {
         display: flex;
         gap: 8px;
@@ -29,7 +31,7 @@
         margin-right: 8px;
     }
 
-    .hero__list-item {
+    /* .hero__list-item {
         width: 230px;
         display: flex;
         gap: 15px;
@@ -40,6 +42,30 @@
     
     .hero__img {
         width: 100px;
+    } */
+
+    .hero__title {
+        font-size: 73px;
+    }
+
+    .hero__text {
+        font-size: 28px;
+    }
+
+    .hero__button {
+            padding: 21.5px 50.5px;
     }
     
+}
+
+@media(max-width: 1024px){
+    .hero{
+        /* height: 82vh; */
+    }
+
+    .example__slider-buttons{
+        width: 120px;
+        height: 47px;
+        gap: 40px;
+    }
 }
