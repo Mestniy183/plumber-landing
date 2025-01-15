@@ -90,6 +90,8 @@ width: 36px;
 height: 36px;
 position: relative;
 display: none;
+justify-content: center;
+align-items: center;
 }
 
 .burger__line{
@@ -143,6 +145,7 @@ display: none;
 .header__content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__nav {
@@ -202,6 +205,10 @@ display: none;
     padding: 22px 34px 21px 24px;
 }
 
+.header__contacts-icon {
+    height: 24px;
+}
+
 .heder__contacts-link {
     font-family: var(--second-family);
     font-weight: 500;
@@ -213,6 +220,7 @@ display: none;
 
 .header__contacts-social {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
@@ -291,6 +299,7 @@ display: none;
 .hero__list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .hero__list-item {
