@@ -99,8 +99,8 @@ align-items: center;
     top: 18px;
 }
 .burger__line, .burger__line::after, .burger__line::before{
-    width: 27px;
-    height: 3px;
+    width: 36px;
+    height: 4px;
     background-color: white;
     display: block;
     transition: 0.3s;
@@ -108,13 +108,13 @@ align-items: center;
 }
 .burger__line::before{
     content: '';
-    top: -10px;
+    top: -12px;
     transform-origin: center;
 }
 
 .burger__line::after{
     content: '';
-    top: 10px;
+    top: 12px;
     transform-origin: center;
 }
 
@@ -339,7 +339,7 @@ align-items: center;
 .about__title {
     border-bottom: 10px solid var(--chistyy-zheltyy);
     margin-bottom: 33px;
-    width: 247px;
+    display: inline-block;
 }
 
 .about__caption {

@@ -136,7 +136,10 @@
         <section class="about">
             <div class="container">
                 <div class="about__content">
-                    <img class="about__img" src="img/about/about.jpg" alt="Фото сантехника">
+                    <picture>
+                        <source media="(max-width: 576px )" srcset="img/about/about-576.jpg">
+                        <img class="about__img" srcset="img/about/about.jpg" alt="Фото сантехника">
+                    </picture>
                     <div class="about__inner">
                         <h2 class="about__title site-title">Обо мне</h2>
                         <strong class="about__caption">
