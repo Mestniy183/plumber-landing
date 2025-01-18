@@ -182,4 +182,74 @@ max-width: 305px;
         margin-bottom: 15px;
     }
 
+    .services__title{
+        margin-bottom: 25px;
+    }
+
+    .accordion__text{
+        font-size: 18px;
+    }
+
+    .services{
+        padding-bottom: 44px;
+    }
+
+    .accordion__icon::before {
+        width: 12px;
+        height: 1px;
+    }
+
+    .accordion__icon::after {
+        height: 12px;
+        width: 1px;
+    }
+
+    .accordion__icon {
+        width: 32px;
+        height: 32px;
+        right: 14px;
+    }
+
+    .accordion__btn {
+        padding: 20px 11px;
+       
+    }
+
+    .advantages__item-title{
+        font-size: 18px;
+        margin-bottom: 11px;
+    }
+
+    .advantages__text{
+        font-size: 12px;
+    }
+
+    .advantages__item {
+        width: 164px;
+        
+    }
+
+    .advantages__list {
+        gap: 30px;
+    }
+
+    .advantages__img {
+        margin-bottom: 20px;
+    }
+
+    .advantages__title {
+        margin-bottom: 17px;
+    }
+
+    .advantages__item:nth-child(3) {
+        display: flex;
+        justify-content: center
+        ;
+        flex: 1 1 100%;
+    }
+
+    .advantages__item-wrapper {
+        width: 164px;
+    }
+
 }
