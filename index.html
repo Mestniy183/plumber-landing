@@ -7,8 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сантехник178</title>
     <link rel="stylesheet" href="css/normalize.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="js/swiperComment.js" defer></script>
 </head>
 
 <body>
@@ -390,12 +396,12 @@
             </div>
         </section>
 
-        <section class="comment">
+        <section class="comment swiper">
             <div class="container">
                 <div class="comment__box">
                     <h2 class="comment__title site-title">Отзывы</h2>
                     <div class="comment__buttons">
-                        <button class="comment__button btn-reset">
+                        <button class="comment__button btn-reset swiper-button-prev">
                             <svg width="18" height="30" viewBox="0 0 18 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -404,7 +410,7 @@
                             </svg>
 
                         </button>
-                        <button class="comment__button btn-reset">
+                        <button class="comment__button btn-reset swiper-button-next">
                             <svg width="18" height="30" viewBox="0 0 18 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -415,8 +421,8 @@
                         </button>
                     </div>
                 </div>
-                <ul class="comment__list list-reset">
-                    <li class="comment__item">
+                <ul class="swiper-wrapper comment__list list-reset">
+                    <li class="comment__item swiper-slide">
                         <img class='comment__item-img' src="img/comment/comment-1.jpg" alt="Фото отзыва">
                         <div class="comment__item-content">
                             <h3 class="comment__item-title">Отзыв:</h3>
@@ -431,7 +437,7 @@
                             <span class="comment__item-city">Санкт-Петербург, 2024</span>
                         </div>
                     </li>
-                    <li class="comment__item">
+                    <li class="comment__item swiper-slide">
                         <img class="comment__item-img" src="img/comment/comment-1.jpg" alt="Фото отзыва">
                         <div class="comment__item-content">
                             <h3 class="comment__item-title">Отзыв:</h3>
@@ -446,7 +452,7 @@
                             <span class="comment__item-city">Санкт-Петербург, 2024</span>
                         </div>
                     </li>
-                    <li class="comment__item">
+                    <li class="comment__item swiper-slide">
                         <img class='comment__item-img' src="img/comment/comment-1.jpg" alt="Фото отзыва">
                         <div class="comment__item-content">
                             <h3 class="comment__item-title">Отзыв:</h3>

@@ -243,7 +243,7 @@ align-items: center;
 
 .hero::after {
     content: '';
-    background-image: url('../img/hero/overlay.png');
+    background-image: url('../img/hero/overlay.webp');
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -554,7 +554,7 @@ align-items: center;
 }
 
 .example__slider-button {
-
+    display: flex;
 }
 
 /* Questions */
