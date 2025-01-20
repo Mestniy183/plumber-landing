@@ -150,10 +150,7 @@ margin-bottom: 18px;
 max-width: 305px;
     }
 
-    .hero__button{
-        padding: 17.5px 63px;
-        font-size: 18px;
-    }
+ 
 
     .hero__list {
         gap: 32px;
@@ -293,4 +290,46 @@ max-width: 305px;
         padding-bottom: 44px;
     }
 
+    .reqest__title {
+        margin: 0 auto 18px;
+        max-width: 380px;
+        font-size: 53px;
+    }
+
+    .request__subtitle {
+        font-size: 20px;
+    }
+
+    .site-btn {
+        font-size: 18px;
+        padding: 17.5px 63px;
+    }
+
+    .request {
+        height: 440px;
+    }
+
+    .footer {
+        padding: 50px 0 34px;
+    }
+
+    .footer__list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer__text-link {
+        text-align: center;
+    }
+
+    .footer__right {
+        align-items: center;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 175px;
+    }
 }
