@@ -598,7 +598,7 @@ img {
 }
 
 .comment__button {
-   
+   display: flex;
 }
 
 .comment__list {
