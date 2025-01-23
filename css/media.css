@@ -3,6 +3,11 @@
         padding: 0 50px;
     }
 
+    .example__slider-buttons {
+        width: 120px;
+        height: 50px;
+    }
+
 
     .header__list {
         display: flex;
@@ -46,6 +51,7 @@
 
     .hero__title {
         font-size: 73px;
+        max-width: 700px;
     }
 
     .hero__text {
@@ -63,11 +69,92 @@
         /* height: 82vh; */
     }
 
+    .hero__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+    }
+
+    .example__slider-buttons {
+        top: 13px;
+        right: 50px;
+    }
+
+    .header__contacts {
+        width: auto;
+        gap: 20px;
+        padding: 12px 10px 12px 10px;
+    }
+
     .example__slider-buttons, .comment__buttons {
         width: 120px;
         height: 47px;
         gap: 40px;
     }
+
+    .header {
+        background: rgba(0, 0, 0, 0.77);
+        padding: 18px 0;
+    }
+
+
+    .header__content {
+        justify-content: space-between;
+        gap: 26px;
+    }
+
+
+    .header__contacts-icon {
+        height: 36px;
+    }
+
+    .header__contacts-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header__list {
+        display: none;
+
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .header__nav {
+        background: transparent;
+        max-width: none;
+        border-radius: 0;
+        order: 2;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .example__slider-content {
+        flex-direction: column;
+        position: static;
+    }
+    .example {
+        position: relative;
+    }
+
+    .about__content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .about__caption, .about__text {
+        max-width: max-content;
+    }
+    .footer__list {
+        gap: 14px;
+    }
+
+    .footer__link-tel {
+        font-size: 23px;
+    }
+ 
 }
 
 @media(max-width: 576px) {
@@ -178,11 +265,6 @@
         gap: 20px;
     }
 
-    .about__content {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-
     .about {
         padding: 44px 0;
     }
@@ -274,13 +356,7 @@
         width: 164px;
     }
 
-    .example__slider-content {
-        flex-direction: column;
-        position: static;
-    }
-
     .example {
-        position: relative;
         padding-bottom: 44px;
     }
 
@@ -374,6 +450,12 @@
 @media (max-width: 499px) {
     .hero__content {
         transform: translateY(-100px);
+    }
+
+    .hero__list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
     }
 }
 
