@@ -260,7 +260,7 @@ img {
     max-width: 719px;
     width: 100%;
     position: relative;
-    z-index: 10;
+    z-index: 9;
 }
 
 .hero__title {
