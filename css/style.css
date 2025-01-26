@@ -162,7 +162,7 @@ img {
 .header__list {
     display: flex;
     gap: 18px;
-    padding: 28px 37px 25px;
+    padding: 28px 37px 26px;
 }
 
 .header__list-item {
@@ -171,23 +171,11 @@ img {
     text-transform: uppercase;
     color: #fff;
     font-family: var(--third-family);
-}
-
-.header__list-select {
-    outline: 0;
-    border: 0;
-    background-color: transparent;
-    color: white;
-
-
-}
-
-.header__list-link {
     display: flex;
     align-items: center;
 }
 
-.gear::before {
+.header__list-item:nth-child(n+2)::before {
     content: '';
     background-image: url('../img/header/gear.svg');
     width: 20px;
@@ -393,11 +381,39 @@ img {
 .accordion__item {
     background: #e7e7e7;
     border-radius: 11px;
+    padding: 28px 27px;
+}
 
+
+
+.accordion__item.active{
+    background: #CBCBCB;
+}
+
+
+.accordion__item.active .accordion-box {
+    max-height: 1500px;
+    
+    margin-bottom: 4px;
+}
+
+
+.accordion-box {
+    max-width: 777px;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.8s;
+}
+.accotdion-box__text {
+    font-family: var(--second-family);
+font-weight: 400;
+font-size: 20px;
+line-height: 123%;
+color: #4a4a4a;
 }
 
 .accordion__btn {
-    padding: 28px 27px;
+    
     position: relative;
     display: flex;
     width: 100%;
@@ -416,11 +432,27 @@ img {
     border-radius: 50%;
     background-color: white;
     position: absolute;
-    right: 27px;
+    right: 0px;
     top: 50%;
+    transform: translateY(-50%);
+    transition: 0.6s ease;
+}
+
+.accordion__item.active .accordion__icon{
+    background-color: #000;
     transform: translateY(-50%);
 }
 
+.accordion__item.active .accordion__icon::before, .accordion__item.active .accordion__icon::after{
+    background-color: rgb(255, 255, 255);
+}
+
+.accordion__item.active .accordion__icon::before {
+    transform: translate(-50%, -50%) rotate(405deg);
+}
+.accordion__item.active .accordion__icon::after {
+    transform: translate(-50%, -50%) rotate(405deg);
+}
 .accordion__icon::before,
 .accordion__icon::after {
     content: '';
@@ -429,6 +461,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #000;
+    transition: 0.6s ease;
 }
 
 .accordion__icon::before {

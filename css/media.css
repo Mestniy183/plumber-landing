@@ -28,8 +28,8 @@
         font-size: 25px;
     }
 
-    .gear::before {
 
+    .header__list-item:nth-child(n+2)::before {
         width: 15px;
         height: 15px;
         background-size: cover;
@@ -121,9 +121,25 @@
        width: 400px;
        background-color: rgba(0, 0, 0, 0.77);
         right: 0;
-        /* visibility: hidden;
-        opacity: 0; */
+        visibility: hidden;
+        opacity: 0; 
         z-index: 11;
+        transform: 0.5s;
+    }
+
+    .header__list.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .header__list-item:nth-child(n)::before {
+        content: '';
+        background-image: url('../img/header/gear.svg');
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin-right: 18px;
+        background-size: cover;
     }
 
     .header__nav {
@@ -135,6 +151,7 @@
 
     .burger {
         display: flex;
+        z-index: 12;
     }
 
     .example__slider-content {
