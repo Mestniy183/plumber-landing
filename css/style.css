@@ -10,7 +10,7 @@
 }
 
 html {
-   scroll-behavior: smooth;
+    scroll-behavior: smooth;
 
 }
 
@@ -150,6 +150,26 @@ img {
 .header.fixed {
     position: fixed;
     top: 0;
+    padding: 20px 0;
+    background-color: black;
+    animation: header 0.5s ease-in-out 1;
+}
+
+@keyframes header {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.header.fixed .header__nav {
+    box-shadow: inset -14px 14px 14px 0 rgba(255, 255, 255, 0.1), inset 14px -14px 14px 0 rgba(165, 165, 165, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(28.66666603088379px);
+    border: 1px solid #969696;
 }
 
 .header__content {
@@ -162,12 +182,12 @@ img {
     background: rgba(7, 7, 7, 0.77);
     max-width: 694px;
     border-radius: 10px;
+    padding: 28px 37px 26px;
 }
 
 .header__list {
     display: flex;
     gap: 18px;
-    padding: 28px 37px 26px;
 }
 
 .header__list-item {
@@ -178,6 +198,27 @@ img {
     font-family: var(--third-family);
     display: flex;
     align-items: center;
+}
+
+.header__list, .footer__list {
+    @media (hover) and (prefers-reduced-motion: no-preference) {
+        &>li {
+            transition: opacity 0.3s;
+        }
+
+        &>li::before {
+            transition: filter 0.3s;
+        }
+
+        &:hover > li:not(:hover) {
+            opacity: 0.25;
+        }
+
+        &:hover > li::before {
+            filter: brightness(1000%);
+        }
+
+    }
 }
 
 .header__list-item:nth-child(n+2)::before {
@@ -386,11 +427,16 @@ img {
 .accordion__item {
     background: #e7e7e7;
     border-radius: 11px;
+    transition: background 0.3s;
 }
 
 
 
 .accordion__item.active {
+    background: #CBCBCB;
+}
+
+.accordion__item:hover {
     background: #CBCBCB;
 }
 
@@ -598,6 +644,14 @@ img {
     display: flex;
 }
 
+.example__slider-button path {
+    transition: fill 0.3s ;
+}
+
+.example__slider-button:hover path {
+    fill: #fae668;
+}
+
 /* Questions */
 
 .questions {
@@ -635,6 +689,14 @@ img {
 
 .comment__button {
     display: flex;
+}
+
+.comment__button path {
+    transition: fill 0.3s;
+}
+
+.comment__button:hover path {
+    fill: black;
 }
 
 .comment__list {
@@ -763,7 +825,7 @@ img {
     font-weight: 700;
     font-size: 20px;
     text-transform: uppercase;
-    color: #a2a2a2;
+    color: #ffffff;
 }
 
 .footer__text-link {
