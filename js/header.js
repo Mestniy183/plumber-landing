@@ -1,22 +1,23 @@
 const header = document.querySelector('.header')
+const headerNav = document.querySelector('.header__nav')
+const headerAddress = document.querySelector('.header__contacts')
 const headerHeight = header.clientHeight
-
-const headerAnimation = [
-    { transfrom: "translateY(0)" },
-    { transfrom: "translateY(-100%)" }
-]
-
-const headerTiming = {
-    duration: 300,
-    iterations: 1
-}
+console.log(headerHeight);
 
 document.addEventListener('scroll', () => {
     let scroll = window.scrollY
-    if (scroll >= headerHeight) {
+    console.log(scroll);
+    if (scroll >= 50) {
+        console.log(1);
         header.classList.add('fixed')
+        headerAddress.classList.add('show')
+        headerNav.classList.add('show')
     } else {
-        header.classList.remove('fixed')
-        header.animate(headerAnimation, headerTiming)
+        header.classList.add('hidden');
+        setTimeout(() => {
+            header.classList.remove('hidden', 'fixed');
+            headerNav.classList.remove('show')
+            headerAddress.classList.remove('show')
+        }, 300);
     }
 })

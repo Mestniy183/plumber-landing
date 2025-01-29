@@ -70,6 +70,22 @@ img {
     list-style: none;
 }
 
+.site-tel {
+    transition: transform 0.3s;
+}
+
+.site-tel:hover {
+    transform: scale(1.05);
+}
+
+.site-icon {
+    transition: transform 0.3s;
+}
+
+.site-icon:hover {
+    transform: scale(1.2);
+}
+
 .site-btn {
     background: linear-gradient(180deg, #ffe749 0%, #d8b710 100%);
     border-radius: 12px;
@@ -81,6 +97,13 @@ img {
     border: none;
     outline: none;
     padding: 21.5px 71.5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.site-btn:hover {
+    background: black;
+    color: rgb(255, 255, 255);
 }
 
 /* Header */
@@ -145,6 +168,7 @@ img {
     left: 0;
     right: 0;
     z-index: 10;
+    transition: 0.3s;
 }
 
 .header.fixed {
@@ -152,9 +176,14 @@ img {
     top: 0;
     padding: 20px 0;
     background-color: black;
-    animation: header 0.5s ease-in-out 1;
-}
+    opacity: 1;
+    animation: header 0.3s 1;
 
+}
+.header.hidden{
+    transform: translateY(-100%);
+    opacity: 0;
+}
 @keyframes header {
     from {
         transform: translateY(-100%);
@@ -162,6 +191,26 @@ img {
 
     to {
         transform: translateY(0);
+    }
+}
+
+@keyframes headerNav {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes headerAddress {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
     }
 }
 
@@ -176,6 +225,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .header__nav {
@@ -183,6 +233,18 @@ img {
     max-width: 694px;
     border-radius: 10px;
     padding: 28px 37px 26px;
+    transition: 0.3s;
+    animation: headerNav 1.2s ease 1;
+}
+
+.header__nav.show {
+    opacity: 1;
+    animation: headerNav 1.2s ease 1;
+}
+
+.header__nav.hidden{
+    transform: translatex(-100%);
+    opacity: 0;
 }
 
 .header__list {
@@ -242,7 +304,20 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 22px 34px 21px 24px;
+    transition: 0.3s;
+    animation: headerAddress 1.2s ease 1;
 }
+
+.header__contacts.show {
+    opacity: 1;
+    animation: headerAddress 1.2s ease 1;
+}
+
+.header__contacts.hidden {
+    opacity: 0;
+    transform: translateX(100%)
+}
+
 
 .header__contacts-icon {
     height: 24px;
@@ -833,6 +908,11 @@ img {
     font-weight: 400;
     font-size: 20px;
     color: #a7963f;
+    transition: color 0.3s;
+}
+
+.footer__text-link:hover {
+    color: #ffd505;
 }
 
 .footer__link-mail {}
