@@ -87,6 +87,7 @@
         width: auto;
         gap: 20px;
         padding: 12px 10px 12px 10px;
+        order: 2;
     }
 
     .example__slider-buttons,
@@ -117,40 +118,61 @@
         height: 36px;
     }
 
+    .header__nav {
+        padding: 0;
+    }
+
     .header__list {
         position: absolute;
-        top: 0;
+        top: -30px;
         flex-direction: column;
+        padding-top: 165px;
+        padding-left: 50px;
+        gap: 50px;
         height: 100vh;
         width: 400px;
-        background-color: rgba(0, 0, 0, 0.77);
-        right: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        left: -50px;
         visibility: hidden;
         opacity: 0;
+        transform: translateX(-100%);
         z-index: 11;
-        transform: 0.5s;
+        transition: 0.5s;
     }
 
     .header__list.active {
+        transform: translateX(0);
         visibility: visible;
         opacity: 1;
+    }
+
+    .header__list-item {
+        font-size: 24px;
     }
 
     .header__list-item:nth-child(n)::before {
         content: '';
         background-image: url('../img/header/gear.svg');
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         display: inline-block;
         margin-right: 18px;
-        background-size: cover;
+         background-repeat: no-repeat;
+         background-size: contain;
     }
 
     .header__nav {
         background: transparent;
         max-width: none;
         border-radius: 0;
-        order: 2;
+        order: 1;
+    }
+
+    .header.fixed .header__nav {
+        box-shadow: none;
+        background: none;
+        backdrop-filter: none;
+        border: none;
     }
 
     .burger {
@@ -188,6 +210,12 @@
 }
 
 @media(max-width:768px) {
+
+    .header__list {
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 1);
+    }
+
     .hero__title {
         font-size: 65px;
         max-width: 620px;
