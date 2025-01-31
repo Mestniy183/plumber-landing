@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header')
     const headerNav = document.querySelector('.header__nav')
     const headerContacts = document.querySelector('.header__contacts')
-    const headerHeight = header.clientHeight
 
 
     const tl = gsap.timeline({ paused: true });
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tl.play()
     }
 
-    showHeaderContent()
 
     function hiddenHeaderFixed() {
         tl.clear()
@@ -45,4 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
            }
         }
     })
+
+    if(window.scrollY >= 10){
+        header.classList.add('fixed')
+        headerFixed();
+    }else{
+        showHeaderContent();
+    }
 })

@@ -132,19 +132,12 @@
         height: 100vh;
         width: 400px;
         background-color: rgba(0, 0, 0, 0.85);
-        left: -50px;
-        visibility: hidden;
-        opacity: 0;
         transform: translateX(-100%);
+        left: -50px;
         z-index: 11;
-        transition: 0.5s;
     }
 
-    .header__list.active {
-        transform: translateX(0);
-        visibility: visible;
-        opacity: 1;
-    }
+
 
     .header__list-item {
         font-size: 24px;
