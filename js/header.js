@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showHeaderContent() {
-        tl.fromTo(headerNav, {x: "-100%", autoAlpha: 0}, {x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out"}, 'contacts')
-        tl.fromTo(headerContacts, {x: "100%", autoAlpha: 0}, {x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out"}, 'contacts')
+        tl.fromTo(headerNav, {x: "-50px", autoAlpha: 0}, {x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out"}, 'contacts')
+        tl.fromTo(headerContacts, {x: "50px", autoAlpha: 0}, {x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out"}, 'contacts')
         tl.play()
     }
 
