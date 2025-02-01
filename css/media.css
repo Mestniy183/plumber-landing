@@ -136,7 +136,9 @@
         left: -50px;
         z-index: 11;
     }
-
+    .swiper {
+        position: static;
+    }
 
 
     .header__list-item {

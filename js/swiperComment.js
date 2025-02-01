@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-comment', {
     loop: true,
     spaceBetween: 30,
     speed: 1000,

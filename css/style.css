@@ -656,6 +656,7 @@ img {
     justify-content: center;
     align-items: center;
     gap: 50px;
+    z-index: 100;
 }
 
 .example__slider-button {
