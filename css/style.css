@@ -162,7 +162,7 @@ img {
 
 .header {
     padding-top: 32px;
-    position: absolute;
+    position: relative;
     width: 100%;
     top: 0;
     left: 0;
@@ -284,11 +284,8 @@ img {
 
 /* Hero */
 
-.hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url('../img/hero/hero-bg.jpg');
+.site-wrapper {
+     background-image: url('../img/hero/hero-bg.jpg');
     width: 100%;
     height: 100dvh;
     background-size: cover;
@@ -296,6 +293,17 @@ img {
     background-repeat: no-repeat;
     position: relative;
     background-position: center;
+}
+
+.hero {
+ 
+   
+}
+
+.hero__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
 }
 
 .hero::after {
@@ -344,13 +352,11 @@ img {
 .site-btn {}
 
 .hero__box {
-    position: absolute;
+    position: relative;
     width: 100%;
     bottom: 0;
     left: 0;
     z-index: 1;
-    padding-bottom: 56px;
-
 }
 
 .hero__list {
@@ -360,7 +366,6 @@ img {
 }
 
 .hero__list-item {
-    width: 230px;
     display: flex;
     gap: 15px;
 }
