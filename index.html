@@ -12,6 +12,7 @@
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/media.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
@@ -20,6 +21,7 @@
     <script src="js/header.js" defer></script>
     <script src="js/burger.js" defer></script>
     <script src="js/accordion.js" defer></script>
+    <script src="js/modal.js" defer></script>
 </head>
 
 <body>
@@ -115,27 +117,29 @@
                     <div class="hero__content">
                         <h1 class="hero__title">услуги сантехника</h1>
                         <p class="hero__text">Только лучшее для вашей сантехники</p>
-                        <button class="hero__button site-btn">Оставить заявку</button>
+                        <button class="hero__button site-btn open-modal">Оставить заявку</button>
                     </div>
                     <div class="hero__box">
-                        <ul class="hero__list list-reset">
-                            <li class="hero__list-item">
-                                <img class="hero__img" src="img/hero/icon-1.svg" alt="Иконка">
-                                <span class="hero__list-text">Опыт <br> с 2004 года</span>
-                            </li>
-                            <li class="hero__list-item">
-                                <img class="hero__img" src="img/hero/icon-2.svg" alt="Иконка">
-                                <span class="hero__list-text">Гарантия <br> 3 года</span>
-                            </li>
-                            <li class="hero__list-item">
-                                <img class="hero__img" src="img/hero/icon-3.svg" alt="Иконка">
-                                <span class="hero__list-text">Без посредников</span>
-                            </li>
-                            <li class="hero__list-item">
-                                <img class="hero__img" src="img/hero/icon-4.svg" alt="Иконка">
-                                <span class="hero__list-text">Качественные материалы</span>
-                            </li>
-                        </ul>
+                       <div class="container">
+                            <ul class="hero__list list-reset">
+                                <li class="hero__list-item">
+                                    <img class="hero__img" src="img/hero/icon-1.svg" alt="Иконка">
+                                    <span class="hero__list-text">Опыт <br> с 2004 года</span>
+                                </li>
+                                <li class="hero__list-item">
+                                    <img class="hero__img" src="img/hero/icon-2.svg" alt="Иконка">
+                                    <span class="hero__list-text">Гарантия <br> 3 года</span>
+                                </li>
+                                <li class="hero__list-item">
+                                    <img class="hero__img" src="img/hero/icon-3.svg" alt="Иконка">
+                                    <span class="hero__list-text">Без посредников</span>
+                                </li>
+                                <li class="hero__list-item">
+                                    <img class="hero__img" src="img/hero/icon-4.svg" alt="Иконка">
+                                    <span class="hero__list-text">Качественные материалы</span>
+                                </li>
+                            </ul>
+                       </div>
                     </div>
                 </div>
             </div>
@@ -579,7 +583,7 @@
                 <div class="request__content">
                     <h2 class="reqest__title ">Оставить заявку</h2>
                     <h3 class="request__subtitle">Выезд по санкт-петербургу </h3>
-                    <button class="request__btn site-btn">Оставить заявку</button>
+                    <button class="request__btn site-btn open-modal">Оставить заявку</button>
                 </div>
             </div>
         </section>
@@ -664,7 +668,29 @@
             </div>
         </div>
     </footer>
-
+        <div class="modal">
+        <div class="modal__box">
+            <div class="modal__caption">
+                <h2 class="modal__title">Оставьте заявку</h2>
+                <p class="modal__text"> в форме ниже, и я Вам перезвоню</p>
+            </div>
+            <form class="modal__form">
+                <label class="modal__label">
+                    <input class="modal__input form-data" type="text" placeholder="Имя">
+                </label class="modal__label">
+                <label>
+                    <input class="modal__input form-data" type="tel" placeholder="Телефон">
+                </label>
+                <label class="modal__label">
+                    <textarea class="modal__textarea form-data" placeholder="Текст обращения"></textarea>
+                </label>
+                <button class="modal__btn btn-reset" type="submit">
+                    Оставить заявку
+                </button>
+            </form>
+        </div>
+    </div>
+    
 
 
 

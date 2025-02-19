@@ -1,6 +1,6 @@
 @media(max-width:1200px) {
     .container {
-        padding: 0 50px;
+        padding: 0 70px;
     }
 
     .example__slider-buttons {
@@ -133,7 +133,7 @@
         width: 400px;
         background-color: rgba(0, 0, 0, 0.85);
         transform: translateX(-100%);
-        left: -50px;
+        left: -70px;
         z-index: 11;
     }
     .swiper {
@@ -578,10 +578,20 @@
 
 
     .hero {
-        min-height: 558px;
-        display: flex;
-        align-items: center;
-        /* padding: 54px 0; */
+        height: 480px;
+    }
+
+    .hero__box {
+        position: relative;
+        bottom: 0;
+    }
+
+    .hero__box > .container {
+        padding: 0;
+    }
+
+    .hero__list {
+        gap: 20px 8px;
     }
 
     .hero__text {
@@ -599,6 +609,7 @@
     }
 
     .hero__wrapper {
+        padding-top: 73px;
         gap: 30px;
     }
 
@@ -607,12 +618,14 @@
         transform: translateX(-100%);
         left: -20px;
         padding-left: 20px;
+        padding-top: 130px;
         z-index: 11;
     }
 
     .hero__list-text {
         font-size: 14px;
     }
+
 
     .hero__title {
         font-size: 40px;
