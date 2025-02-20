@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="css/media.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/imask" defer></script>
     <script src="js/swiperExample.js" defer></script>
     <script src="js/swiperComment.js" defer></script>
     <script src="js/header.js" defer></script>
     <script src="js/burger.js" defer></script>
     <script src="js/accordion.js" defer></script>
     <script src="js/modal.js" defer></script>
+
 </head>
 
 <body>
@@ -676,13 +678,13 @@
             </div>
             <form class="modal__form">
                 <label class="modal__label">
-                    <input class="modal__input form-data" type="text" placeholder="Имя">
+                    <input name="name" class="modal__input form-data" type="text" placeholder="Имя">
                 </label class="modal__label">
                 <label>
-                    <input class="modal__input form-data" type="tel" placeholder="Телефон">
+                    <input name="tel" class="modal__input form-data" type="tel" placeholder="Телефон">
                 </label>
                 <label class="modal__label">
-                    <textarea class="modal__textarea form-data" placeholder="Текст обращения"></textarea>
+                    <textarea name="message" class="modal__textarea form-data" placeholder="Текст обращения"></textarea>
                 </label>
                 <button class="modal__btn btn-reset" type="submit">
                     Оставить заявку
