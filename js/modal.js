@@ -37,7 +37,7 @@ window.addEventListener('keydown', (btn) => {
 })
 
 function getIsValid(input, fieldName) {
-
+    
     const errorText = input.parentElement.querySelector('.error-message')
     function createError(message) {
         const newErrorElement = document.createElement('div');
@@ -49,6 +49,12 @@ function getIsValid(input, fieldName) {
 
     if (errorText) {
         errorText.remove()
+    }
+
+    if(input.name === 'tel') {
+        if(input.value.length <= 15) {
+            createError('Телефон должен быть заполнен полностью')
+        }
     }
 
     if (input.value.trim() === '') {
@@ -90,22 +96,56 @@ const maskOptions = {
 const mask = new IMask(tel, maskOptions)
 
 function checkForm() {
+    let result = true
     const inputs = document.querySelectorAll('.form-data')
     inputs.forEach(input => {
-        if(!getIsValid(input, input.placeholder)) return;
+        if (!getIsValid(input, input.placeholder)) {
+            result = false
+        }
     })
-    // const name = modal.querySelector('input[name="name"]')
-    // const tel = modal.querySelector('input[name="tel"]')
-    // const message = modal.querySelector('textarea[name="message"]')
-    // if (!getIsValid(name, name.placeholder) || !getIsValid(tel, tel.placeholder) || !getIsValid(message, message.placeholder)) return;
+    return result
 }
 
+function notify(text, bgColor) {
+    const divElement = document.createElement('div');
+    divElement.classList.add('notify')
+    divElement.style.backgroundColor = bgColor
+    divElement.textContent = text;
+    document.body.append(divElement)
+    setTimeout(() => {
+        divElement.remove()
+    }, 3000);
+}
+
+async function fetchData() {
+    const [name, tel, mes] = inputs
+    try {
+        const response = await fetch('https://dc3c997554c1d330.mokky.dev/items', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name.value,
+                phone: tel.value,
+                message: mes.value
+            })
+        })
+        if(!response.ok) {
+            notify('Произошла ошибка', 'red')
+            return;
+        }
+        notify('Данные отправлены', 'green')
+    } catch (e) {
+        throw Error(e)
+    }
+}
 modal.querySelector('.modal__btn').addEventListener('click', (e) => {
     e.preventDefault()
-    
-    checkForm()
-
-
-    // closeModal()
-    // clearForm()
+    if (checkForm()) {
+        fetchData()
+        closeModal()
+        clearForm()
+    }
 })
