@@ -52,7 +52,7 @@ function getIsValid(input, fieldName) {
     }
 
     if(input.name === 'tel') {
-        if(input.value.length <= 15) {
+        if(input.value.length > 2 && input.value.length <= 15) {
             createError('Телефон должен быть заполнен полностью')
         }
     }
@@ -112,8 +112,10 @@ function notify(text, bgColor) {
     divElement.style.backgroundColor = bgColor
     divElement.textContent = text;
     document.body.append(divElement)
+    gsap.from('.notify', {y: '-50', duration: 1, ease: "power1.in"})
     setTimeout(() => {
-        divElement.remove()
+        gsap.to('.notify', {y: -50, duration: 0.8, ease: "power1.out", onComplete: function() {divElement.remove()}})
+        
     }, 3000);
 }
 

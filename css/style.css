@@ -280,8 +280,6 @@ img {
     gap: 20px;
 }
 
-.header__contacts-icon {}
-
 /* Hero */
 
 .hero {
@@ -344,10 +342,6 @@ img {
     color: #f0f0f0;
     margin-bottom: 28px;
 }
-
-.hero__button {}
-
-.site-btn {}
 
 .hero__box {
     position: absolute;
