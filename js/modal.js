@@ -13,8 +13,15 @@ function clearForm() {
 function openModal() {
     modal.classList.add('open')
     document.body.style.overflow = 'hidden';
-}
+  }
+  
+  const tel = document.getElementById('tel')
+  const mask = IMask(tel, {
+    mask: '+7(000)000-00-00',
+    lazy: false, 
+  })
 
+  console.log(mask);
 openBtns.forEach((btn) => {
     btn.addEventListener('click', openModal)
 })
@@ -52,9 +59,12 @@ function getIsValid(input, fieldName) {
     }
 
     if(input.name === 'tel') {
-        if(input.value.length > 2 && input.value.length <= 15) {
-            createError('Телефон должен быть заполнен полностью')
-        }
+      mask.updateValue()
+
+    if (mask.unmaskedValue.length < 10) {
+      createError(`Телефон должен быть заполнен`)
+      return false
+    }
     }
 
     if (input.value.trim() === '') {
@@ -86,14 +96,6 @@ function validateForm(inputs) {
 const inputs = document.querySelectorAll('.form-data')
 validateForm(inputs)
 
-
-const tel = modal.querySelector('input[name="tel"]')
-const maskOptions = {
-    mask: '+7(000)000-00-00',
-    laze: false
-}
-
-const mask = new IMask(tel, maskOptions)
 
 function checkForm() {
     let result = true
