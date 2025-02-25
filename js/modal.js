@@ -9,19 +9,18 @@ function closeModal() {
 function clearForm() {
     modal.querySelector('.modal__form').reset()
 }
-
+let mask;
 function openModal() {
     modal.classList.add('open')
     document.body.style.overflow = 'hidden';
-  }
-  
-  const tel = document.getElementById('tel')
-  const mask = IMask(tel, {
-    mask: '+7(000)000-00-00',
-    lazy: false, 
-  })
+    const tel = document.getElementById('tel')
+    mask = IMask(tel, {
+        mask: '+7(000)000-00-00',
+        lazy: false,
+    })
+}
 
-  console.log(mask);
+
 openBtns.forEach((btn) => {
     btn.addEventListener('click', openModal)
 })
@@ -44,7 +43,7 @@ window.addEventListener('keydown', (btn) => {
 })
 
 function getIsValid(input, fieldName) {
-    
+
     const errorText = input.parentElement.querySelector('.error-message')
     function createError(message) {
         const newErrorElement = document.createElement('div');
@@ -58,13 +57,13 @@ function getIsValid(input, fieldName) {
         errorText.remove()
     }
 
-    if(input.name === 'tel') {
-      mask.updateValue()
+    if (input.name === 'tel') {
+        mask.updateValue()
 
-    if (mask.unmaskedValue.length < 10) {
-      createError(`Телефон должен быть заполнен`)
-      return false
-    }
+        if (mask.unmaskedValue.length < 10) {
+            createError(`Телефон должен быть заполнен`)
+            return false
+        }
     }
 
     if (input.value.trim() === '') {
@@ -114,10 +113,10 @@ function notify(text, bgColor) {
     divElement.style.backgroundColor = bgColor
     divElement.textContent = text;
     document.body.append(divElement)
-    gsap.from('.notify', {y: '-50', duration: 1, ease: "power1.in"})
+    gsap.from('.notify', { y: '-50', duration: 1, ease: "power1.in" })
     setTimeout(() => {
-        gsap.to('.notify', {y: -50, duration: 0.8, ease: "power1.out", onComplete: function() {divElement.remove()}})
-        
+        gsap.to('.notify', { y: -50, duration: 0.8, ease: "power1.out", onComplete: function () { divElement.remove() } })
+
     }, 3000);
 }
 
@@ -136,7 +135,7 @@ async function fetchData() {
                 message: mes.value
             })
         })
-        if(!response.ok) {
+        if (!response.ok) {
             notify('Произошла ошибка', 'red')
             return;
         }

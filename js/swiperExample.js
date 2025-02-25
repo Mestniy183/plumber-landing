@@ -1,5 +1,6 @@
 const swiperExample = new Swiper('.swiper-example', {
     loop: true,
+    allowTouchMove: false,
     spaceBetween: 30,
     speed: 1000,
     navigation: {
