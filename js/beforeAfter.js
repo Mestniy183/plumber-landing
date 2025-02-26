@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 function pauseEvents (e){
     e.stopPropagation();
-    e.preventDefault();
+    // e.preventDefault();
     return false;
 }
 
@@ -40,4 +40,28 @@ body.addEventListener('mousemove', (e) => {
     x -= photo.getBoundingClientRect().left;
     beforeAfterSlider(x);
     pauseEvents(e);
+})
+
+photo.addEventListener('touchstart', () =>{
+    isActive = true;
+})
+
+body.addEventListener('touchend', () =>{
+    isActive = false;
+})
+
+body.addEventListener('touchcancel', () =>{
+    isActive = false;
+})
+
+body.addEventListener('touchmove', (event) =>{
+    if(!isActive) return;
+    let x;
+    let i;
+    for(i = 0; i < event.changedTouches.length; i++ ){
+        x = event.changedTouches[0].pageX
+    }
+    x -= photo.getBoundingClientRect().left;
+    beforeAfterSlider(x);
+    pauseEvents(event);
 })

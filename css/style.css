@@ -610,6 +610,7 @@ img {
 }
 
 .example__img{
+    max-width: none;
     width: 100%;
     height: 100%;
     display: block;
@@ -663,6 +664,7 @@ z-index: 5;
 
 .example__after-text{
     right: 30px;
+    z-index: 1;
 }
 
 

@@ -8,6 +8,10 @@
         height: 50px;
     }
 
+    .example__photo {
+        height: 487px;
+    }
+
     .header__nav {
         padding: 28px 10px 25px;
     }
@@ -174,6 +178,10 @@
     .burger {
         display: flex;
         z-index: 12;
+    }
+
+    .example__photo {
+        height: 531px;
     }
 
     .example__slider-content {
