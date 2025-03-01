@@ -107,6 +107,19 @@ function checkForm() {
     return result
 }
 
+function getCurrentDate (){
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2,'0');
+    const day = String(now.getDate()).padStart(2,'0');
+    const hours = String(now.getHours()).padStart(2,'0');
+    const minutes = String(now.getMinutes()).padStart(2,'0');
+    const data = `${day}.${month}.${year}`;
+    const time =  `${hours}:${minutes}`;
+   return `${data} ${time}`
+}
+
+
 function notify(text, bgColor) {
     const divElement = document.createElement('div');
     divElement.classList.add('notify')
@@ -132,7 +145,8 @@ async function fetchData() {
             body: JSON.stringify({
                 name: name.value,
                 phone: tel.value,
-                message: mes.value
+                message: mes.value,
+                date: getCurrentDate()
             })
         })
         if (!response.ok) {
