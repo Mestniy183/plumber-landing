@@ -157,7 +157,11 @@ async function fetchData() {
             })
         })
         if (!response.ok) {
-            notify('Произошла ошибка', 'red')
+            if(window.innerWidth <= 576) {
+                notify(`Произошла ошибка ${response.status}\nперезвоните по номеру +7(905)287-77-22`, 'red')
+                return;
+            }
+            notify(`Произошла ошибка ${response.status}`, 'red')
             return;
         }
         notify('Данные отправлены', 'green')
@@ -173,3 +177,4 @@ modal.querySelector('.modal__btn').addEventListener('click', (e) => {
         clearForm()
     }
 })
+
