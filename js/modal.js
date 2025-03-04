@@ -75,10 +75,17 @@ function getIsValid(input, fieldName) {
     return true
 }
 
+function validateInput(input) {
+    input.value = input.value.replace(/<[^>]*>/g, '');
+    input.value = input.value.replace(/javascript:/gi, '');
+    input.value = input.value.replace(/(https?:\/\/|www\.)\S+/gi, '');
+}
+
 function validateForm(inputs) {
     inputs.forEach((input) => {
         input.addEventListener('input', (e) => {
             const target = e.target;
+            validateInput(target);
             if (target) {
                 if (target.name === 'name') {
                     getIsValid(target, 'Имя');
@@ -107,16 +114,16 @@ function checkForm() {
     return result
 }
 
-function getCurrentDate (){
+function getCurrentDate() {
     const now = new Date();
     const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2,'0');
-    const day = String(now.getDate()).padStart(2,'0');
-    const hours = String(now.getHours()).padStart(2,'0');
-    const minutes = String(now.getMinutes()).padStart(2,'0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
     const data = `${day}.${month}.${year}`;
-    const time =  `${hours}:${minutes}`;
-   return `${data} ${time}`
+    const time = `${hours}:${minutes}`;
+    return `${data} ${time}`
 }
 
 
