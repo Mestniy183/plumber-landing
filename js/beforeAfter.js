@@ -46,7 +46,7 @@ photos.forEach(photo => {
 
     photo.addEventListener('touchstart', () => {
         isActive = true;
-    })
+    }, { passive: true })
 
     body.addEventListener('touchend', () => {
         isActive = false;

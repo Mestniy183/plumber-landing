@@ -79,7 +79,7 @@ img {
 }
 
 .site-icon {
-    transition: transform 0.3s;
+    transition: transform 0.3s, fill 0.3s;
 }
 
 .site-icon:hover {
@@ -104,6 +104,18 @@ img {
 .site-btn:hover {
     background: black;
     color: rgb(255, 255, 255);
+}
+
+.icon-wa:hover path {
+    fill: #40c351;
+}
+
+.icon-tg:hover path {
+    fill: #24A1DE;
+}
+
+.icon-vk:hover path {
+    fill: #4C75A3;
 }
 
 /* Header */
