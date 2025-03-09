@@ -6,9 +6,9 @@ const cleanCSS = require("gulp-clean-css");
 const autoprefixer = require("gulp-autoprefixer");
 const browserSync = require("browser-sync").create();
 const htmlmin = require("gulp-htmlmin");
-const webp = require("gulp-webp");
 const typograf = require("gulp-typograf");
 const del = require("del");
+// const webp = require("gulp-webp").default;
 const babel = require("gulp-babel");
 const notify = require("gulp-notify");
 const uglify = require("gulp-uglify-es").default;
@@ -50,12 +50,14 @@ const htmlMinify = () => {
 };
 
 const images = () => {
-  return src(["src/img/**/*.jpg", "src/img/**/*.png", "src/img/**/*.jpeg"], {
-    encoding: false,
-  })
-    .pipe(imagemin())
-    .pipe(webp())
-    .pipe(dest("dist/img"));
+  return (
+    src(["src/img/**/*"], {
+      encoding: false,
+    })
+      .pipe(imagemin())
+      // .pipe(webp())
+      .pipe(dest("dist/img"))
+  );
 };
 
 const scripts = () => {
