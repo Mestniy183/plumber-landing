@@ -21,12 +21,15 @@
     "gulp-cli": "^3.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-image": "^5.1.0",
+    "gulp-imagemin": "^9.1.0",
     "gulp-notify": "^5.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-typograf": "^4.1.0",
     "gulp-uglify-es": "^3.0.0",
-    "gulp-webp": "^5.0.0",
-    "imagemin-webp": "^6.0.1"
+    "gulp-webp": "^4.0.1",
+    "imagemin-webp": "^8.0.0",
+    "uuid": "^11.1.0"
   }
 }
