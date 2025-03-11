@@ -13,6 +13,9 @@ const babel = require("gulp-babel");
 const notify = require("gulp-notify");
 const uglify = require("gulp-uglify-es").default;
 const replace = require("gulp-replace");
+const gulpif = require("gulp-if");
+const svgSprite = require("gulp-svg-sprite");
+const isProd = process.argv.includes("--build");
 
 const clean = () => {
   return del(["dist"]);
@@ -64,7 +67,7 @@ const images = () => {
       encoding: false,
     }
   )
-    .pipe(imagemin())
+    .pipe(gulpif(isProd, imagemin()))
     .pipe(webp())
     .pipe(dest("dist/img"));
 };
@@ -88,6 +91,26 @@ const scripts = () => {
     .pipe(browserSync.stream());
 };
 
+const svgSprites = () => {
+  const sprite = src("src/img/**/*.svg")
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: "../sprite.svg",
+          },
+        },
+      })
+    )
+    .pipe(dest("dist/img"));
+
+  return sprite;
+};
+
+const svgSymbols = () => {
+  return src;
+};
+
 const watchFiles = () => {
   browserSync.init({
     server: {
@@ -97,8 +120,8 @@ const watchFiles = () => {
   watch("src/**/*.html", htmlMinify);
   watch("src/css/**/*.css", styles);
   watch("src/js/**/*.js", scripts);
-  watch("src/img/**/*.jpg", images);
-  watch("src/img/**/*.png", images);
+  watch("src/img/**/*.svg", svgSprites);
+  watch("src/img/**/*.{jpg,jpeg,png,webp}", images);
 };
 
 exports.default = series(
@@ -106,6 +129,7 @@ exports.default = series(
   htmlMinify,
   styles,
   scripts,
+  svgSprites,
   images,
   watchFiles
 );
