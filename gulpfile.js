@@ -100,6 +100,15 @@ const svgSprites = () => {
             sprite: "../sprite.svg",
           },
         },
+        shape: {
+          transform: [
+            {
+              svgo: {
+                js2svg: { indent: 4, pretty: true },
+              },
+            },
+          ],
+        },
       })
     )
     .pipe(dest("dist/img"));
@@ -108,7 +117,36 @@ const svgSprites = () => {
 };
 
 const svgSymbols = () => {
-  return src;
+  const sprite = src("src/img/**/*.svg")
+    .pipe(
+      svgSprite({
+        mode: {
+          symbol: {
+            sprite: "../sprite.symbol.svg",
+          },
+        },
+        shape: {
+          transform: [
+            {
+              svgo: {
+                js2svg: { indent: 4, pretty: true },
+                plugins: [
+                  {
+                    name: "removeAttrs",
+                    params: {
+                      attrs: "(fill|stroke)",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      })
+    )
+    .pipe(dest("dist/img"));
+
+  return sprite;
 };
 
 const watchFiles = () => {
@@ -121,6 +159,7 @@ const watchFiles = () => {
   watch("src/css/**/*.css", styles);
   watch("src/js/**/*.js", scripts);
   watch("src/img/**/*.svg", svgSprites);
+  watch("src/img/**/*.svg", svgSymbols);
   watch("src/img/**/*.{jpg,jpeg,png,webp}", images);
 };
 
@@ -130,6 +169,7 @@ exports.default = series(
   styles,
   scripts,
   svgSprites,
+  svgSymbols,
   images,
   watchFiles
 );
