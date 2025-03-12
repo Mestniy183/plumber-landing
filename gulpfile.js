@@ -25,9 +25,9 @@ const styles = () => {
   return src("src/css/**/index.css")
     .pipe(sourcemaps.init())
     .pipe(concat("main.css"))
+    .pipe(replace(/\.jpg|\.jpeg|\.png/g, ".webp"))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(cleanCSS({ level: 2 }))
-    .pipe(replace(/\.jpg|\.jpeg|\.png/g, ".webp"))
     .pipe(sourcemaps.write())
     .pipe(dest("dist/css"))
     .pipe(browserSync.stream());
@@ -96,6 +96,9 @@ const svgSprites = () => {
     .pipe(
       svgSprite({
         mode: {
+          defs: {
+            sprite: "../sprite.defs.svg",
+          },
           stack: {
             sprite: "../sprite.svg",
           },

@@ -78,6 +78,7 @@ img {
 }
 
 .site-icon {
+  fill: #fae042;
   transition: transform 0.3s, fill 0.3s;
 }
 
@@ -105,15 +106,15 @@ img {
   color: rgb(255, 255, 255);
 }
 
-.icon-wa:hover path {
+.icon-wa:hover {
   fill: #40c351;
 }
 
-.icon-tg:hover path {
+.icon-tg:hover {
   fill: #24a1de;
 }
 
-.icon-vk:hover path {
+.icon-vk:hover {
   fill: #4c75a3;
 }
 
@@ -200,6 +201,11 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header__contacts-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .header__nav {
@@ -846,7 +852,7 @@ img {
 
 .request {
   height: 668px;
-  background-image: url("../img/request/request.jpg");
+  background: grey url("../img/request/request.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 90%;
@@ -898,13 +904,9 @@ img {
   z-index: 2;
 }
 
-.container {
-}
-
-.footer__left {
-}
-
-.footer__nav {
+.footer__contacts-icon svg {
+  width: 33px;
+  height: 33px;
 }
 
 .footer__container {
