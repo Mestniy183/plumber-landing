@@ -259,7 +259,7 @@ img {
 
 .header__list-item:nth-child(n + 2)::before {
   content: "";
-  background-image: url("../img/header/gear.svg");
+  background-image: url("../img/sprite.svg#header--gear");
   width: 20px;
   height: 20px;
   background-size: contain;
@@ -750,11 +750,11 @@ img {
   display: flex;
 }
 
-.example__slider-button path {
+.example__slider-button .example__slider-arrow {
   transition: fill 0.3s;
 }
 
-.example__slider-button:hover path {
+.example__slider-button:hover .example__slider-arrow {
   fill: #fae668;
 }
 
@@ -796,11 +796,11 @@ img {
   display: flex;
 }
 
-.comment__button path {
+.comment__button .comment__slider-arrow {
   transition: fill 0.3s;
 }
 
-.comment__button:hover path {
+.comment__button:hover .comment__slider-arrow {
   fill: black;
 }
 
