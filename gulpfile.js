@@ -15,6 +15,7 @@ const uglify = require("gulp-uglify-es").default;
 const replace = require("gulp-replace");
 const gulpif = require("gulp-if");
 const svgSprite = require("gulp-svg-sprite");
+const webpCSS = require("gulp-webp-css");
 const isProd = process.argv.includes("--build");
 
 const clean = () => {
@@ -25,9 +26,10 @@ const styles = () => {
   return src("src/css/**/index.css")
     .pipe(sourcemaps.init())
     .pipe(concat("main.css"))
-    .pipe(replace(/\.jpg|\.jpeg|\.png/g, ".webp"))
+    .pipe(replace(/url\(['"]?(.*?)\.(jpg|jpeg|png)['"]?\)/g, "url($1.webp)"))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(cleanCSS({ level: 2 }))
+    .pipe(webpCSS())
     .pipe(sourcemaps.write())
     .pipe(dest("dist/css"))
     .pipe(browserSync.stream());
