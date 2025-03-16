@@ -662,8 +662,8 @@
   }
 
   .hero__img {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
   }
 
   .hero__wrapper {
@@ -680,11 +680,11 @@
   }
 
   .hero__list-text {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .hero__title {
-    font-size: 40px;
+    font-size: 39px;
     max-width: 320px;
     margin-bottom: 18px;
   }
@@ -699,7 +699,7 @@
 
   .example__slider-buttons,
   .comment__buttons {
-    top: 53px;
+    top: 90px;
     right: 20px;
     left: 20px;
     width: 86px;

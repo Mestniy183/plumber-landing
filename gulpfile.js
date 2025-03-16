@@ -83,12 +83,15 @@ const images = () => {
 };
 
 const scripts = () => {
-  return src("src/js/**/*.js")
+  return src("src/js/*.js")
     .pipe(gulpif(!isProd, sourcemaps.init()))
     .pipe(
-      babel({
-        presets: ["@babel/env"],
-      })
+      gulpif(
+        isProd,
+        babel({
+          presets: ["@babel/env"],
+        })
+      )
     )
     .pipe(concat("index.js"))
     .pipe(

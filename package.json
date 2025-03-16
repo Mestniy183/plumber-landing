@@ -18,14 +18,12 @@
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-changed": "^5.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^3.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
     "gulp-image": "^5.1.0",
-    "gulp-imagemin": "^9.1.0",
     "gulp-notify": "^5.0.0",
     "gulp-replace": "^1.1.4",
     "gulp-sourcemaps": "^3.0.0",
@@ -34,8 +32,11 @@
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
     "gulp-webp-css": "^1.1.0",
-    "imagemin-webp": "^8.0.0",
     "uuid": "^11.1.0",
     "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "depcheck": "^1.4.7",
+    "imask": "^7.6.1"
   }
 }
