@@ -1,5 +1,9 @@
-import { accordion } from "./modules/accordion.js";
-
 document.addEventListener("DOMContentLoaded", () => {
+  headerAnimation();
+  burger();
+  modal();
   accordion();
+  beforeAfter();
+  commentSwiper();
+  exampleSwiper();
 });

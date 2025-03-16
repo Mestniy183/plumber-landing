@@ -83,7 +83,7 @@ const images = () => {
 };
 
 const scripts = () => {
-  return src("src/js/*.js")
+  return src("src/js/**/*.js")
     .pipe(gulpif(!isProd, sourcemaps.init()))
     .pipe(
       gulpif(
