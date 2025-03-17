@@ -1,4 +1,4 @@
-function beforeAfter() {
+export function beforeAfter() {
   const photos = document.querySelectorAll(".example__photo");
 
   photos.forEach((photo) => {

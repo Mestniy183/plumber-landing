@@ -1,6 +1,6 @@
 import IMask from "imask";
 
-function modal() {
+export function modal() {
   const modal = document.querySelector(".modal");
   const openBtns = document.querySelectorAll(".open-modal");
 

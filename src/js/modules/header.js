@@ -1,4 +1,4 @@
-function headerAnimation() {
+export function headerAnimation() {
   const header = document.querySelector(".header");
   const headerNav = document.querySelector(".header__nav");
   const headerContacts = document.querySelector(".header__contacts");

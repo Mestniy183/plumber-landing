@@ -1,4 +1,4 @@
-function burger() {
+export function burger() {
   const burgerElement = document.querySelector(".burger");
   const listElement = document.querySelector(".header__list");
   const itemsElement = listElement.querySelectorAll(".header__list-item");

@@ -16,6 +16,7 @@ const replace = require("gulp-replace");
 const gulpif = require("gulp-if");
 const svgSprite = require("gulp-svg-sprite");
 const webpCSS = require("gulp-webp-css");
+const webpack = require("webpack-stream");
 const isProd = process.argv.includes("--build");
 
 const clean = () => {
@@ -83,28 +84,31 @@ const images = () => {
 };
 
 const scripts = () => {
-  return src("src/js/**/*.js")
-    .pipe(gulpif(!isProd, sourcemaps.init()))
-    .pipe(
-      gulpif(
-        isProd,
-        babel({
-          presets: ["@babel/env"],
-        })
+  return (
+    src("src/js/*.js")
+      .pipe(gulpif(!isProd, sourcemaps.init()))
+      .pipe(
+        gulpif(
+          isProd,
+          babel({
+            presets: ["@babel/env"],
+          })
+        )
       )
-    )
-    .pipe(concat("index.js"))
-    .pipe(
-      gulpif(
-        isProd,
-        uglify({
-          toplevel: true,
-        }).on("error", notify.onError())
+      // .pipe(concat("index.js"))
+      .pipe(
+        gulpif(
+          isProd,
+          uglify({
+            toplevel: true,
+          }).on("error", notify.onError())
+        )
       )
-    )
-    .pipe(gulpif(!isProd, sourcemaps.write()))
-    .pipe(dest("dist/js"))
-    .pipe(browserSync.stream());
+      .pipe(webpack(require("./webpack.config.js")))
+      .pipe(gulpif(!isProd, sourcemaps.write()))
+      .pipe(dest("dist/js"))
+      .pipe(browserSync.stream())
+  );
 };
 
 const svgSprites = () => {

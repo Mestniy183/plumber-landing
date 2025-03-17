@@ -1,4 +1,4 @@
-function exampleSwiper() {
+export function exampleSwiper() {
   const swiperExample = new Swiper(".swiper-example", {
     loop: true,
     allowTouchMove: false,

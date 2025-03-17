@@ -1,4 +1,4 @@
-function commentSwiper() {
+export function commentSwiper() {
   const swiper = new Swiper(".swiper-comment", {
     loop: true,
     spaceBetween: 30,
