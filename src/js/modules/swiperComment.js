@@ -1,3 +1,6 @@
+import Swiper from 'swiper';
+import 'swiper/css'
+
 export function commentSwiper() {
   const swiper = new Swiper(".swiper-comment", {
     loop: true,

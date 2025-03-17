@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 export function burger() {
   const burgerElement = document.querySelector(".burger");
   const listElement = document.querySelector(".header__list");

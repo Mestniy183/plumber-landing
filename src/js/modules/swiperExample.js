@@ -1,3 +1,6 @@
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
+
 export function exampleSwiper() {
   const swiperExample = new Swiper(".swiper-example", {
     loop: true,

@@ -1,3 +1,5 @@
+import gsap from 'gsap';
+
 export function headerAnimation() {
   const header = document.querySelector(".header");
   const headerNav = document.querySelector(".header__nav");
