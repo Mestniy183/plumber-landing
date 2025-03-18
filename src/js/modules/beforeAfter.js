@@ -8,10 +8,9 @@ export function beforeAfter() {
     const body = document.body;
     let isActive = false;
 
-    document.addEventListener("DOMContentLoaded", () => {
       let widthPhoto = photo.offsetWidth;
+
       img.style.width = `${widthPhoto}px`;
-    });
 
     function pauseEvents(e) {
       e.stopPropagation();
