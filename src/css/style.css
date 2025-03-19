@@ -295,7 +295,7 @@ img {
   height: 24px;
 }
 
-.heder__contacts-link {
+.header__contacts-link {
   font-family: var(--second-family);
   font-weight: 500;
   font-size: 28px;
@@ -374,7 +374,7 @@ img {
 .hero__box {
   position: absolute;
   width: 100%;
-  bottom: 56px;
+  bottom: 62px;
   left: 0;
   z-index: 1;
 }
@@ -388,6 +388,7 @@ img {
 .hero__list-item {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 
 .hero__img {
@@ -971,6 +972,7 @@ img {
   color: #fff;
   border-bottom: 1px dashed white;
   margin-bottom: 23px;
+  white-space: nowrap;
 }
 
 .footer__contacts-social {
