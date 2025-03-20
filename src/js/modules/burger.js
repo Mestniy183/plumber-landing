@@ -7,10 +7,12 @@ export function burger() {
   const anchorLinks = listElement.querySelectorAll(".header__list-link");
   function activeBurger() {
     burgerElement.classList.add("active");
+    document.body.style.overflow = "hidden";
   }
 
   function removeActiveBurger() {
     burgerElement.classList.remove("active");
+    document.body.style.overflow = "visible";
   }
 
   let mm = gsap.matchMedia();

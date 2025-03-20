@@ -1,3 +1,40 @@
+@media (hover: hover) {
+  .site-tel:hover {
+    transform: scale(1.05);
+  }
+  .site-icon:hover {
+    transform: scale(1.2);
+  }
+  .site-btn:hover {
+    background: black;
+    color: rgb(255, 255, 255);
+  }
+
+  .icon-wa:hover {
+    fill: #40c351;
+  }
+
+  .icon-tg:hover {
+    fill: #24a1de;
+  }
+
+  .icon-vk:hover {
+    fill: #4c75a3;
+  }
+  .accordion__item:hover {
+    background: #cbcbcb;
+  }
+  .example__slider-button:hover .example__slider-arrow {
+    fill: #fae668;
+  }
+  .comment__button:hover .comment__slider-arrow {
+    fill: black;
+  }
+  .footer__text-link:hover {
+    color: #ffd505;
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     padding: 0 40px;
@@ -94,7 +131,7 @@
 
   .example__slider-buttons {
     top: 75px;
-    left: 73px;
+    left: 40px;
   }
 
   .header__contacts {
@@ -148,7 +185,7 @@
     width: 400px;
     background-color: rgba(0, 0, 0, 0.85);
     transform: translateX(-100%);
-    left: -70px;
+    left: -40px;
     z-index: 11;
   }
 
@@ -222,6 +259,7 @@
     gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 270px;
   }
 
   .footer__link-tel {
@@ -289,7 +327,7 @@
 
   .footer__container {
     flex-direction: column;
-    gap: 50px;
+    gap: 33px;
     align-items: center;
     margin-bottom: 175px;
   }
@@ -365,17 +403,17 @@
     order: 1;
   }
 
-  .heder__contacts-link {
+  .header__contacts-link {
     display: none;
   }
 
   .header__list {
-    top: -15px;
+    top: -20px;
   }
 
   .hero__title {
     font-size: 51px;
-    max-width: 320px;
+    max-width: 370px;
     margin-bottom: 18px;
   }
 
@@ -508,7 +546,7 @@
 
   .example__slider-buttons {
     top: 52px;
-    right: 20px;
+    right: auto;
   }
 
   .example__slider-title {
@@ -639,8 +677,7 @@
   .example__slider-buttons,
   .comment__buttons {
     top: 58px;
-    right: 70px;
-    left: 70px;
+    right: auto;
     width: 86px;
     height: 32px;
     gap: 26px;

@@ -80,17 +80,9 @@ img {
   transition: transform 0.3s;
 }
 
-.site-tel:hover {
-  transform: scale(1.05);
-}
-
 .site-icon {
   fill: #fae042;
   transition: transform 0.3s, fill 0.3s;
-}
-
-.site-icon:hover {
-  transform: scale(1.2);
 }
 
 .site-btn {
@@ -108,20 +100,20 @@ img {
   transition: 0.3s;
 }
 
-.site-btn:hover {
+.site-btn:active {
   background: black;
   color: rgb(255, 255, 255);
 }
 
-.icon-wa:hover {
+.icon-wa:active {
   fill: #40c351;
 }
 
-.icon-tg:hover {
+.icon-tg:active {
   fill: #24a1de;
 }
 
-.icon-vk:hover {
+.icon-vk:active {
   fill: #4c75a3;
 }
 
@@ -480,10 +472,6 @@ img {
   background: #cbcbcb;
 }
 
-.accordion__item:hover {
-  background: #cbcbcb;
-}
-
 .accordion-box {
   max-width: 777px;
   overflow: hidden;
@@ -763,7 +751,7 @@ img {
   transition: fill 0.3s;
 }
 
-.example__slider-button:hover .example__slider-arrow {
+.example__slider-button:active .example__slider-arrow {
   fill: #fae668;
 }
 
@@ -809,7 +797,7 @@ img {
   transition: fill 0.3s;
 }
 
-.comment__button:hover .comment__slider-arrow {
+.comment__button:active .comment__slider-arrow {
   fill: black;
 }
 
@@ -951,7 +939,7 @@ img {
   transition: color 0.3s;
 }
 
-.footer__text-link:hover {
+.footer__text-link:active {
   color: #ffd505;
 }
 
