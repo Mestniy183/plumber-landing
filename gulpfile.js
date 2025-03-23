@@ -16,6 +16,7 @@ const replace = require("gulp-replace");
 const gulpif = require("gulp-if");
 const svgSprite = require("gulp-svg-sprite");
 const webpCSS = require("gulp-webp-css");
+const fileInclude = require("gulp-file-include");
 const webpack = require("webpack-stream");
 const isProd = process.argv.includes("--build");
 
@@ -41,6 +42,11 @@ const styles = () => {
     .pipe(browserSync.stream());
 };
 
+const fileIncludeSetting = {
+  prefix: '@@',
+  basepath: '@file',
+}
+
 const htmlMinify = () => {
   return src("src/**/*.html")
     .pipe(
@@ -51,6 +57,7 @@ const htmlMinify = () => {
         })
       )
     )
+    .pipe(fileInclude(fileIncludeSetting))
     .pipe(
       typograf({
         locale: ["ru", "en-US"],
