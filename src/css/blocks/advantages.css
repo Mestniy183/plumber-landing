@@ -23,6 +23,10 @@
   justify-content: center;
 }
 
+.advantages__img {
+  display: block;
+}
+
 .advantages__item-wrapper {
   width: 349px;
 }
