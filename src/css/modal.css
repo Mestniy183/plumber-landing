@@ -119,9 +119,47 @@
 
 
 .modal__checkbox {
-    
+    display: block;
+    user-select: none;
+    cursor: pointer;
 }
 .modal__checkbox-input {
+    position: absolute;
+    appearance: none;
 }
 .modal__checkbox-text {
+    position: relative;
+    font-family: var(--second-family);
+font-weight: 400;
+font-size: 18px;
+letter-spacing: -0.02em;
+color: var(--seryy);
+}
+
+.modal__checkbox-text::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border: 2px solid var(--chistyy-zheltyy);
+}
+
+.modal__checkbox-text::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 11px;
+    background: url('../img/check.svg') center no-repeat;
+    opacity: 0;
+}
+
+.modal__checkbox-input:checked + .modal__checkbox-text::after{
+opacity: 1;
 }
