@@ -129,11 +129,13 @@
 }
 .modal__checkbox-text {
     position: relative;
+    display: block;
     font-family: var(--second-family);
 font-weight: 400;
 font-size: 18px;
 letter-spacing: -0.02em;
 color: var(--seryy);
+padding-left: 45px;
 }
 
 .modal__checkbox-text::before{
@@ -148,16 +150,26 @@ color: var(--seryy);
     border: 2px solid var(--chistyy-zheltyy);
 }
 
+.modal__checkbox-link{
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.modal__checkbox-link:hover{
+    color: #d8b710;
+}
+
 .modal__checkbox-text::after{
     content: '';
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 16px;
-    height: 11px;
-    background: url('../img/check.svg') center no-repeat;
+    width: 24px;
+    height: 12px;
+    background: url('../img/sprite.svg#check') center no-repeat;
     opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .modal__checkbox-input:checked + .modal__checkbox-text::after{
