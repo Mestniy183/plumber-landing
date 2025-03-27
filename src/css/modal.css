@@ -151,11 +151,12 @@ padding-left: 45px;
 }
 
 .modal__checkbox-link{
+    display: block;
     text-decoration: underline;
     transition: color 0.3s;
 }
 
-.modal__checkbox-link:hover{
+.modal__checkbox-link:active {
     color: #d8b710;
 }
 

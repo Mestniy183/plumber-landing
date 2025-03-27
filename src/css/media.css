@@ -33,6 +33,10 @@
   .footer__text-link:hover {
     color: #ffd505;
   }
+  .modal__checkbox-link:hover {
+    color: #d8b710;
+}
+
 }
 
 @media (max-width: 1200px) {
@@ -376,6 +380,10 @@
 @media (max-width: 576px) {
   .site-title {
     font-size: 36px;
+  }
+
+  .modal__checkbox-text {
+    font-size: 15px;
   }
 
   .header {
