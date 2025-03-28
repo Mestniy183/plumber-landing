@@ -58,6 +58,13 @@ export function modal() {
       errorText.remove();
     }
 
+    if (input.type === 'checkbox') {
+      if (!input.checked) {
+        createError('Необходимо согласие на обработку персональных данных')
+        return false
+      }
+      return true
+    }
     if (input.name === "tel") {
       mask.updateValue();
 
@@ -77,6 +84,7 @@ export function modal() {
   }
 
   function validateInput(input) {
+    if (input.type === 'checkbox') return;
     input.value = input.value.replace(/<[^>]*>/g, "");
     input.value = input.value.replace(/javascript:/gi, "");
     input.value = input.value.replace(/(https?:\/\/|www\.)\S+/gi, "");
@@ -97,6 +105,11 @@ export function modal() {
           }
         }
       });
+      if (input.type === 'checkbox') {
+        input.addEventListener('change', () => {
+          getIsValid(input, '')
+        })
+      }
     });
   }
 

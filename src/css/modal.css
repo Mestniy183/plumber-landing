@@ -122,6 +122,7 @@
     display: block;
     user-select: none;
     cursor: pointer;
+    width: max-content;
 }
 .modal__checkbox-input {
     position: absolute;
