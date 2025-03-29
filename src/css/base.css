@@ -9,12 +9,11 @@
   --third-family: "Roboto Condensed", sans-serif;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
-}
-
-body {
   font-family: "Roboto", sans-serif;
+  scrollbar-gutter: stable;
+  scroll-padding-top: 130px;
 }
 
 *,

@@ -93,6 +93,8 @@
 .error-message {
     margin-top: 5px;
     color: red;
+    text-wrap: balance;
+    max-width: 360px;
 }
 
 .input-invalid {

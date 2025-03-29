@@ -110,7 +110,7 @@
 
 .header__list-item:nth-child(n + 2):before {
   content: "";
-  background-image: url("../img/sprite.svg#header--gear");
+  background-image: url("../../img/sprite.svg#header--gear");
   width: 20px;
   height: 20px;
   background-size: contain;
