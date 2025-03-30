@@ -28,6 +28,7 @@ const styles = () => {
   return src("src/css/**/index.css")
     .pipe(sourcemaps.init())
     .pipe(concat("main.css"))
+    .pipe(replace(/url\(['"]?\.\.\/\.\.\/img\/(.*?)['"]?\)/g, 'url("../img/$1")'))
     .pipe(
       gulpif(
         isProd,
