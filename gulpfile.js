@@ -24,6 +24,11 @@ const clean = () => {
   return del(["dist"]);
 };
 
+const assets = () =>{
+  return src('src/assets/**')
+  .pipe(dest('dist/assets'))
+}
+
 const styles = () => {
   return src("src/css/**/index.css")
     .pipe(sourcemaps.init())
@@ -192,10 +197,12 @@ const watchFiles = () => {
   watch("src/img/**/*.svg", svgSprites);
   watch("src/img/**/*.svg", svgSymbols);
   watch("src/img/**/*.{jpg,jpeg,png,webp}", images);
+  watch("src/assets/**", assets);
 };
 
 exports.default = series(
   clean,
+  assets,
   htmlMinify,
   styles,
   scripts,
