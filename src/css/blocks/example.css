@@ -17,6 +17,7 @@
   overflow: hidden;
   width: 533px;
   border-radius: 30px;
+  touch-action: none;
 }
 
 .example__img {
