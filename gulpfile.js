@@ -25,7 +25,7 @@ const clean = () => {
 };
 
 const assets = () =>{
-  return src('src/assets/**')
+  return src('src/assets/**', {encoding:false})
   .pipe(dest('dist/assets'))
 }
 
@@ -86,6 +86,7 @@ const images = () => {
       "src/img/**/*.jpeg",
       "src/img/**/*.png",
       "src/img/**/*.webp",
+      "!src/**/*.pdf"
     ],
     {
       encoding: false,
