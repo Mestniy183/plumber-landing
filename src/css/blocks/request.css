@@ -1,6 +1,6 @@
 .request {
   height: 668px;
-  background: grey url("../../img/request/request.jpg");
+  background: grey url("../../img/request/request.jpg") no-repeat 0% 90% /cover;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 90%;
@@ -13,7 +13,6 @@
 }
 
 .request__content {
-  max-width: 550px;
   margin: 0 auto;
   text-align: center;
 }
