@@ -212,5 +212,16 @@ exports.default = series(
   svgSprites,
   svgSymbols,
   images,
-  gulpif(!isProd, watchFiles)
+  watchFiles
+);
+
+exports.build = series(
+  clean,
+  assets,
+  htmlMinify,
+  styles,
+  scripts,
+  svgSprites,
+  svgSymbols,
+  images
 );
