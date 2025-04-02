@@ -24,16 +24,17 @@ const clean = () => {
   return del(["dist"]);
 };
 
-const assets = () =>{
-  return src('src/assets/**', {encoding:false})
-  .pipe(dest('dist/assets'))
-}
+const assets = () => {
+  return src("src/assets/**", { encoding: false }).pipe(dest("dist/assets"));
+};
 
 const styles = () => {
   return src("src/css/**/index.css")
     .pipe(sourcemaps.init())
     .pipe(concat("main.css"))
-    .pipe(replace(/url\(['"]?\.\.\/\.\.\/img\/(.*?)['"]?\)/g, 'url("../img/$1")'))
+    .pipe(
+      replace(/url\(['"]?\.\.\/\.\.\/img\/(.*?)['"]?\)/g, 'url("../img/$1")')
+    )
     .pipe(
       gulpif(
         isProd,
@@ -49,9 +50,9 @@ const styles = () => {
 };
 
 const fileIncludeSetting = {
-  prefix: '@@',
-  basepath: '@file',
-}
+  prefix: "@@",
+  basepath: "@file",
+};
 
 const htmlMinify = () => {
   return src("src/**/*.html")
@@ -86,7 +87,7 @@ const images = () => {
       "src/img/**/*.jpeg",
       "src/img/**/*.png",
       "src/img/**/*.webp",
-      "!src/**/*.pdf"
+      "!src/**/*.pdf",
     ],
     {
       encoding: false,
@@ -187,11 +188,14 @@ const svgSymbols = () => {
 };
 
 const watchFiles = () => {
-  browserSync.init({
-    server: {
-      baseDir: "dist",
-    },
-  });
+  if (!isProd) {
+    browserSync.init({
+      server: {
+        baseDir: "dist",
+      },
+    });
+  }
+
   watch("src/**/*.html", htmlMinify);
   watch("src/css/**/*.css", styles);
   watch("src/js/**/*.js", scripts);
