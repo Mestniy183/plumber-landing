@@ -194,15 +194,15 @@ const watchFiles = () => {
         baseDir: "dist",
       },
     });
-  }
 
-  watch("src/**/*.html", htmlMinify);
-  watch("src/css/**/*.css", styles);
-  watch("src/js/**/*.js", scripts);
-  watch("src/img/**/*.svg", svgSprites);
-  watch("src/img/**/*.svg", svgSymbols);
-  watch("src/img/**/*.{jpg,jpeg,png,webp}", images);
-  watch("src/assets/**", assets);
+    watch("src/**/*.html", htmlMinify);
+    watch("src/css/**/*.css", styles);
+    watch("src/js/**/*.js", scripts);
+    watch("src/img/**/*.svg", svgSprites);
+    watch("src/img/**/*.svg", svgSymbols);
+    watch("src/img/**/*.{jpg,jpeg,png,webp}", images);
+    watch("src/assets/**", assets);
+  }
 };
 
 exports.default = series(
