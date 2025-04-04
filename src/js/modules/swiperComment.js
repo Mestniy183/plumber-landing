@@ -4,6 +4,8 @@ export function commentSwiper() {
   const swiper = new Swiper(".swiper-comment", {
     loop: true,
     spaceBetween: 30,
+    lazy: true,
+    lazyPreloadPrevNext: 2,
     speed: 1000,
     breakpoints: {
       320: {

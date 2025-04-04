@@ -3,6 +3,8 @@ import Swiper from "swiper/bundle";
 export function exampleSwiper() {
   const swiperExample = new Swiper(".swiper-example", {
     loop: true,
+    lazy: true,
+    lazyPreloadPrevNext: 1,
     allowTouchMove: false,
     spaceBetween: 30,
     speed: 1000,
