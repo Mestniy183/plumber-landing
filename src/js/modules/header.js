@@ -20,20 +20,28 @@ export function headerAnimation() {
       fixedTl.fromTo(
         header,
         { y: 0 },
-        { y: "-100%", duration: 0.5, ease: "none" }
+        {
+          y: "-100%",
+          duration: 0.5,
+          ease: "none",
+          onComplete: () => {
+            gsap.set(header, { y: 0 });
+          },
+        }
       ),
     showContent: () => {
       contentTl
         .fromTo(
           headerNav,
           { x: "-10px", autoAlpha: 0 },
-          { x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out" }
+          { x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out" },
+          "content"
         )
         .fromTo(
           headerContacts,
           { x: "10px", autoAlpha: 0 },
           { x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out" },
-          "-=0.8"
+          "content"
         );
     },
   };
