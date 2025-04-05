@@ -35,8 +35,7 @@
   }
   .modal__checkbox-link:hover {
     color: #d8b710;
-}
-
+  }
 }
 
 @media (max-width: 1200px) {
@@ -277,10 +276,6 @@
     height: 100%;
   }
 
-  .header__contacts-social {
-    gap: 10px;
-  }
-
   .header__list {
     width: 100vw;
     background-color: rgba(0, 0, 0, 1);
@@ -416,7 +411,7 @@
   }
 
   .header__list {
-    top: -20px;
+    top: -22px;
   }
 
   .hero__title {
@@ -436,7 +431,6 @@
     font-size: 18px;
   }
 
-
   .hero__list-item {
     align-items: center;
     gap: 8px;
@@ -450,7 +444,6 @@
   .hero {
     background-position: 52.8%;
   }
-
 
   .about {
     padding: 44px 0;
@@ -758,7 +751,6 @@
     max-width: 320px;
     margin-bottom: 18px;
   }
-
 
   .container {
     padding: 0 20px;

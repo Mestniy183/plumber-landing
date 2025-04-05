@@ -1,4 +1,5 @@
 import IMask from "imask";
+import gsap from "gsap";
 
 export function modal() {
   const modal = document.querySelector(".modal");
@@ -58,12 +59,12 @@ export function modal() {
       errorText.remove();
     }
 
-    if (input.type === 'checkbox') {
+    if (input.type === "checkbox") {
       if (!input.checked) {
-        createError('Необходимо согласие на обработку персональных данных')
-        return false
+        createError("Необходимо согласие на обработку персональных данных");
+        return false;
       }
-      return true
+      return true;
     }
     if (input.name === "tel") {
       mask.updateValue();
@@ -84,7 +85,7 @@ export function modal() {
   }
 
   function validateInput(input) {
-    if (input.type === 'checkbox') return;
+    if (input.type === "checkbox") return;
     input.value = input.value.replace(/<[^>]*>/g, "");
     input.value = input.value.replace(/javascript:/gi, "");
     input.value = input.value.replace(/(https?:\/\/|www\.)\S+/gi, "");
@@ -105,10 +106,10 @@ export function modal() {
           }
         }
       });
-      if (input.type === 'checkbox') {
-        input.addEventListener('change', () => {
-          getIsValid(input, '')
-        })
+      if (input.type === "checkbox") {
+        input.addEventListener("change", () => {
+          getIsValid(input, "");
+        });
       }
     });
   }
