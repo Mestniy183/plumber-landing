@@ -122,7 +122,6 @@
 }
 
 @media (max-width: 1024px) {
-
   .hero__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -439,7 +438,18 @@
   }
 
   .hero {
-    background-position: 52.8%;
+    background: grey url("../img/hero/hero-bg-mobile.jpg") fixed no-repeat
+      center / cover;
+  }
+
+  .hero__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+  }
+
+  .hero::after {
+    background-image: url("../img/hero/overlay-mobile.png");
   }
 
   .about {
