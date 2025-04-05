@@ -42,7 +42,7 @@ const styles = () => {
       )
     )
     .pipe(autoprefixer({ cascade: false }))
-    .pipe(cleanCSS())
+    .pipe(cleanCSS({ level: 2 }))
     .pipe(gulpif(isProd, webpCSS()))
     .pipe(sourcemaps.write())
     .pipe(dest("dist/css"))
