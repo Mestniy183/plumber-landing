@@ -30,7 +30,7 @@ const assets = () => {
 
 const styles = () => {
   return src("src/css/**/index.css")
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(!isProd, sourcemaps.init()))
     .pipe(concat("main.css"))
     .pipe(
       replace(/url\(['"]?\.\.\/\.\.\/img\/(.*?)['"]?\)/g, 'url("../img/$1")')
@@ -44,7 +44,7 @@ const styles = () => {
     .pipe(autoprefixer({ cascade: false }))
     .pipe(cleanCSS())
     .pipe(gulpif(isProd, webpCSS()))
-    .pipe(sourcemaps.write())
+    .pipe(gulpif(!isProd, sourcemaps.write()))
     .pipe(dest("dist/css"))
     .pipe(browserSync.stream());
 };

@@ -27,17 +27,17 @@
     <title>Сантехник178</title>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <link rel="preload" href="js/index.bundle.js" as="script" />
+    <link
+      rel="preload"
+      href="js/index.bundle.js"
+      as="script"
+      crossorigin="anonymous"
+    />
     <link
       rel="preload"
       href="css/main.css"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-      as="style"
+      onload="this.rel='stylesheet'"
     />
 
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
@@ -48,6 +48,21 @@
     />
 
     <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    @@include('html/blocks/header.html') @@include('html/blocks/hero.html')
+
+    <main class="main">
+      @@include('html/blocks/about.html') @@include('html/blocks/services.html')
+      @@include('html/blocks/advantages.html')
+      @@include('html/blocks/example.html')
+      @@include('html/blocks/questions.html')
+      @@include('html/blocks/comment.html')
+      @@include('html/blocks/request.html')
+    </main>
+
+    @@include('html/blocks/footer.html') @@include('html/blocks/modal.html')
 
     <script type="application/ld+json">
       {
@@ -112,21 +127,6 @@
         ]
       }
     </script>
-    <script src="js/index.bundle.js" type="module" defer></script>
-  </head>
-
-  <body>
-    @@include('html/blocks/header.html') @@include('html/blocks/hero.html')
-
-    <main class="main">
-      @@include('html/blocks/about.html') @@include('html/blocks/services.html')
-      @@include('html/blocks/advantages.html')
-      @@include('html/blocks/example.html')
-      @@include('html/blocks/questions.html')
-      @@include('html/blocks/comment.html')
-      @@include('html/blocks/request.html')
-    </main>
-
-    @@include('html/blocks/footer.html') @@include('html/blocks/modal.html')
+    <script src="js/index.bundle.js" type="module"></script>
   </body>
 </html>
