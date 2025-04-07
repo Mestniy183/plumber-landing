@@ -42,8 +42,8 @@ const styles = () => {
       )
     )
     .pipe(autoprefixer({ cascade: false }))
-    .pipe(gulpif(isProd, webpCSS()))
     .pipe(cleanCSS())
+    .pipe(gulpif(isProd, webpCSS()))
     .pipe(gulpif(!isProd, sourcemaps.write()))
     .pipe(dest("dist/css"))
     .pipe(browserSync.stream());
@@ -132,10 +132,10 @@ const svgSprites = () => {
       svgSprite({
         mode: {
           defs: {
-            sprite: "sprite.defs.svg",
+            sprite: "../sprite.defs.svg",
           },
           stack: {
-            sprite: "sprite.svg",
+            sprite: "../sprite.svg",
           },
         },
         shape: {
@@ -160,7 +160,7 @@ const svgSymbols = () => {
       svgSprite({
         mode: {
           symbol: {
-            sprite: "sprite.symbol.svg",
+            sprite: "../sprite.symbol.svg",
           },
         },
         shape: {
