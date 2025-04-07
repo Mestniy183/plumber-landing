@@ -42,8 +42,8 @@ const styles = () => {
       )
     )
     .pipe(autoprefixer({ cascade: false }))
-    .pipe(cleanCSS())
     .pipe(gulpif(isProd, webpCSS()))
+    .pipe(cleanCSS())
     .pipe(gulpif(!isProd, sourcemaps.write()))
     .pipe(dest("dist/css"))
     .pipe(browserSync.stream());
@@ -111,6 +111,7 @@ const scripts = () => {
         )
       )
       // .pipe(concat("index.js"))
+      .pipe(webpack(require("./webpack.config.js")))
       .pipe(
         gulpif(
           isProd,
@@ -119,7 +120,6 @@ const scripts = () => {
           }).on("error", notify.onError())
         )
       )
-      .pipe(webpack(require("./webpack.config.js")))
       .pipe(gulpif(!isProd, sourcemaps.write()))
       .pipe(dest("dist/js"))
       .pipe(browserSync.stream())
@@ -132,10 +132,10 @@ const svgSprites = () => {
       svgSprite({
         mode: {
           defs: {
-            sprite: "../sprite.defs.svg",
+            sprite: "sprite.defs.svg",
           },
           stack: {
-            sprite: "../sprite.svg",
+            sprite: "sprite.svg",
           },
         },
         shape: {
@@ -160,7 +160,7 @@ const svgSymbols = () => {
       svgSprite({
         mode: {
           symbol: {
-            sprite: "../sprite.symbol.svg",
+            sprite: "sprite.symbol.svg",
           },
         },
         shape: {
