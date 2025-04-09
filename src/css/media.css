@@ -438,8 +438,8 @@
   }
 
   .hero {
-    background: grey url("../img/hero/hero-bg-mobile.jpg") fixed no-repeat
-      center / cover;
+    background: grey url("../img/hero/hero-mobile.jpg") fixed no-repeat center /
+      cover;
   }
 
   .hero__wrapper {
@@ -448,9 +448,9 @@
     gap: 38px;
   }
 
-  .hero::after {
+  /* .hero::after {
     background-image: url("../img/hero/overlay-mobile.png");
-  }
+  } */
 
   .about {
     padding: 44px 0;
