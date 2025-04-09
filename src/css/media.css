@@ -438,8 +438,7 @@
   }
 
   .hero {
-    background: grey url("../img/hero/hero-mobile.jpg") fixed no-repeat center /
-      cover;
+    background: grey url("../img/hero/hero-mobile.jpg") no-repeat center / cover;
   }
 
   .hero__wrapper {
