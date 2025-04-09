@@ -1,7 +1,7 @@
 .hero {
   display: flex;
   align-items: center;
-  background: url("../../img/hero/hero.jpg") fixed no-repeat center / cover;
+  background: grey url("../../img/hero/hero.jpg") fixed no-repeat center / cover;
   width: 100%;
   height: 100vh;
   position: relative;
