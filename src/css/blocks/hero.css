@@ -13,16 +13,6 @@
   gap: 38px;
 }
 
-/* .hero::after {
-  content: "";
-  background-image: url("../../img/hero/overlay.webp");
-  opacity: 0.57;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  inset: 0;
-} */
-
 .hero__content {
   max-width: 812px;
   width: 100%;
