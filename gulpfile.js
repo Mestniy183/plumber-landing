@@ -24,6 +24,13 @@ const clean = () => {
   return del(["dist"]);
 };
 
+const fonts = () => {
+  return src("src/fonts/**", {
+    encoding: false,
+    removeBOM: false,
+  }).pipe(dest("dist/fonts"));
+};
+
 const assets = () => {
   return src("src/assets/**", { encoding: false }).pipe(dest("dist/assets"));
 };
@@ -201,10 +208,12 @@ const watchFiles = () => {
   watch("src/img/**/*.svg", svgSymbols);
   watch("src/img/**/*.{jpg,jpeg,png,webp}", images);
   watch("src/assets/**", assets);
+  watch("src/fonts/**", fonts);
 };
 
 exports.default = series(
   clean,
+  fonts,
   assets,
   htmlMinify,
   styles,
@@ -217,6 +226,7 @@ exports.default = series(
 
 exports.build = series(
   clean,
+  fonts,
   assets,
   htmlMinify,
   styles,
