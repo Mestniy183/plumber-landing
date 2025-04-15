@@ -1,4 +1,4 @@
-import Swiper from "swiper";
+import Swiper from "swiper/bundle";
 
 export function exampleSwiper() {
   const swiperExample = new Swiper(".swiper-example", {

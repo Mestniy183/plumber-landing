@@ -1,4 +1,4 @@
-import Swiper from "swiper";
+import Swiper from "swiper/bundle";
 
 export function commentSwiper() {
   const swiper = new Swiper(".swiper-comment", {
