@@ -25,6 +25,7 @@
 
 .advantages__img {
   display: block;
+  height: auto;
 }
 
 .advantages__item-wrapper {
