@@ -76,4 +76,5 @@
 
 .comment__item-img {
   border-radius: 22px;
+  align-self: center;
 }

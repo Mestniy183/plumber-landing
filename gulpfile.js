@@ -124,6 +124,10 @@ const scripts = () => {
           isProd,
           uglify({
             toplevel: true,
+            compress: {
+              unused: true,
+              dead_code: true
+            }
           }).on("error", notify.onError())
         )
       )
