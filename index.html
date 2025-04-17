@@ -357,14 +357,15 @@
   <div class="container">
     <div class="about__content">
       <picture>
-        <source media="(max-width: 430px )" srcset="img/about/about-576.webp" />
+        <source media="(max-width: 430px )" srcset="img/about/about-576.webp 1x, img/about/about-576@2x.webp 2x" />
         <img
-          loading="lazy"
-          class="about__img"
-          srcset="img/about/about.webp"
-          alt="Фото сантехника"
-          width="468"
-          height="535"
+        class="about__img"
+        src="img/about/about.webp"
+        srcset="img/about/about.webp 1x, img/about/about@2x.webp 2x"
+        alt="Фото сантехника"
+        width="468"
+        height="535"
+        loading="lazy"
         />
       </picture>
       <div class="about__inner">
