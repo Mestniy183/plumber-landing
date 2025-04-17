@@ -423,10 +423,6 @@
     height: 42px;
   }
 
-  .hero {
-    background: grey url("../img/hero/hero-mobile.jpg") no-repeat center / cover;
-  }
-
   .hero__wrapper {
     display: flex;
     flex-direction: column;
