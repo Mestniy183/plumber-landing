@@ -769,9 +769,7 @@
 @media (max-width: 360px) {
   .comment__buttons,
   .example__slider-buttons {
-    top: 50px;
-    right: 20px;
-    left: auto;
+    top: 38px;
     width: 86px;
     height: 32px;
     gap: 26px;
