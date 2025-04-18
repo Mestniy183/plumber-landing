@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><svg fill="none" viewBox="0 0 16 11" id="check" xmlns="http://www.w3.org/2000/svg">
     <path d="M6.653 10.975 6.626 11 0 4.65l2.158-2.068L6.653 6.89 13.843 0 16 2.068 6.68 11l-.027-.025Z" fill="#01203F"/>
 </svg><svg fill="none" viewBox="0 0 15 24" id="example--left-arrow" xmlns="http://www.w3.org/2000/svg">
-    <path d="M.484 12 11.984.5l2.683 2.683L5.85 12l8.817 8.817-2.683 2.683L.484 12Z" fill="#fff"/>
+    <path d="M.484 12 11.984.5l2.683 2.683L5.85 12l8.817 8.817-2.683 2.683L.484 12Z" fill="#efeaea"/>
 </svg><svg fill="none" viewBox="0 0 15 24" id="example--right-arrow" xmlns="http://www.w3.org/2000/svg">
-    <path d="m14.516 12-11.5 11.5-2.683-2.683L9.15 12 .333 3.183 3.016.5l11.5 11.5Z" fill="#fff"/>
+    <path d="m14.516 12-11.5 11.5-2.683-2.683L9.15 12 .333 3.183 3.016.5l11.5 11.5Z" fill="#efeaea"/>
 </svg><svg fill="none" viewBox="0 0 397 345" id="footer--ellipse" xmlns="http://www.w3.org/2000/svg">
     <g filter="url(#fa)">
         <circle cx="198.5" cy="198.5" r="105.5" fill="#212020"/>
