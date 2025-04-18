@@ -68,6 +68,8 @@ const htmlMinify = () => {
         isProd,
         htmlmin({
           collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true
         })
       )
     )

@@ -4,8 +4,14 @@ const config = {
     index: "./src/js/index.js",
   },
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[contenthash].bundle.js",
   },
+  optimization: {
+    minimize: true,
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
   // module: {
   //   rules: [
   //     {
