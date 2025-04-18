@@ -4,7 +4,7 @@ const config = {
     index: "./src/js/index.js",
   },
   output: {
-    filename: "[name].[contenthash].bundle.js",
+    filename: "[name].bundle.js",
   },
   optimization: {
     minimize: true,
