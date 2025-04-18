@@ -8,9 +8,6 @@ const config = {
   },
   optimization: {
     minimize: true,
-    splitChunks: {
-      chunks: 'all'
-    }
   }
   // module: {
   //   rules: [
