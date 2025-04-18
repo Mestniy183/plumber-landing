@@ -115,6 +115,14 @@
     row-gap: 20px;
   }
 
+  .comment__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    gap: 10px;
+}
+
   .example__slider-buttons {
     top: 75px;
     left: 40px;
@@ -769,13 +777,10 @@
 @media (max-width: 360px) {
   .comment__buttons,
   .example__slider-buttons {
-    top: 38px;
+    top: 50px;
     width: 86px;
     height: 32px;
     gap: 26px;
   }
 
-  .example__title {
-    margin-bottom: 35px;
-  }
 }
