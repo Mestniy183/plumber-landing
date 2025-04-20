@@ -74,16 +74,16 @@ const htmlMinify = () => {
       )
     )
     .pipe(fileInclude(fileIncludeSetting))
-    .pipe(
-      typograf({
-        locale: ["ru", "en-US"],
-        htmlEntity: { type: "digit" },
-        safeTags: [
-          ["<\\?php", "\\?>"],
-          ["<no-typography>", "</no-typography>"],
-        ],
-      })
-    )
+    // .pipe(
+    //   typograf({
+    //     locale: ["ru", "en-US"],
+    //     htmlEntity: { type: "digit" },
+    //     safeTags: [
+    //       ["<\\?php", "\\?>"],
+    //       ["<no-typography>", "</no-typography>"],
+    //     ],
+    //   })
+    // )
     .pipe(gulpif(isProd, replace(/\.jpg|\.jpeg|\.png/g, ".webp")))
     .pipe(dest("dist"))
     .pipe(browserSync.stream());
