@@ -65,26 +65,27 @@ const htmlMinify = () => {
   return src("src/**/*.html")
   .pipe(fileInclude(fileIncludeSetting))
   .pipe(gulpif(isProd, replace(/\.jpg|\.jpeg|\.png/g, ".webp")))
+  .pipe(
+    typograf({
+      locale: ["ru", "en-US"],
+      htmlEntity: { type: "digit" },
+      safeTags: [
+        ["<\\?php", "\\?>"],
+        ["<no-typography>", "</no-typography>"],
+      ],
+    })
+  )
     .pipe(
       gulpif(
         isProd,
         htmlmin({
           collapseWhitespace: true,
           removeComments: true,
-          removeRedundantAttributes: true
+          removeRedundantAttributes: true,
+          minifyJS: true
         })
       )
     )
-    // .pipe(
-    //   typograf({
-    //     locale: ["ru", "en-US"],
-    //     htmlEntity: { type: "digit" },
-    //     safeTags: [
-    //       ["<\\?php", "\\?>"],
-    //       ["<no-typography>", "</no-typography>"],
-    //     ],
-    //   })
-    // )
     .pipe(dest("dist"))
     .pipe(browserSync.stream());
 };
