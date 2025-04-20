@@ -63,6 +63,8 @@ const fileIncludeSetting = {
 
 const htmlMinify = () => {
   return src("src/**/*.html")
+  .pipe(fileInclude(fileIncludeSetting))
+  .pipe(gulpif(isProd, replace(/\.jpg|\.jpeg|\.png/g, ".webp")))
     .pipe(
       gulpif(
         isProd,
@@ -73,7 +75,6 @@ const htmlMinify = () => {
         })
       )
     )
-    .pipe(fileInclude(fileIncludeSetting))
     // .pipe(
     //   typograf({
     //     locale: ["ru", "en-US"],
@@ -84,7 +85,6 @@ const htmlMinify = () => {
     //     ],
     //   })
     // )
-    .pipe(gulpif(isProd, replace(/\.jpg|\.jpeg|\.png/g, ".webp")))
     .pipe(dest("dist"))
     .pipe(browserSync.stream());
 };
