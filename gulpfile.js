@@ -32,7 +32,7 @@ const fonts = () => {
 };
 
 const assets = () => {
-  return src("src/assets/**", { encoding: false }).pipe(dest("dist/assets"));
+  return src("src/assets/**", { encoding: false, removeBOM: false }).pipe(dest("dist/assets"));
 };
 
 const styles = () => {
