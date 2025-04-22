@@ -23,8 +23,6 @@
 }
 
 .hero__wrapper {
-  content-visibility: auto;
-  contain-intrinsic-size: 1000px;
   display: flex;
   flex-direction: column;
   gap: 38px;
