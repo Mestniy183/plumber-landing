@@ -7,6 +7,7 @@ import { commentSwiper } from "./modules/swiperComment.js";
 import { exampleSwiper } from "./modules/swiperExample.js";
 import { getCurrentYear } from "./modules/getCurrentYear.js";
 import {createExamples} from "./modules/example.js";
+import {createComment} from "./modules/comment.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   headerAnimation();
@@ -14,8 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   modal();
   accordion();
   createExamples();
-  beforeAfter();
+  createComment();
   commentSwiper();
   exampleSwiper();
   getCurrentYear();
+  beforeAfter();
 });
