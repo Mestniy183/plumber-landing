@@ -1,6 +1,6 @@
 export async function createExamples(){
 try {
-    const response = await fetch("../assets/json/example.json");
+    const response = await fetch("./assets/json/example.json");
     const {examples} = await response.json();
     console.log(examples); 
 
@@ -54,28 +54,24 @@ try {
   <div class="example__slider-inner">
   <h3 class="example__slider-title">${title}</h3>
   <ul class="example__slider-list list-reset">
-    <li class="example__slider-item">
-      <h4 class="example__slider-item-title">Задача:</h4>
+  ${tasks.map(({title: taskTitle, text}) => `
+  <li class="example__slider-item">
+      <h4 class="example__slider-item-title">${taskTitle}</h4>
       <p class="example__slider-item-text">
-        После перепланировки детской комнаты, и обЪединение её с
-        балконом, появилась потребность, в изменении конструкции
-        стояка отопления и замене радиатора.
+        ${text}
       </p>
     </li>
-    <li class="example__slider-item">
-      <h4 class="example__slider-item-title">Решение:</h4>
-      <p class="example__slider-item-text">
-        Переварка стояка отопления и замена радиатора вертикальной
-        конструкции, установка запорной арматуры(краны), для удобства
-        будущей эксплуатации. Результат-экономия пространства,
-        увеличения кпд батареи.
-      </p>
-    </li>
+  `).join('')}
   </ul>
 </div>
 <div class="swiper-lazy-preloader"></div>
-    `
+    `;
+    return slide;
     }
+    examples.forEach((example) => {
+        fragment.append(createSlide(example));
+    })
+    swiperWrapper.append(fragment);
 }catch(error){
     console.log(error);
 }
