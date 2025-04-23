@@ -6,7 +6,7 @@ export function createComment(){
         const commentList = document.querySelector('.comment__list');
         data.forEach(element => {
             const slide = document.createElement('li');
-            slide.classList.add('comment__item','comment__list');
+            slide.classList.add('comment__item','swiper-slide');
             slide.setAttribute('lazy', 'true');
             slide.innerHTML = `
             <img
