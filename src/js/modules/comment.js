@@ -1,3 +1,4 @@
+import Swiper from "swiper/bundle";
 export function createComment(){
     fetch('./assets/json/comment.json')
     .then(res => res.json())
@@ -30,7 +31,32 @@ export function createComment(){
             `;
            commentList.append(slide);
         });
-        
+        initSwiper();
     }).catch(error => console.error('Ошибка загрузки отзывов', error));
 
+}
+
+function initSwiper(){
+     new Swiper(".swiper-comment", {
+        loop: true,
+        spaceBetween: 30,
+        lazy: true,
+        lazyPreloadPrevNext: 2,
+        speed: 1000,
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+          },
+          576: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+        navigation: {
+          nextEl: ".swiper-button-custom-next",
+          prevEl: ".swiper-button-custom-prev",
+        },
+      });
 }
