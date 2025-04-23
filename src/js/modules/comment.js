@@ -31,14 +31,13 @@ export function createComment(){
             `;
            commentList.append(slide);
         });
-        initSwiper();
+        initSwiper(data.length);
     }).catch(error => console.error('Ошибка загрузки отзывов', error));
 
 }
 
-function initSwiper(){
-     new Swiper(".swiper-comment", {
-        loop: true,
+function initSwiper(slidesCount){
+    const swiperOptions = {
         spaceBetween: 30,
         lazy: true,
         lazyPreloadPrevNext: 2,
@@ -58,5 +57,15 @@ function initSwiper(){
           nextEl: ".swiper-button-custom-next",
           prevEl: ".swiper-button-custom-prev",
         },
-      });
+    }
+
+    if(slidesCount >= 4) {
+        swiperOptions.loop = true
+    } else {
+        console.warn('Недастаточно слайдов для режима loop')
+    }
+
+     new Swiper(".swiper-comment", swiperOptions);
+
+
 }
