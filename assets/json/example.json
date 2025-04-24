@@ -2,7 +2,7 @@
     "examples": [
         {
             "title": "Замена радиатора отопления",
-            "beforeImage": "img/example/pairs-1/exаmple-before.webp",
+            "beforeImage": "img/example/pairs-1/example-before.webp",
             "afterImage": "img/example/pairs-1/example-after.webp",
             "tasks": [
                 {
@@ -18,7 +18,7 @@
         },
         {
             "title": "Замена радиатора отопления",
-            "beforeImage": "img/example/pairs-2/exаmple-before.webp",
+            "beforeImage": "img/example/pairs-2/example-before.webp",
             "afterImage": "img/example/pairs-2/example-after.webp",
             "tasks": [
                 {
@@ -34,7 +34,7 @@
         },
         {
             "title": "Замена радиатора отопления",
-            "beforeImage": "img/example/pairs-3/exаmple-before.webp",
+            "beforeImage": "img/example/pairs-3/example-before.webp",
             "afterImage": "img/example/pairs-3/example-after.webp",
             "tasks": [
                 {
@@ -50,7 +50,7 @@
         },
         {
             "title": "Замена радиатора отопления",
-            "beforeImage": "img/example/pairs-3/exаmple-before.webp",
+            "beforeImage": "img/example/pairs-3/example-before.webp",
             "afterImage": "img/example/pairs-3/example-after.webp",
             "tasks": [
                 {
