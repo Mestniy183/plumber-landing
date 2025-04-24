@@ -1,4 +1,5 @@
 import Swiper from "swiper";
+import{Navigation, Lazy} from 'swiper/modules';
 export function createComment(){
     fetch('./assets/json/comment.json')
     .then(res => res.json())
@@ -38,6 +39,7 @@ export function createComment(){
 
 function initSwiper(slidesCount){
     const swiperOptions = {
+        modules: [Navigation, Lazy],
         spaceBetween: 30,
         lazy: true,
         lazyPreloadPrevNext: 2,
