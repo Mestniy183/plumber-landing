@@ -19,7 +19,6 @@ try {
         draggable="false"
         src="${beforeImage}"
         alt="Фото до"
-        loading="lazy"
         width="533"
         height="531"
       />
@@ -31,7 +30,6 @@ try {
         draggable="false"
         src="${afterImage}"
         alt="Фото после"
-        loading="lazy"
         width="533"
         height="531"
       />
