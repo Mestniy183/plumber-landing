@@ -171,7 +171,7 @@
 
   .header__list {
     position: absolute;
-    top: -30px;
+    top: 0;
     flex-direction: column;
     padding-top: 165px;
     padding-left: 50px;
@@ -180,7 +180,7 @@
     width: 400px;
     background-color: rgba(0, 0, 0, 0.85);
     transform: translateX(-100%);
-    left: -40px;
+    left: 0;
     z-index: 11;
   }
 

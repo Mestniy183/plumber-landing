@@ -1,3 +1,4 @@
+import Swiper from "swiper";
 export async function createExamples(){
 try {
     const response = await fetch("./assets/json/example.json");
@@ -71,7 +72,23 @@ try {
         fragment.append(createSlide(example));
     })
     swiperWrapper.append(fragment);
+    initExampleSwiper();
 }catch(error){
     console.log(error);
 }
+}
+
+function initExampleSwiper(){
+    const swiperExample = new Swiper(".swiper-example", {
+        loop: true,
+        lazy: true,
+        lazyPreloadPrevNext: 1,
+        allowTouchMove: false,
+        spaceBetween: 30,
+        speed: 1000,
+        navigation: {
+          nextEl: ".swiper-button-custom-next",
+          prevEl: ".swiper-button-custom-prev",
+        },
+      });
 }

@@ -1,4 +1,4 @@
-import Swiper from "swiper/bundle";
+import Swiper from "swiper";
 export function createComment(){
     fetch('./assets/json/comment.json')
     .then(res => res.json())
