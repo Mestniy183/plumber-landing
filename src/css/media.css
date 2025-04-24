@@ -118,6 +118,7 @@
   .comment__box {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 28px;
     gap: 10px;
@@ -769,7 +770,6 @@
   .comment__box {
     flex-direction: column;
     gap: 12px;
-    align-items: flex-start;
     margin-bottom: 20px;
   }
 }
