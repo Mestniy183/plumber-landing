@@ -1,5 +1,6 @@
 import Swiper from "swiper";
-import{Navigation, Lazy} from 'swiper/modules';
+import{ Navigation, Lazy} from 'swiper/modules';
+
 export async function createExamples(){
 try {
     const response = await fetch("./assets/json/example.json");
@@ -73,13 +74,12 @@ try {
         fragment.append(createSlide(example));
     })
     swiperWrapper.append(fragment);
-    initExampleSwiper();
 }catch(error){
     console.log(error);
 }
 }
 
-function initExampleSwiper(){
+export function initExampleSwiper(){
     const swiperExample = new Swiper(".swiper-example", {
         modules: [Navigation, Lazy],
         loop: true,
