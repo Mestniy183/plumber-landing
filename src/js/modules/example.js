@@ -11,7 +11,6 @@ try {
     const createSlide = ({title, beforeImage, afterImage, tasks}) =>{
     const slide = document.createElement('div');
     slide.classList.add('example__slider-content', 'swiper-slide');
-    slide.setAttribute('lazy', 'true');
     slide.innerHTML = `
     <div class="example__photo">
     <div class="example__before">
@@ -20,7 +19,6 @@ try {
         draggable="false"
         src="${beforeImage}"
         alt="Фото до"
-        
         loading="lazy"
         width="533"
         height="531"
