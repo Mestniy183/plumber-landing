@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import{ Navigation, Lazy} from 'swiper/modules';
+import{ Navigation} from 'swiper/modules';
 
 export async function createExamples(){
 try {
@@ -20,6 +20,7 @@ try {
         draggable="false"
         src="${beforeImage}"
         alt="Фото до"
+        
         loading="lazy"
         width="533"
         height="531"
@@ -66,7 +67,6 @@ try {
   `).join('')}
   </ul>
 </div>
-<div class="swiper-lazy-preloader"></div>
     `;
     return slide;
     }
@@ -81,9 +81,8 @@ try {
 
 export function initExampleSwiper(){
     const swiperExample = new Swiper(".swiper-example", {
-        modules: [Navigation, Lazy],
+        modules: [Navigation],
         loop: true,
-        lazy: true,
         lazyPreloadPrevNext: 1,
         allowTouchMove: false,
         spaceBetween: 30,
