@@ -19,6 +19,7 @@ try {
         draggable="false"
         src="${beforeImage}"
         alt="Фото до"
+        loading="lazy"
         width="533"
         height="531"
       />
@@ -30,6 +31,7 @@ try {
         draggable="false"
         src="${afterImage}"
         alt="Фото после"
+        loading="lazy"
         width="533"
         height="531"
       />
@@ -70,12 +72,13 @@ try {
         fragment.append(createSlide(example));
     })
     swiperWrapper.append(fragment);
+    initExampleSwiper()
 }catch(error){
     console.log(error);
 }
 }
 
-export function initExampleSwiper(){
+function initExampleSwiper(){
     const swiperExample = new Swiper(".swiper-example", {
         modules: [Navigation],
         loop: true,
