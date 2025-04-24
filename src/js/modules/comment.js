@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import{Navigation, Lazy} from 'swiper/modules';
+import{Navigation} from 'swiper/modules';
 export function createComment(){
     fetch('./assets/json/comment.json')
     .then(res => res.json())
@@ -8,7 +8,6 @@ export function createComment(){
         data.forEach(element => {
             const slide = document.createElement('li');
             slide.classList.add('comment__item','swiper-slide');
-            slide.setAttribute('lazy', 'true');
             slide.innerHTML = `
             <img
             loading="lazy"
@@ -28,7 +27,6 @@ export function createComment(){
             <span class="comment__item-name">${element.name}</span>
             <span class="comment__item-city">${element.city}</span>
           </div>
-          <div class="swiper-lazy-preloader"></div>
             `;
            commentList.append(slide);
         });
@@ -39,9 +37,8 @@ export function createComment(){
 
 function initSwiper(slidesCount){
     const swiperOptions = {
-        modules: [Navigation, Lazy],
+        modules: [Navigation],
         spaceBetween: 30,
-        lazy: true,
         lazyPreloadPrevNext: 2,
         speed: 1000,
         breakpoints: {
