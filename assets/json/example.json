@@ -3,7 +3,7 @@
         {
             "title": "Замена радиатора отопления",
             "beforeImage": "img/example/pairs-1/example-before.webp",
-            "afterImage": "img/example/pairs-1/example-after.webp",
+            "afterImage": "img/example/pairs-1fix/example-after.webp",
             "tasks": [
                 {
                     "title": "Задача:",
