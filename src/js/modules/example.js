@@ -1,4 +1,5 @@
 import Swiper from "swiper";
+import{Navigation, Lazy} from 'swiper/modules';
 export async function createExamples(){
 try {
     const response = await fetch("./assets/json/example.json");
@@ -80,6 +81,7 @@ try {
 
 function initExampleSwiper(){
     const swiperExample = new Swiper(".swiper-example", {
+        modules: [Navigation, Lazy],
         loop: true,
         lazy: true,
         lazyPreloadPrevNext: 1,
