@@ -1,5 +1,6 @@
 import Swiper from "swiper";
 import{ Navigation} from 'swiper/modules';
+import { beforeAfter } from "./beforeAfter";
 
 export async function createExamples(){
 try {
@@ -73,6 +74,7 @@ try {
     })
     swiperWrapper.append(fragment);
     initExampleSwiper()
+    beforeAfter()
 }catch(error){
     console.log(error);
 }
