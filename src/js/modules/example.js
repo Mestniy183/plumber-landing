@@ -1,24 +1,38 @@
 import Swiper from "swiper";
-import{ Navigation} from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { beforeAfter } from "./beforeAfter";
+import { escapeHTML } from "./escapeHTML";
 
-export async function createExamples(){
-try {
-    const response = await fetch("./assets/json/example.json");
-    const {examples} = await response.json();
+export async function createExamples() {
+    try {
+        const response = await fetch("./assets/json/example.json");
 
-    const swiperWrapper = document.querySelector ('.swiper-wrapper');
-    const fragment = document.createDocumentFragment();
-    const createSlide = ({title, beforeImage, afterImage, tasks}) =>{
-    const slide = document.createElement('div');
-    slide.classList.add('example__slider-content', 'swiper-slide');
-    slide.innerHTML = `
+        if (!response.ok) {
+            throw new Error(`HTTP ошибка! статус: ${response.status}`);
+        }
+
+        const { examples } = await response.json();
+
+        if (!examples || !Array(examples) || examples.length === 0) {
+            throw new Error('Нет данных примеров');
+        }
+
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+        swiperWrapper.innerHTML = '';
+
+        const fragment = document.createDocumentFragment();
+
+        const createSlide = ({ title, beforeImage, afterImage, tasks = []}) => {
+            const slide = document.createElement('div');
+            slide.classList.add('example__slider-content', 'swiper-slide');
+            slide.innerHTML = `
     <div class="example__photo">
     <div class="example__before">
       <img
         class="example__img"
         draggable="false"
-        src="${beforeImage}"
+        src="${escapeHTML(beforeImage)}"
         alt="Фото до"
         loading="lazy"
         width="533"
@@ -30,7 +44,7 @@ try {
       <img
         class="example__img"
         draggable="false"
-        src="${afterImage}"
+        src="${escapeHTML(afterImage)}"
         alt="Фото после"
         loading="lazy"
         width="533"
@@ -54,34 +68,34 @@ try {
     </div>
   </div>
   <div class="example__slider-inner">
-  <h3 class="example__slider-title">${title}</h3>
+  <h3 class="example__slider-title">${escapeHTML(title)}</h3>
   <ul class="example__slider-list list-reset">
-  ${tasks.map(({title: taskTitle, text}) => `
+  ${tasks.map(({ title: taskTitle, text }) => `
   <li class="example__slider-item">
-      <h4 class="example__slider-item-title">${taskTitle}</h4>
+      <h4 class="example__slider-item-title">${escapeHTML(taskTitle)}</h4>
       <p class="example__slider-item-text">
-        ${text}
+        ${escapeHTML(text)}
       </p>
     </li>
   `).join('')}
   </ul>
 </div>
     `;
-    return slide;
+            return slide;
+        }
+        examples.forEach((example) => {
+            fragment.append(createSlide(example));
+        })
+        swiperWrapper.append(fragment);
+        initExampleSwiper()
+        beforeAfter()
+    } catch (error) {
+        console.log(error);
     }
-    examples.forEach((example) => {
-        fragment.append(createSlide(example));
-    })
-    swiperWrapper.append(fragment);
-    initExampleSwiper()
-    beforeAfter()
-}catch(error){
-    console.log(error);
-}
 }
 
-function initExampleSwiper(){
-    const swiperExample = new Swiper(".swiper-example", {
+function initExampleSwiper() {
+    new Swiper(".swiper-example", {
         modules: [Navigation],
         loop: true,
         lazyPreloadPrevNext: 1,
@@ -89,8 +103,8 @@ function initExampleSwiper(){
         spaceBetween: 30,
         speed: 1000,
         navigation: {
-          nextEl: ".swiper-button-custom-next",
-          prevEl: ".swiper-button-custom-prev",
+            nextEl: ".swiper-button-custom-next",
+            prevEl: ".swiper-button-custom-prev",
         },
-      });
+    });
 }
