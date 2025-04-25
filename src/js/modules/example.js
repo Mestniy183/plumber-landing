@@ -1,10 +1,12 @@
 import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
 import { beforeAfter } from "./beforeAfter";
+import { createError, removeError } from "./error";
 import { escapeHTML } from "./escapeHTML";
 
 export async function createExamples() {
     try {
+        removeError();
         const response = await fetch("./assets/json/example.json");
 
         if (!response.ok) {
@@ -90,7 +92,7 @@ export async function createExamples() {
         initExampleSwiper()
         beforeAfter()
     } catch (error) {
-        console.log(error);
+        swiperWrapper.append(createError(error.message));
     }
 }
 
