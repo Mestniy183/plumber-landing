@@ -1,9 +1,10 @@
 import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
-
+import { createError, removeError } from "./error";
 export function createComment() {
     const commentList = document.querySelector('.comment__list');
     try {
+        removeError();
         const response = await fetch('./assets/json/comment.json');
         if (!response.ok) {
             throw new Error(`HTTP ошибка! статус: ${response.status}`);
