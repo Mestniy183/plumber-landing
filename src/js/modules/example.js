@@ -5,8 +5,8 @@ import { createError, removeError } from "./error";
 import { escapeHTML } from "./escapeHTML";
 
 export async function createExamples() {
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
     try {
-        const swiperWrapper = document.querySelector('.swiper-wrapper');
         removeError();
         const response = await fetch("./assets/json/examle.json");
 
