@@ -406,7 +406,7 @@
   }
 
   .header__list {
-    top: -22px;
+    top: -18px;
   }
 
   .hero__title {
@@ -728,7 +728,6 @@
 
   .hero__wrapper {
     padding-top: 73px;
-    gap: 30px;
   }
 
   .header__list {
