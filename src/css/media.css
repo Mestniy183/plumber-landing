@@ -180,7 +180,7 @@
     width: 400px;
     background-color: rgba(0, 0, 0, 0.85);
     transform: translateX(-100%);
-    left: -30px;
+    left: -40px;
     z-index: 11;
   }
 
@@ -275,6 +275,10 @@
   .hero__title {
     font-size: 65px;
     max-width: 620px;
+  }
+
+  .hero-box{
+    bottom:34px;
   }
 
   .request__subtitle {
@@ -697,7 +701,7 @@
 
   .hero__box {
     position: relative;
-    bottom: 0;
+    bottom: -10px;
   }
 
   .hero__box > .container {
