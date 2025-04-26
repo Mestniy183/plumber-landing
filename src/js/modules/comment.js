@@ -1,7 +1,7 @@
 import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
 import { createError, removeError } from "./error";
-export function createComment() {
+export async function createComment() {
     const commentList = document.querySelector('.comment__list');
     try {
         removeError();
