@@ -7,7 +7,7 @@ import { escapeHTML } from "./escapeHTML";
 export async function createExamples() {
     try {
         removeError();
-        const response = await fetch("./assets/json/example.json");
+        const response = await fetch("./assets/json/examle.json");
 
         if (!response.ok) {
             throw new Error(`HTTP ошибка! статус: ${response.status}`);
