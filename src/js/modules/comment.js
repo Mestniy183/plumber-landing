@@ -11,9 +11,8 @@ export async function createComment() {
         }
 
         const {data} = await response.json();
-        console.log(data);
 
-        if (!examples || !Array(examples) || examples.length === 0) {
+        if (!data || !Array(data) || data.length === 0) {
             throw new Error('Нет доступных отзывов');
         }
         data.forEach(element => {

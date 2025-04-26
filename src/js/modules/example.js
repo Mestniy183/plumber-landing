@@ -8,7 +8,7 @@ export async function createExamples() {
     const swiperWrapper = document.querySelector('.swiper-wrapper');
     try {
         removeError();
-        const response = await fetch("./assets/json/examle.json");
+        const response = await fetch("./assets/json/example.json");
 
         if (!response.ok) {
             throw new Error(`HTTP ошибка! статус: ${response.status}`);

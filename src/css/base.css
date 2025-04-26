@@ -114,3 +114,8 @@ img {
 .icon-vk:active {
   fill: #4c75a3;
 }
+
+.error{
+  color: red;
+  font-size: 24px;
+}
