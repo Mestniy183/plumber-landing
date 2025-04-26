@@ -6,6 +6,7 @@ import { escapeHTML } from "./escapeHTML";
 
 export async function createExamples() {
     try {
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
         removeError();
         const response = await fetch("./assets/json/examle.json");
 
@@ -19,7 +20,7 @@ export async function createExamples() {
             throw new Error('Нет данных примеров');
         }
 
-        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        
 
         swiperWrapper.innerHTML = '';
 
