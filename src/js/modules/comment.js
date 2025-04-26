@@ -9,7 +9,8 @@ export function createComment() {
             throw new Error(`HTTP ошибка! статус: ${response.status}`);
         }
 
-        const data = await response.json();
+        const {data} = await response.json();
+        console.log(data);
 
         if (!examples || !Array(examples) || examples.length === 0) {
             throw new Error('Нет доступных отзывов');
