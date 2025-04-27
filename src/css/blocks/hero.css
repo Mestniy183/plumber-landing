@@ -38,16 +38,12 @@
 .hero__title {
   font-family: var(--third-family);
   font-weight: 700;
-  font-size: 113px;
+  font-size: clamp(2.438rem, 0.738rem + 6.32vw, 7.063rem);
   line-height: 92%;
   text-transform: uppercase;
-  background: linear-gradient(178deg, #fff 0%, #ededed 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   letter-spacing: 0.03em;
-  text-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.15);
   margin-bottom: 14px;
+  color: white;
 }
 
 .hero__text {
