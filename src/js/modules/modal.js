@@ -3,165 +3,146 @@ import gsap from "gsap";
 
 export function modal() {
   const modal = document.querySelector(".modal");
+  if (!modal) return;
+
   const openBtns = document.querySelectorAll(".open-modal");
+  const modalBox = document.querySelectorAll(".modal__box");
+  const modalForm = document.querySelectorAll(".modal__form");
+  const modalBtn = document.querySelectorAll(".modal__btn");
+  const formInputs = document.querySelectorAll(".form-data");
 
-  function closeModal() {
-    modal.classList.remove("open");
-    document.body.style.overflow = "visible";
+  const telInput = document.getElementById('tel');
+  const phoneMask = telInput ? IMask(telInput, {
+    mask: "+7(000)000-00-00",
+    lazy: false,
+  }) : null;
+
+  const toggleModal = (isOpen) => {
+    modal.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : 'visible';
+    if (isOpen && phoneMask) {
+      phoneMask.updateValue();
+    }
   }
 
-  function clearForm() {
-    modal.querySelector(".modal__form").reset();
-  }
-  let mask;
-  function openModal() {
-    modal.classList.add("open");
-    document.body.style.overflow = "hidden";
-    const tel = document.getElementById("tel");
-    mask = IMask(tel, {
-      mask: "+7(000)000-00-00",
-      lazy: false,
-    });
+  const clearForm = () => {
+    modalForm?.reset();
+    formInputs.forEach(input => {
+      input.classList.remove("input-invalid");
+      const error = input.parentElement.querySelector("error-message");
+      if (error) error.remove();
+    })
   }
 
-  openBtns.forEach((btn) => {
-    btn.addEventListener("click", openModal);
-  });
-
-  modal.querySelector(".modal__box").addEventListener("click", (e) => {
-    e._isClickWithinModal = true;
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e._isClickWithinModal) return;
-    closeModal();
+  const closeModal = () => {
+    toggleModal(false);
     clearForm();
-  });
+  }
 
-  window.addEventListener("keydown", (btn) => {
-    if (btn.key === "Escape") {
+  const openModal = () => {
+    toggleModal(true);
+  }
+
+  const handleOutsideClick = (e) => {
+    if (!e._isClickWithinModal) {
       closeModal();
-      clearForm();
     }
-  });
+  }
 
-  function getIsValid(input, fieldName) {
-    const errorText = input.parentElement.querySelector(".error-message");
-    function createError(message) {
-      const newErrorElement = document.createElement("div");
-      newErrorElement.textContent = message;
-      newErrorElement.classList.add("error-message");
-      input.parentElement.append(newErrorElement);
+  const handleEscapeKey = (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  }
+
+  const showError = (input, message) => {
+    const existingError = input.parentElement.querySelector("error-message");
+    if (existingError) existingError.remove();
+
+    if (message) {
+      const errorElement = document.createElement("div");
+      errorElement.textContent = message;
+      errorElement.classList.add("error-message");
+      input.parentElement.append(errorElement);
       input.classList.add("input-invalid");
+    } else {
+      input.classList.remove("input-invalid");
     }
+  }
 
-    if (errorText) {
-      errorText.remove();
+const validateInput = (input) => {
+    if (input.type !== "checkbox"){
+       input.value = input.value.replace(/<[^>]*>/g, "")
+       .replace(/javascript:/gi, "")
+       .replace(/(https?:\/\/|www\.)\S+/gi, "");
     }
 
     if (input.type === "checkbox") {
       if (!input.checked) {
-        createError("Необходимо согласие на обработку персональных данных");
+        showError(input, "Необходимо согласие на обработку персональных данных");
         return false;
       }
-      return true;
-    }
-    if (input.name === "tel") {
-      mask.updateValue();
-
-      if (mask.unmaskedValue.length < 10) {
-        createError(`Телефон должен быть заполнен`);
+    } else if (input.name === "tel" && phoneMask) {
+      phoneMask.updateValue();
+      if (phoneMask.unmaskedValue.length < 10) {
+        showError(input, 'Телефон должен быть заполнен');
         return false;
       }
-    }
-
-    if (input.value.trim() === "") {
-      createError(`${fieldName} обязательно для заполнения`);
+    } else if (input.value.trim() === "") {
+      const fieldName = input.placeholder || 'Поле'
+      showError(`${fieldName} обязательно для заполнения`);
       return false;
     }
 
-    input.classList.remove("input-invalid");
+    showError(input, '')
     return true;
   }
 
-  function validateInput(input) {
-    if (input.type === "checkbox") return;
-    input.value = input.value.replace(/<[^>]*>/g, "");
-    input.value = input.value.replace(/javascript:/gi, "");
-    input.value = input.value.replace(/(https?:\/\/|www\.)\S+/gi, "");
-  }
-
-  function validateForm(inputs) {
-    inputs.forEach((input) => {
-      input.addEventListener("input", (e) => {
-        const target = e.target;
-        validateInput(target);
-        if (target) {
-          if (target.name === "name") {
-            getIsValid(target, "Имя");
-          } else if (target.name === "tel") {
-            getIsValid(target, "Телефон");
-          } else if (target.name === "message") {
-            getIsValid(target, "Сообщение");
-          }
-        }
-      });
-      if (input.type === "checkbox") {
-        input.addEventListener("change", () => {
-          getIsValid(input, "");
-        });
-      }
+  const validateForm = () =>  {
+    let isValid = true;
+    formInputs.forEach((input) => {
+    if(!validateInput(input)){
+      isValid = false;
+    } 
     });
+    return isValid;
   }
 
-  const inputs = document.querySelectorAll(".form-data");
-  validateForm(inputs);
+  const showNotification = (text, bgColor) => {
+    const notification = document.createElement("div");
+    notification.classList.add("notify");
+    notification.style.backgroundColor = bgColor;
+    notification.textContent = text;
 
-  function checkForm() {
-    let result = true;
-    const inputs = document.querySelectorAll(".form-data");
-    inputs.forEach((input) => {
-      if (!getIsValid(input, input.placeholder)) {
-        result = false;
-      }
-    });
-    return result;
-  }
+    document.body.append(notification);
 
-  function getCurrentDate() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const day = String(now.getDate()).padStart(2, "0");
-    const hours = String(now.getHours()).padStart(2, "0");
-    const minutes = String(now.getMinutes()).padStart(2, "0");
-    const data = `${day}.${month}.${year}`;
-    const time = `${hours}:${minutes}`;
-    return `${data} ${time}`;
-  }
+    gsap.from(notification, { y: "-50", duration: 1, ease: "power1.in" });
 
-  function notify(text, bgColor) {
-    const divElement = document.createElement("div");
-    divElement.classList.add("notify");
-    divElement.style.backgroundColor = bgColor;
-    divElement.textContent = text;
-    document.body.append(divElement);
-    gsap.from(".notify", { y: "-50", duration: 1, ease: "power1.in" });
     setTimeout(() => {
-      gsap.to(".notify", {
+      gsap.to(notification, {
         y: -50,
         duration: 0.8,
         ease: "power1.out",
-        onComplete: function () {
-          divElement.remove();
-        },
+        onComplete: () => notification.remove(),
       });
     }, 3000);
   }
 
-  async function fetchData() {
-    const [name, tel, mes] = inputs;
+  const getCurrentDateTime = () => {
+    const now = new Date();
+    const format = (value) => String(value).padStart(2, "0");
+
+    return `${format(now.getDate())}.${format(now.getMonth() + 1)}.${now.getFullYear()} ${format(now.getHours())}:${format(now.getMinutes())}`
+  }
+
+
+  const submotForm = async (e) => {
+    e.preventDefault()
+    
+    if(!validateForm()) return;
+
     try {
+      const [name, tel, mes] = formInputs;
       const response = await fetch("https://dc3c997554c1d330.mokky.dev/items", {
         method: "POST",
         headers: {
@@ -172,31 +153,26 @@ export function modal() {
           name: name.value,
           phone: tel.value,
           message: mes.value,
-          date: getCurrentDate(),
+          date: getCurrentDateTime(),
         }),
       });
       if (!response.ok) {
-        if (window.innerWidth <= 576) {
-          notify(
-            `Произошла ошибка ${response.status}\nперезвоните по номеру +7(905)287-77-22`,
-            "red"
-          );
+        const errorMessage = window.innerWidth <= 576
+         ? `Произошла ошибка ${response.status}\nперезвоните по номеру +7(905)287-77-22`
+           : `Произошла ошибка ${response.status}`;
+           showNotification(errorMessage, 'red')
           return;
         }
-        notify(`Произошла ошибка ${response.status}`, "red");
-        return;
-      }
-      notify("Данные отправлены", "green");
+      showNotification("Данные отправлены", "green");
+      closeModal()
     } catch (e) {
-      throw Error(e);
+      showNotification('Ошибка соединения', "red");
     }
   }
-  modal.querySelector(".modal__btn").addEventListener("click", (e) => {
-    e.preventDefault();
-    if (checkForm()) {
-      fetchData();
-      closeModal();
-      clearForm();
-    }
-  });
+
+  const init = () => {
+
+  }
+
+  init()
 }
