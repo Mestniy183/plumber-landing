@@ -6,9 +6,9 @@ export function modal() {
   if (!modal) return;
 
   const openBtns = document.querySelectorAll(".open-modal");
-  const modalBox = document.querySelectorAll(".modal__box");
-  const modalForm = document.querySelectorAll(".modal__form");
-  const modalBtn = document.querySelectorAll(".modal__btn");
+  const modalBox = document.querySelector(".modal__box");
+  const modalForm = document.querySelector(".modal__form");
+  const modalBtn = document.querySelector(".modal__btn");
   const formInputs = document.querySelectorAll(".form-data");
 
   const telInput = document.getElementById('tel');
