@@ -136,7 +136,7 @@ const validateInput = (input) => {
   }
 
 
-  const submotForm = async (e) => {
+  const submitForm = async (e) => {
     e.preventDefault()
     
     if(!validateForm()) return;
@@ -171,8 +171,29 @@ const validateInput = (input) => {
   }
 
   const init = () => {
-
+    openBtns.forEach(btn =>{
+      btn.addEventListener('click', openModal);
+    }) 
     
+    if(modalBox){
+      modalBox.addEventListener('click', (e) =>{
+        e._isClickWithinModal = true;
+      })
+    }
+
+    modal.addEventListener('click', handleOutsideClick);
+    window.addEventListener('keydown', handleEscapeKey);
+    formInputs.forEach(input =>{
+      input.addEventListener('input', () => validateInput(input));
+      if(input.type === 'checkbox'){
+        input.addEventListener('change', () => validateInput(input));
+      }
+    })
+
+    if(modalBtn){
+      modalBtn.addEventListener('click', submitForm)
+    }
+
   }
 
   init()
