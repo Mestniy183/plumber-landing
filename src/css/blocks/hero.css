@@ -49,7 +49,7 @@
 .hero__text {
   font-family: var(--second-family);
   font-weight: 300;
-  font-size: 36px;
+  font-size: clamp(1rem, 0.541rem + 1.71vw, 2.25rem);
   letter-spacing: 0.02em;
   color: #f0f0f0;
   margin-bottom: 28px;
@@ -83,7 +83,7 @@
 .hero__list-text {
   font-family: var(--third-family);
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(0.75rem, 0.474rem + 1.03vw, 1.5rem);
   text-transform: uppercase;
   color: #e6cf5b;
 }

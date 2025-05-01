@@ -169,7 +169,7 @@
 .header__contacts-link {
   font-family: var(--second-family);
   font-weight: 500;
-  font-size: 28px;
+  font-size: clamp(1.438rem, 0.5rem + 1.25vw, 1.75rem);
   color: #fff;
   border-bottom: 1px dashed white;
   font-style: normal;
