@@ -56,7 +56,7 @@ export function modal() {
   }
 
   const showError = (input, message) => {
-    const existingError = input.parentElement.querySelector("error-message");
+    const existingError = input.parentElement.querySelector(".error-message");
     if (existingError) existingError.remove();
 
     if (message) {
@@ -90,7 +90,7 @@ const validateInput = (input) => {
       }
     } else if (input.value.trim() === "") {
       const fieldName = input.placeholder || 'Поле'
-      showError(`${fieldName} обязательно для заполнения`);
+      showError(input,`${fieldName} обязательно для заполнения`);
       return false;
     }
 
