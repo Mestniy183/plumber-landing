@@ -47,7 +47,7 @@
 .accordion__text {
   font-family: var(--second-family);
   font-weight: 400;
-  font-size: 30px;
+  font-size: clamp(1.125rem, 0.703rem + 1.17vw, 1.875rem);
   color: #000;
 }
 

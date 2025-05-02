@@ -99,9 +99,9 @@
 .example__slider-title {
   font-family: var(--second-family);
   font-weight: 600;
-  font-size: 36px;
+  font-size: clamp(1.75rem, 0.25rem + 4.17vw, 2.25rem);
   color: #000;
-  margin-bottom: 34px;
+  margin-bottom: clamp(1.25rem, -1.375rem + 7.29vw, 2.125rem);
 }
 
 .example__slider-list {
