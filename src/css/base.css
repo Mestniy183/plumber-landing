@@ -42,7 +42,7 @@ img {
 .site-title {
   font-family: var(--third-family);
   font-weight: 600;
-  font-size: 64px;
+  font-size: clamp(2.25rem, 6.25vw, 4rem);
   text-transform: uppercase;
   color: #1b1b1b;
 }

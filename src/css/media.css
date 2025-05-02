@@ -87,15 +87,10 @@
     gap: 25px;
   }
 
-  .hero__list-item {
-    gap: 10px;
-  }
-
 }
 
 @media (max-width: 1024px) {
   .hero__list {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 20px;
   }
@@ -257,7 +252,7 @@
     background-color: rgba(0, 0, 0, 1);
   }
 
-  .hero-box{
+  .hero__box{
     bottom:34px;
   }
 
@@ -267,14 +262,6 @@
 
   .reqest__title {
     font-size: 80px;
-  }
-
-  .site-title {
-    font-family: var(--third-family);
-    font-weight: 600;
-    font-size: 46px;
-    text-transform: uppercase;
-    color: #1b1b1b;
   }
 
   .hero__text {
@@ -342,10 +329,6 @@
 }
 
 @media (max-width: 576px) {
-  .site-title {
-    font-size: 36px;
-  }
-
   .modal__checkbox-text {
     font-size: 15px;
   }
@@ -389,13 +372,11 @@
 
   .hero__text {
     font-weight: 400;
-    margin-bottom: 18px;
     max-width: 280px;
   }
 
   .hero__list-item {
     align-items: center;
-    gap: 8px;
   }
 
   .header__contacts-icon svg {
@@ -403,24 +384,8 @@
     height: 42px;
   }
 
-  .hero__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 38px;
-  }
-
   .about {
     padding: 44px 0;
-  }
-
-  .about__caption {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-
-  .about__text {
-    font-size: 12px;
-    margin-top: 15px;
   }
 
   .about__title {
@@ -618,7 +583,6 @@
 
 @media (max-width: 499px) {
   .hero__list {
-    display: grid;
     gap: 20px;
   }
 

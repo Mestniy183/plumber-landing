@@ -1,5 +1,5 @@
 
-      .hero {
+.hero {
   display: flex;
   align-items: center;
   width: 100%;
@@ -52,7 +52,7 @@
   font-size: clamp(1rem, 0.541rem + 1.71vw, 2.25rem);
   letter-spacing: 0.02em;
   color: #f0f0f0;
-  margin-bottom: 28px;
+  margin-bottom: clamp(1.125rem, -0.75rem + 5.21vw, 1.75rem);
 }
 
 .hero__box {
@@ -71,7 +71,7 @@
 
 .hero__list-item {
   display: flex;
-  gap: 15px;
+  gap: clamp(0.5rem, 0.254rem + 0.68vw, 0.938rem);
   align-items: center;
 }
 
