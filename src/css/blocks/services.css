@@ -50,6 +50,8 @@
   font-size: clamp(1.125rem, 0.703rem + 1.17vw, 1.875rem);
   color: #000;
   text-align: left;
+  text-wrap: balance;
+  width: 85%;
 }
 
 .accordion__icon {
