@@ -2,7 +2,7 @@ export function accordion() {
   const accordionItems = document.querySelectorAll(".accordion__item");
   const toggleAccordion = (item, forceClose = false) => {
     const isActive = item.classList.contains('active');
-    const btn = item.querySelector('accordion__btn');
+    const btn = item.querySelector('.accordion__btn');
     const box = btn.nextElementSibling;
     const isMobile = window.innerWidth < 576;
 
