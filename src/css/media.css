@@ -236,9 +236,6 @@
     max-width: 270px;
   }
 
-  .footer__link-tel {
-    font-size: 23px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -253,14 +250,6 @@
 
   .hero__box{
     bottom:34px;
-  }
-
-  .request__subtitle {
-    font-size: 28px;
-  }
-
-  .reqest__title {
-    font-size: 80px;
   }
 
   .hero__text {
@@ -477,11 +466,6 @@
   .reqest__title {
     margin: 0 auto 18px;
     max-width: 380px;
-    font-size: 53px;
-  }
-
-  .request__subtitle {
-    font-size: 20px;
   }
 
   .site-btn {

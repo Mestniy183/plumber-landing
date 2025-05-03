@@ -52,7 +52,7 @@
   display: inline-block;
   font-family: var(--second-family);
   font-weight: 500;
-  font-size: 28px;
+  font-size: clamp(1.438rem, 0.882rem + 0.87vw, 1.75rem);
   color: #fff;
   border-bottom: 1px dashed white;
   margin-bottom: 23px;

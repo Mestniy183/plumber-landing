@@ -20,7 +20,7 @@
 .reqest__title {
   font-family: var(--third-family);
   font-weight: 700;
-  font-size: 104px;
+  font-size: clamp(3.313rem, -0.786rem + 11.38vw, 6.5rem);
   line-height: 101%;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -31,7 +31,7 @@
 .request__subtitle {
   font-family: var(--third-family);
   font-weight: 700;
-  font-size: 40px;
+  font-size: clamp(1.25rem, -0.357rem + 4.46vw, 2.5rem);
   line-height: 101%;
   letter-spacing: -0.03em;
   text-transform: uppercase;
