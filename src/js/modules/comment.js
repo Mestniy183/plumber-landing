@@ -19,7 +19,10 @@ export async function createComment() {
             const slide = document.createElement('li');
             slide.classList.add('comment__item', 'swiper-slide');
             slide.innerHTML = `
-        <img
+            <picture>
+            <source media="(max-width: 768px)" srcset="${element.img768}">
+            <source media="(max-width: 430px)" srcset="${element.img430}">
+<img
         loading="lazy"
         class="comment__item-img"
         src="${element.img}"
@@ -27,6 +30,8 @@ export async function createComment() {
         width="336"
         height="336"
       />
+            </picture>
+        
       <div class="comment__item-content">
         <h3 class="comment__item-title">Отзыв:</h3>
         <p class="comment__item-text">
@@ -44,7 +49,7 @@ export async function createComment() {
     } catch (error) {
         commentList.append(createError(error.message));
     }
-    
+
 
 }
 
