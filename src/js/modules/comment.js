@@ -27,8 +27,6 @@ export async function createComment() {
         class="comment__item-img"
         src="${element.img}"
         alt="Фото отзыва"
-        width="336"
-        height="336"
       />
             </picture>
         
