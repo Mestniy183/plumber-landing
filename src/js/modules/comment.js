@@ -18,15 +18,20 @@ export async function createComment() {
         data.forEach(element => {
             const slide = document.createElement('li');
             slide.classList.add('comment__item', 'swiper-slide');
+            const source768 = element.img768 ? `<source media="(max-width: 768px)" srcset="${element.img768}">`  : '';
+            const source430 = element.img430 ?  `<source media="(max-width: 430px)" srcset="${element.img430}">` : '';
             slide.innerHTML = `
             <picture>
-            <source media="(max-width: 768px)" srcset="${element.img768}">
-            <source media="(max-width: 430px)" srcset="${element.img430}">
+            ${source768}
+            ${source430}
+  
 <img
         loading="lazy"
         class="comment__item-img"
         src="${element.img}"
         alt="Фото отзыва"
+        width="336"
+        height="336"
       />
             </picture>
         
