@@ -17,6 +17,7 @@ export function accordion() {
     box.style.maxHeight = box.scrollHeight + "px";
     box.style.paddingLeft = isMobile ? '11px' : "27px";
     box.style.marginBottom = isMobile ? '20px' : "28px";
+    box.style.paddingRight = isMobile ? '11px' : '27px';
   }
 
   const handleResize = () =>{
@@ -27,6 +28,7 @@ export function accordion() {
       if(box.style.maxHeight){
         box.style.paddingLeft = isMobile ? '11px' : "27px";
     box.style.marginBottom = isMobile ? '20px' : "28px";
+    box.style.paddingRight = isMobile ? '11px' : '27px';
       }
     })
   }
