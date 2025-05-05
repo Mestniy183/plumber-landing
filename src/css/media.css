@@ -38,6 +38,18 @@
   }
 }
 
+@-moz-document url-prefix() {
+  .accordion__icon {
+    background-color: white !important;
+  }
+
+  .burger__line,
+  .burger__line::after,
+  .burger__line::before {
+    background-color: white !important;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .accordion__icon {
     background-color: white;
@@ -45,6 +57,12 @@
 
   .accordion__item.active .accordion__icon {
     background-color: grey;
+  }
+
+  .burger__line,
+  .burger__line::after,
+  .burger__line::before {
+    background-color: white;
   }
 }
 

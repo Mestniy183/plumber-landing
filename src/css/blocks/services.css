@@ -85,12 +85,6 @@
   transform: translate(-50%, -50%) rotate(405deg);
 }
 
-@-moz-document url-prefix() {
-  .accordion__icon {
-    background-color: white !important;
-  }
-}
-
 .accordion__icon::before,
 .accordion__icon::after {
   content: "";
