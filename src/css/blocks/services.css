@@ -59,7 +59,7 @@
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: white;
+  background-color: white !important;
   position: absolute;
   right: 27px;
   top: 50%;
