@@ -38,6 +38,16 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .accordion__icon {
+    background-color: white;
+  }
+
+  .accordion__item.active .accordion__icon {
+    background-color: grey;
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     padding: 0 40px;
