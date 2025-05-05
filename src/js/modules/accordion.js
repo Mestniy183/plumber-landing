@@ -1,5 +1,6 @@
 export function accordion() {
   const accordionItems = document.querySelectorAll(".accordion__item");
+
   const toggleAccordion = (item, forceClose = false) => {
     const isActive = item.classList.contains('active');
     const btn = item.querySelector('.accordion__btn');
@@ -14,39 +15,46 @@ export function accordion() {
     }
 
     item.classList.add('active');
-    box.style.maxHeight = box.scrollHeight + "px";
+
+    void item.offsetHeight;
+    const contentHeight = box.scrollHeight;
+
+    box.style.maxHeight = contentHeight + "px";
     box.style.paddingLeft = isMobile ? '11px' : "27px";
     box.style.marginBottom = isMobile ? '20px' : "28px";
     box.style.paddingRight = isMobile ? '11px' : '27px';
   }
 
-  const handleResize = () =>{
-    document.querySelectorAll('.accordion__item.active').forEach(item =>{
+  const handleResize = () => {
+    document.querySelectorAll('.accordion__item.active').forEach(item => {
       const btn = item.querySelector('.accordion__btn');
       const box = btn.nextElementSibling;
       const isMobile = window.innerWidth < 576;
-      if(box.style.maxHeight){
+
+      if (box.style.maxHeight) {
+        void item.offsetHeight;
+        box.style.maxHeight = box.scrollHeight + "px";
         box.style.paddingLeft = isMobile ? '11px' : "27px";
-    box.style.marginBottom = isMobile ? '20px' : "28px";
-    box.style.paddingRight = isMobile ? '11px' : '27px';
+        box.style.marginBottom = isMobile ? '20px' : "28px";
+        box.style.paddingRight = isMobile ? '11px' : '27px';
       }
     })
   }
 
- document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.accordion__btn');
-  if(!btn) return;
-  const currentItem = btn.closest('.accordion__item');
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.accordion__btn');
+    if (!btn) return;
+    const currentItem = btn.closest('.accordion__item');
 
-  accordionItems.forEach(item =>{
-    if(item !== currentItem) toggleAccordion(item, true);
+    accordionItems.forEach(item => {
+      if (item !== currentItem) toggleAccordion(item, true);
+    })
+    toggleAccordion(currentItem);
+  });
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(handleResize, 1000);
   })
-  toggleAccordion(currentItem);
- });
-
- let resizeTimeout;
- window.addEventListener('resize', () =>{
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(handleResize, 1000);
- })
 }
