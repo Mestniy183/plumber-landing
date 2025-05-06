@@ -36,6 +36,11 @@
   display: flex;
 }
 
+
+.swiper-slide {
+  height: auto !important;
+}
+
 .comment__item {
   border-radius: 22px;
   padding: 20px 22px;
