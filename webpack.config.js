@@ -7,16 +7,14 @@ const config = {
     filename: "[name].bundle.js",
   },
   optimization: {
-    minimize: true,
+    minimize: true, 
+    usedExports: true,
+    sideEffects: true,
+    concatenateModules: true,
+    splitChunks: {
+      chunks: 'all',
+    }
   }
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /\.css$/,
-  //       use: ["style-loader", "css-loader"],
-  //     },
-  //   ],
-  // },
 };
 
 module.exports = config;
