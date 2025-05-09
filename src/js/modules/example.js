@@ -30,7 +30,31 @@ export async function createExamples() {
             const slide = document.createElement('div');
             slide.classList.add('example__slider-content', 'swiper-slide');
             slide.innerHTML = `
-
+    <div class="example__photo">
+    <div class="example__before">
+      <img
+        class="example__img"
+        draggable="false"
+        srcset="${escapeHTML(beforeImage)}"
+        alt="Фото до"
+        loading="lazy"
+        width="533"
+        height="531"
+      />
+      <div class="example__before-text">До</div>
+    </div>
+    <div class="example__after">
+      <img
+        class="example__img"
+        draggable="false"
+        srcset="${escapeHTML(afterImage)}"
+        alt="Фото после"
+        loading="lazy"
+        width="533"
+        height="531"
+      />
+      <div class="example__after-text">После</div>
+    </div>
     <div class="example__change">
       <div class="example__btns">
         <button class="example__btn btn-reset">
