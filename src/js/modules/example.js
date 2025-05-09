@@ -35,7 +35,7 @@ export async function createExamples() {
       <img
         class="example__img"
         draggable="false"
-        src="${escapeHTML(beforeImage)}"
+        srcset="${escapeHTML(beforeImage)}"
         alt="Фото до"
         loading="lazy"
         width="533"
@@ -47,7 +47,7 @@ export async function createExamples() {
       <img
         class="example__img"
         draggable="false"
-        src="${escapeHTML(afterImage)}"
+        srcset="${escapeHTML(afterImage)}"
         alt="Фото после"
         loading="lazy"
         width="533"
