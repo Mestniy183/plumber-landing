@@ -2,8 +2,8 @@
     "examples": [
         {
             "title": "Замена радиатора отопления",
-            "beforeImage": "img/example/pairs-1/example-before.webp 1x, g/example/pairs-1/example-before@2x.webp 2x, g/example/pairs-1/example-before@3x.webp 3x,",
-            "afterImage": "img/example/pairs-1/example-after.webp 1x, img/example/pairs-1/example-after@2x.webp 2x, img/example/pairs-1/example-after@3x.webp 3x ",
+            "beforeImage": "img/example/pairs-1/example-before.webp 1x, img/example/pairs-1/example-before@2x.webp 2x, img/example/pairs-1/example-before@3x.webp 3x",
+            "afterImage": "img/example/pairs-1/example-after.webp 1x, img/example/pairs-1/example-after@2x.webp 2x, img/example/pairs-1/example-after@3x.webp 3x",
             "tasks": [
                 {
                     "title": "Задача:",
