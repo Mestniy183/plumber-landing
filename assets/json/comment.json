@@ -1,17 +1,17 @@
 [
     {
-        "img": "img/comment/comment-1.webp",
-        "img768": "img/comment/comment-1-250.webp",
-        "img430": "img/comment/comment-1-200.webp",
+        "img": "img/comment/comment-1.webp 1x, img/comment/comment-1@2x.webp 2x, img/comment/comment-1@3x.webp 3x",
+        "img768": "img/comment/comment-1-250.webp 1x, img/comment/comment-1-250@2x.webp 2x, img/comment/comment-1-250@3x.webp 3x",
+        "img430": "img/comment/comment-1-200.webp 1x, img/comment/comment-1-200@2x.webp 2x, img/comment/comment-1-200@3x.webp 3x",
         "text": "После перепланировки кухни, во время отделочных работ появилась необходимость в замене радиатора, так как его конфигурация стала препятствовать проходу.",
         "name": "Марина Иванова, ",
         "city": "Санкт-Петербург, 2024"
     },
 
     {
-        "img": "img/comment/comment-1.webp",
-        "img768": "img/comment/comment-1-250.webp",
-        "img430": "img/comment/comment-1-200.webp",
+        "img": "img/comment/comment-2.webp 1x, img/comment/comment-2@2x.webp 2x, img/comment/comment-2@3x.webp 3x",
+        "img768": "img/comment/comment-2-250.webp 1x, img/comment/comment-2-250@2x.webp 2x, img/comment/comment-2-250@3x.webp 3x",
+        "img430": "img/comment/comment-2-200.webp 1x, img/comment/comment-2-200@2x.webp 2x, img/comment/comment-2-200@3x.webp 3x",
         "text": "После перепланировки кухни, во время отделочных работ появилась необходимость в замене радиатора, так как его конфигурация стала препятствовать проходу.",
         "name": "Марина Иванова, ",
         "city": "Санкт-Петербург, 2024"
