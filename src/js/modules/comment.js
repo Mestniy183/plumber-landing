@@ -28,7 +28,7 @@ export async function createComment() {
 <img
         loading="lazy"
         class="comment__item-img"
-        src="${element.img}"
+        srcset="${element.img}"
         alt="Фото отзыва"
         width="336"
         height="336"
