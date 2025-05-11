@@ -14,7 +14,6 @@ export function accordion() {
       return;
     }
 
-    box.style.transition = 'none'
     item.classList.add('active');
 
     const contentHeight = box.scrollHeight;
@@ -25,7 +24,6 @@ export function accordion() {
     box.style.paddingRight = isMobile ? '11px' : '27px';
 
     void item.offsetHeight;
-    box.style.transition = ''
     box.style.maxHeight = box.scrollHeight + "px";
   }
 
@@ -36,14 +34,12 @@ export function accordion() {
       const isMobile = window.innerWidth < 576;
 
       if (box.style.maxHeight) {
-        box.style.transition = 'none'
         box.style.maxHeight = box.scrollHeight + "px";
         box.style.paddingLeft = isMobile ? '11px' : "27px";
         box.style.marginBottom = isMobile ? '20px' : "28px";
         box.style.paddingRight = isMobile ? '11px' : '27px';
 
         void item.offsetHeight;
-      box.style.transition = ''
       }
     })
   }
