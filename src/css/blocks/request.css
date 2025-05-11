@@ -1,6 +1,11 @@
 .request {
   height: 668px;
-  background: grey url("../../img/request/request.jpg") no-repeat 0% 90% /cover;
+  background-image: image-set(
+    url("../../img/request/request.webp") 1x, 
+    url("../../img/request/request@2x.webp") 2x, 
+    url("../../img/request/request@3x.webp") 3x, 
+  );
+  background-image: url("../../img/request/request.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 90%;
