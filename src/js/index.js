@@ -7,7 +7,7 @@ import {createExamples} from "./modules/example.js";
 import {createComment} from "./modules/comment.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  headerAnimation();
+  // headerAnimation();
   burger();
   modal();
   accordion();
