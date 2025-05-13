@@ -6,12 +6,25 @@ import { getCurrentYear } from "./modules/getCurrentYear.js";
 import {createExamples} from "./modules/example.js";
 import {createComment} from "./modules/comment.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  headerAnimation();
-  burger();
-  modal();
+function loadCode(){
+ modal();
   accordion();
   createExamples();
   createComment();
   getCurrentYear();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  headerAnimation();
+  burger();
+
+  if(window.requestIdleCallback){
+    window.requestIdleCallback(() =>{
+      loadCode();
+    }, {timeout: 2000})
+  }else{
+    setTimeout(loadCode, 500);
+  }
+ 
 });
+
