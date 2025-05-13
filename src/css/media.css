@@ -230,10 +230,6 @@
     z-index: 12;
   }
 
-  .example__photo {
-    height: 531px;
-  }
-
   .example__slider-content {
     flex-direction: column;
     position: static;
