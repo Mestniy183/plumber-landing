@@ -58,6 +58,7 @@
   left: 0;
   right: 0;
   z-index: 10;
+  will-change: transform;
 }
 
 .header.fixed {
@@ -91,6 +92,7 @@
   max-width: 694px;
   border-radius: 10px;
   padding: 28px 20px 26px;
+  will-change: transform, opacity;
 }
 
 .header__list {
@@ -132,6 +134,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 22px 34px 21px 24px;
+  will-change: transform, opacity;
 }
 
 .header__list,
