@@ -29,11 +29,13 @@ export async function createExamples() {
         const createSlide = ({ title, mobileBeforeImage, mobileAfterImage, beforeImage, afterImage, tasks = []}) => {
             const slide = document.createElement('div');
             slide.classList.add('example__slider-content', 'swiper-slide');
+            const sourceBefore576 = mobileBeforeImage ? `<source media="(max-width: 576px)" srcset="${escapeHTML(mobileBeforeImage)}">`  : '';
+            const sourceAfter576 = mobileAfterImage ?  `<source media="(max-width: 576px)" srcset="${escapeHTML(mobileAfterImage)}">` : '';
             slide.innerHTML = `
     <div class="example__photo">
     <div class="example__before">
     <picture>
-    <source media="(max-width: 576px)" srcset="${escapeHTML(mobileBeforeImage)}">
+    ${sourceBefore576}
     <img
         class="example__img"
         draggable="false"
@@ -49,7 +51,7 @@ export async function createExamples() {
     </div>
     <div class="example__after">
     <picture>
-    <source media="(max-width: 576px)" srcset="${escapeHTML(mobileAfterImage)}">
+    ${sourceAfter576}
     <img
     <img
     class="example__img"
