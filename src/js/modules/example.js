@@ -26,13 +26,15 @@ export async function createExamples() {
 
         const fragment = document.createDocumentFragment();
 
-        const createSlide = ({ title, beforeImage, afterImage, tasks = []}) => {
+        const createSlide = ({ title, mobileBeforeImage, mobileAfterImage, beforeImage, afterImage, tasks = []}) => {
             const slide = document.createElement('div');
             slide.classList.add('example__slider-content', 'swiper-slide');
             slide.innerHTML = `
     <div class="example__photo">
     <div class="example__before">
-      <img
+    <picture>
+    <source media="(max-width: 576px)" srcset="${escapeHTML(mobileBeforeImage)}">
+    <img
         class="example__img"
         draggable="false"
         srcset="${escapeHTML(beforeImage)}"
@@ -41,18 +43,25 @@ export async function createExamples() {
         width="533"
         height="531"
       />
+    </picture>
+      
       <div class="example__before-text">До</div>
     </div>
     <div class="example__after">
-      <img
-        class="example__img"
-        draggable="false"
-        srcset="${escapeHTML(afterImage)}"
-        alt="Фото после"
-        loading="lazy"
-        width="533"
-        height="531"
-      />
+    <picture>
+    <source media="(max-width: 576px)" srcset="${escapeHTML(mobileAfterImage)}">
+    <img
+    <img
+    class="example__img"
+    draggable="false"
+    srcset="${escapeHTML(afterImage)}"
+    alt="Фото после"
+    loading="lazy"
+    width="533"
+    height="531"
+  />
+    </picture>
+     
       <div class="example__after-text">После</div>
     </div>
     <div class="example__change">
