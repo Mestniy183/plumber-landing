@@ -153,7 +153,7 @@ export function modal() {
     try {
       const [name, tel, mes] = formInputs;
       const response = await fetch(
-        "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app/orders",
+        "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app",
         {
           method: "POST",
           headers: {
