@@ -179,7 +179,11 @@ export function modal() {
       };
 
       const ordersRef = ref(datebase, "orders");
-      await push(ordersRef, orderData);
+      const newOrder = await push(ordersRef, orderData);
+
+      if (!newOrder.key) {
+        throw new Error("Не удалось создать запись в базе данных");
+      }
 
       // const response = await fetch(
       //   "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app",
