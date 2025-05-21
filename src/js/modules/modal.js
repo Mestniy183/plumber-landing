@@ -1,5 +1,22 @@
 import IMask from "imask";
 import gsap from "gsap";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, push } from "firebase/database";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBR9uFLlMQoMgvPcL6HuZGKzPTz3yhV-Fg",
+  authDomain: "plumber-bot.firebaseapp.com",
+  databaseURL:
+    "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "plumber-bot",
+  storageBucket: "plumber-bot.firebasestorage.app",
+  messagingSenderId: "48772325776",
+  appId: "1:48772325776:web:74d68484e5a392fe535315",
+  measurementId: "G-SLLKJQL09V",
+};
+
+const app = initializeApp(firebaseConfig);
+const datebase = getDatabase(app);
 
 export function modal() {
   const modal = document.querySelector(".modal");
@@ -152,30 +169,42 @@ export function modal() {
 
     try {
       const [name, tel, mes] = formInputs;
-      const response = await fetch(
-        "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: name.value,
-            phone: tel.value,
-            message: mes.value,
-            date: getCurrentDateTime(),
-            timestamp: Date.now(),
-          }),
-        }
-      );
-      if (!response.ok) {
-        const errorMessage =
-          window.innerWidth <= 576
-            ? `Произошла ошибка ${response.status}\nперезвоните по номеру +7(905)287-77-22`
-            : `Произошла ошибка ${response.status}`;
-        showNotification(errorMessage, "red");
-        return;
-      }
+
+      const orderData = {
+        name: name.value,
+        phone: tel.value,
+        message: mes.value,
+        date: getCurrentDateTime(),
+        timestamp: Date.now(),
+      };
+
+      const ordersRef = ref(datebase, "orders");
+      await push(ordersRef, orderData);
+
+      // const response = await fetch(
+      //   "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app",
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //       name: name.value,
+      //       phone: tel.value,
+      //       message: mes.value,
+      //       date: getCurrentDateTime(),
+      //       timestamp: Date.now(),
+      //     }),
+      //   }
+      // );
+      // if (!response.ok) {
+      //   const errorMessage =
+      //     window.innerWidth <= 576
+      //       ? `Произошла ошибка ${response.status}\nперезвоните по номеру +7(905)287-77-22`
+      //       : `Произошла ошибка ${response.status}`;
+      //   showNotification(errorMessage, "red");
+      //   return;
+      // }
       showNotification("Данные отправлены", "green");
       closeModal();
     } catch (e) {

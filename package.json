@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "depcheck": "^1.4.7",
+    "firebase": "^11.8.0",
     "gsap": "^3.12.7",
     "imask": "^7.6.1",
     "swiper": "^11.2.5"
