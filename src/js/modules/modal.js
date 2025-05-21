@@ -11,49 +11,51 @@ export function modal() {
   const modalBtn = document.querySelector(".modal__btn");
   const formInputs = document.querySelectorAll(".form-data");
 
-  const telInput = document.getElementById('tel');
-  const phoneMask = telInput ? IMask(telInput, {
-    mask: "+7(000)000-00-00",
-    lazy: false,
-  }) : null;
+  const telInput = document.getElementById("tel");
+  const phoneMask = telInput
+    ? IMask(telInput, {
+        mask: "+7(000)000-00-00",
+        lazy: false,
+      })
+    : null;
 
   const toggleModal = (isOpen) => {
-    modal.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : 'visible';
+    modal.classList.toggle("open", isOpen);
+    document.body.style.overflow = isOpen ? "hidden" : "visible";
     if (isOpen && phoneMask) {
       phoneMask.updateValue();
     }
-  }
+  };
 
   const clearForm = () => {
     modalForm?.reset();
-    formInputs.forEach(input => {
+    formInputs.forEach((input) => {
       input.classList.remove("input-invalid");
       const error = input.parentElement.querySelector("error-message");
       if (error) error.remove();
-    })
-  }
+    });
+  };
 
   const closeModal = () => {
     toggleModal(false);
     clearForm();
-  }
+  };
 
   const openModal = () => {
     toggleModal(true);
-  }
+  };
 
   const handleOutsideClick = (e) => {
     if (!e._isClickWithinModal) {
       closeModal();
     }
-  }
+  };
 
   const handleEscapeKey = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       closeModal();
     }
-  }
+  };
 
   const showError = (input, message) => {
     const existingError = input.parentElement.querySelector(".error-message");
@@ -68,45 +70,49 @@ export function modal() {
     } else {
       input.classList.remove("input-invalid");
     }
-  }
+  };
 
-const validateInput = (input) => {
-    if (input.type !== "checkbox"){
-       input.value = input.value.replace(/<[^>]*>/g, "")
-       .replace(/javascript:/gi, "")
-       .replace(/(https?:\/\/|www\.)\S+/gi, "");
+  const validateInput = (input) => {
+    if (input.type !== "checkbox") {
+      input.value = input.value
+        .replace(/<[^>]*>/g, "")
+        .replace(/javascript:/gi, "")
+        .replace(/(https?:\/\/|www\.)\S+/gi, "");
     }
 
     if (input.type === "checkbox") {
       if (!input.checked) {
-        showError(input, "Необходимо согласие на обработку персональных данных");
+        showError(
+          input,
+          "Необходимо согласие на обработку персональных данных"
+        );
         return false;
       }
     } else if (input.name === "tel" && phoneMask) {
       phoneMask.updateValue();
       if (phoneMask.unmaskedValue.length < 10) {
-        showError(input, 'Телефон должен быть заполнен');
+        showError(input, "Телефон должен быть заполнен");
         return false;
       }
     } else if (input.value.trim() === "") {
-      const fieldName = input.placeholder || 'Поле'
-      showError(input,`${fieldName} обязательно для заполнения`);
+      const fieldName = input.placeholder || "Поле";
+      showError(input, `${fieldName} обязательно для заполнения`);
       return false;
     }
 
-    showError(input, '')
+    showError(input, "");
     return true;
-  }
+  };
 
-  const validateForm = () =>  {
+  const validateForm = () => {
     let isValid = true;
     formInputs.forEach((input) => {
-    if(!validateInput(input)){
-      isValid = false;
-    } 
+      if (!validateInput(input)) {
+        isValid = false;
+      }
     });
     return isValid;
-  }
+  };
 
   const showNotification = (text, bgColor) => {
     const notification = document.createElement("div");
@@ -126,75 +132,81 @@ const validateInput = (input) => {
         onComplete: () => notification.remove(),
       });
     }, 3000);
-  }
+  };
 
   const getCurrentDateTime = () => {
     const now = new Date();
     const format = (value) => String(value).padStart(2, "0");
 
-    return `${format(now.getDate())}.${format(now.getMonth() + 1)}.${now.getFullYear()} ${format(now.getHours())}:${format(now.getMinutes())}`
-  }
-
+    return `${format(now.getDate())}.${format(
+      now.getMonth() + 1
+    )}.${now.getFullYear()} ${format(now.getHours())}:${format(
+      now.getMinutes()
+    )}`;
+  };
 
   const submitForm = async (e) => {
-    e.preventDefault()
-    
-    if(!validateForm()) return;
+    e.preventDefault();
+
+    if (!validateForm()) return;
 
     try {
       const [name, tel, mes] = formInputs;
-      const response = await fetch("https://dc3c997554c1d330.mokky.dev/items", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name.value,
-          phone: tel.value,
-          message: mes.value,
-          date: getCurrentDateTime(),
-        }),
-      });
-      if (!response.ok) {
-        const errorMessage = window.innerWidth <= 576
-         ? `Произошла ошибка ${response.status}\nперезвоните по номеру +7(905)287-77-22`
-           : `Произошла ошибка ${response.status}`;
-           showNotification(errorMessage, 'red')
-          return;
+      const response = await fetch(
+        "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app/orders",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name.value,
+            phone: tel.value,
+            message: mes.value,
+            date: getCurrentDateTime(),
+            timestamp: Date.now(),
+          }),
         }
+      );
+      if (!response.ok) {
+        const errorMessage =
+          window.innerWidth <= 576
+            ? `Произошла ошибка ${response.status}\nперезвоните по номеру +7(905)287-77-22`
+            : `Произошла ошибка ${response.status}`;
+        showNotification(errorMessage, "red");
+        return;
+      }
       showNotification("Данные отправлены", "green");
-      closeModal()
+      closeModal();
     } catch (e) {
-      showNotification('Ошибка соединения', "red");
+      showNotification("Ошибка соединения", "red");
     }
-  }
+  };
 
   const init = () => {
-    openBtns.forEach(btn =>{
-      btn.addEventListener('click', openModal);
-    }) 
-    
-    if(modalBox){
-      modalBox.addEventListener('click', (e) =>{
+    openBtns.forEach((btn) => {
+      btn.addEventListener("click", openModal);
+    });
+
+    if (modalBox) {
+      modalBox.addEventListener("click", (e) => {
         e._isClickWithinModal = true;
-      })
+      });
     }
 
-    modal.addEventListener('click', handleOutsideClick);
-    window.addEventListener('keydown', handleEscapeKey);
-    formInputs.forEach(input =>{
-      input.addEventListener('input', () => validateInput(input));
-      if(input.type === 'checkbox'){
-        input.addEventListener('change', () => validateInput(input));
+    modal.addEventListener("click", handleOutsideClick);
+    window.addEventListener("keydown", handleEscapeKey);
+    formInputs.forEach((input) => {
+      input.addEventListener("input", () => validateInput(input));
+      if (input.type === "checkbox") {
+        input.addEventListener("change", () => validateInput(input));
       }
-    })
+    });
 
-    if(modalBtn){
-      modalBtn.addEventListener('click', submitForm)
+    if (modalBtn) {
+      modalBtn.addEventListener("click", submitForm);
     }
+  };
 
-  }
-
-  init()
+  init();
 }
