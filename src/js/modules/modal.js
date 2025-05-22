@@ -211,9 +211,9 @@ export function modal() {
       // const ordersRef = ref(datebase, "orders");
       // const newOrder = await push(ordersRef, orderData);
 
-      if (!newOrder.key) {
-        throw new Error("Не удалось создать запись в базе данных");
-      }
+      // if (!newOrder.key) {
+      //   throw new Error("Не удалось создать запись в базе данных");
+      // }
 
       showNotification("Данные отправлены", "green");
       closeModal();
