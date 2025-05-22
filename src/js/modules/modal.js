@@ -1,7 +1,7 @@
 import IMask from "imask";
 import gsap from "gsap";
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, push, get } from "firebase/database";
+import { getDatabase, ref, push, get, set } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBR9uFLlMQoMgvPcL6HuZGKzPTz3yhV-Fg",
