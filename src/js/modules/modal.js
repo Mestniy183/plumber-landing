@@ -162,6 +162,25 @@ export function modal() {
     )}`;
   };
 
+  const generateOrderId = (orderData) => {
+    const now = new Date();
+    const datePart = [
+      now.getFullYear(),
+      String(now.getMonth() + 1).padStart(2, "0"),
+      String(now.getDate()).padStart(2, "0"),
+    ].join("");
+
+    const timePart = [
+      String(now.getHours()).padStart(2, "0"),
+      String(now.getMinutes()).padStart(2, "0"),
+    ].join("");
+
+    const phoneLast4 = orderData.phone.replace(/\D/g, "").slice(-4);
+    const nameInitial = orderData.name.charAt(0).toUpperCase();
+
+    return `${datePart}-${timePart}-${nameInitial}${phoneLast4}`;
+  };
+
   const submitForm = async (e) => {
     e.preventDefault();
 
@@ -178,41 +197,33 @@ export function modal() {
         timestamp: Date.now(),
       };
 
-      const ordersRef = ref(datebase, "orders");
-      const newOrder = await push(ordersRef, orderData);
+      const customOrderId = generateOrderId(orderData);
+      const orderRef = ref(datebase, `orders/${customOrderId}`);
+
+      if ((await get(orderRef)).exists()) {
+        orderData._originalId = customOrderId;
+        const fallback = push(ref(database, "orders"));
+        await set(fallback, orderData);
+      } else {
+        await set(orderRef, orderData);
+      }
+
+      // const ordersRef = ref(datebase, "orders");
+      // const newOrder = await push(ordersRef, orderData);
 
       if (!newOrder.key) {
         throw new Error("Не удалось создать запись в базе данных");
       }
 
-      // const response = await fetch(
-      //   "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app",
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({
-      //       name: name.value,
-      //       phone: tel.value,
-      //       message: mes.value,
-      //       date: getCurrentDateTime(),
-      //       timestamp: Date.now(),
-      //     }),
-      //   }
-      // );
-      // if (!response.ok) {
-      //   const errorMessage =
-      //     window.innerWidth <= 576
-      //       ? `Произошла ошибка ${response.status}\nперезвоните по номеру +7(905)287-77-22`
-      //       : `Произошла ошибка ${response.status}`;
-      //   showNotification(errorMessage, "red");
-      //   return;
-      // }
       showNotification("Данные отправлены", "green");
       closeModal();
     } catch (e) {
-      showNotification("Ошибка соединения", "red");
+      console.error("Order submit error", e);
+      const errorMessage =
+        window.innerWidth <= 576
+          ? `Произошла ошибка\nперезвоните по номеру +7(905)287-77-22`
+          : `Произошла ошибка`;
+      showNotification(errorMessage, "red");
     }
   };
 
