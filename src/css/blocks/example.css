@@ -13,7 +13,7 @@
 
 .example__photo {
   position: relative;
-  height: clamp(26.875rem, 9.23rem + 80.66vw, 36rem);
+  height: clamp(21.875rem, -11.4426rem + 123.9726vw, 33.1875rem);
   overflow: hidden;
   width: 533px;
   border-radius: 30px;
