@@ -101,7 +101,6 @@
     margin-right: 8px;
   }
 
-
   .hero__button {
     padding: 21.5px 50.5px;
   }
@@ -109,7 +108,6 @@
   .hero__list {
     gap: 25px;
   }
-
 }
 
 @media (max-width: 1024px) {
@@ -125,7 +123,7 @@
     justify-content: space-between;
     margin-bottom: 28px;
     gap: 10px;
-}
+  }
 
   .example__slider-buttons {
     top: 75px;
@@ -255,7 +253,6 @@
     justify-content: center;
     max-width: 270px;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -268,8 +265,8 @@
     background-color: rgba(0, 0, 0, 1);
   }
 
-  .hero__box{
-    bottom:34px;
+  .hero__box {
+    bottom: 34px;
   }
 
   .hero__text {
@@ -665,10 +662,6 @@
     margin-bottom: 58px;
   }
 
-  .example__photo {
-    height: 350px;
-  }
-
   .comment__box {
     flex-direction: column;
     gap: 12px;
@@ -684,5 +677,4 @@
     height: 32px;
     gap: 26px;
   }
-
 }

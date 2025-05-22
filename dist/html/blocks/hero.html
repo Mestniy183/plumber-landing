@@ -1,8 +1,18 @@
 <section class="hero">
+  <div class="hero__bg">
+    <picture>
+      <source media="(max-width: 576px)" srcset="
+      img/hero/hero-mobile.webp 1x,
+      img/hero/hero-mobile@2x.webp 2x,
+      img/hero/hero-mobile@3x.webp 3x
+      ">
+      <img class="hero__picture" src="img/hero/hero.webp" srcset="img/hero/hero@2x.webp 2x, img/hero/hero@3x.webp 3x" alt="Обложка" width="1440" height="800" loading="eager">
+    </picture>
+  </div>
   <div class="container">
     <div class="hero__wrapper">
       <div class="hero__content">
-        <h1 class="hero__title">услуги сантехника</h1>
+        <h1 class="hero__title">услуги <br> сантехника</h1>
         <p class="hero__text">Только лучшее для вашей сантехники</p>
         <button class="hero__button site-btn open-modal">
           Оставить заявку
@@ -13,9 +23,7 @@
           <ul class="hero__list list-reset">
             <li class="hero__list-item">
               <div class="hero__list-wrap">
-                <!-- <svg class="hero__img">
-                  <use xlink:href="img/sprite.defs.svg#hero--icon-1"></use>
-                </svg> -->
+
                 <svg
                   class="hero__img"
                   width="47"
