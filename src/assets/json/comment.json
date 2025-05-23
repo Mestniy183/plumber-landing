@@ -27,11 +27,11 @@
     },
 
     {
-        "img": "img/comment/comment-1.webp",
-        "img768": "img/comment/comment-1-250.webp",
-        "img430": "img/comment/comment-1-200.webp",
-        "text": "После перепланировки кухни, во время отделочных работ появилась необходимость в замене радиатора, так как его конфигурация стала препятствовать проходу.",
-        "name": "Марина Иванова, ",
+        "img": "img/comment/comment-1.webp 1x, img/comment/comment-4@2x.webp 2x, img/comment/comment-4@3x.webp 3x",
+        "img768": "img/comment/comment-1-250.webp 1x, img/comment/comment-4-250@2x.webp 2x, img/comment/comment-4-250@3x.webp 3x",
+        "img430": "img/comment/comment-1-200.webp 1x, img/comment/comment-4-200@2x.webp 2x, img/comment/comment-4-200@3x.webp 3x",
+        "text": "Хочу выразить благодарность за профессиональную работу по переносу унитаза. Сантехник аккуратно выполнил все необходимые работы, устранив препятствие в проходе. Также качественно смонтировал трубы для раковины и подключил её. Всё сделано быстро и без лишнего беспорядка. Рекомендую этого специалиста!.",
+        "name": "Анастасия Протушная, ",
         "city": "Санкт-Петербург, 2024"
     }
 ]
