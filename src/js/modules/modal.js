@@ -194,7 +194,7 @@ export function modal() {
         phone: tel.value,
         message: mes.value,
         date: getCurrentDateTime(),
-        timestamp: Date.now(),
+        completed: false,
       };
 
       const customOrderId = generateOrderId(orderData);
