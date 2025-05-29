@@ -2,17 +2,17 @@ import IMask from "imask";
 import gsap from "gsap";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, push, get, set } from "firebase/database";
+require("dotenv").config();
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBR9uFLlMQoMgvPcL6HuZGKzPTz3yhV-Fg",
-  authDomain: "plumber-bot.firebaseapp.com",
-  databaseURL:
-    "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "plumber-bot",
-  storageBucket: "plumber-bot.firebasestorage.app",
-  messagingSenderId: "48772325776",
-  appId: "1:48772325776:web:74d68484e5a392fe535315",
-  measurementId: "G-SLLKJQL09V",
+  apiKey: process.env.VITE_FIREBASE_API_KEY,
+  authDomain: process.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: process.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: process.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: process.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
