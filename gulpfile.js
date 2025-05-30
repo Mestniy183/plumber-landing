@@ -19,7 +19,7 @@ const webpCSS = require("gulp-webp-css");
 const fileInclude = require("gulp-file-include");
 const webpack = require("webpack-stream");
 const isProd = process.argv.includes("--build");
-
+require("dotenv").config();
 const clean = () => {
   return del(["dist"]);
 };
@@ -32,7 +32,9 @@ const fonts = () => {
 };
 
 const assets = () => {
-  return src("src/assets/**", { encoding: false, removeBOM: false }).pipe(dest("dist/assets"));
+  return src("src/assets/**", { encoding: false, removeBOM: false }).pipe(
+    dest("dist/assets")
+  );
 };
 
 const styles = () => {
@@ -63,18 +65,18 @@ const fileIncludeSetting = {
 
 const htmlMinify = () => {
   return src("src/**/*.html")
-  .pipe(fileInclude(fileIncludeSetting))
-  .pipe(gulpif(isProd, replace(/\.jpg|\.jpeg|\.png/g, ".webp")))
-  .pipe(
-    typograf({
-      locale: ["ru", "en-US"],
-      htmlEntity: { type: "digit" },
-      safeTags: [
-        ["<\\?php", "\\?>"],
-        ["<no-typography>", "</no-typography>"],
-      ],
-    })
-  )
+    .pipe(fileInclude(fileIncludeSetting))
+    .pipe(gulpif(isProd, replace(/\.jpg|\.jpeg|\.png/g, ".webp")))
+    .pipe(
+      typograf({
+        locale: ["ru", "en-US"],
+        htmlEntity: { type: "digit" },
+        safeTags: [
+          ["<\\?php", "\\?>"],
+          ["<no-typography>", "</no-typography>"],
+        ],
+      })
+    )
     .pipe(
       gulpif(
         isProd,
@@ -82,7 +84,7 @@ const htmlMinify = () => {
           collapseWhitespace: true,
           removeComments: true,
           removeRedundantAttributes: true,
-          minifyJS: true
+          minifyJS: true,
         })
       )
     )
@@ -129,8 +131,8 @@ const scripts = () => {
             toplevel: true,
             compress: {
               unused: true,
-              dead_code: true
-            }
+              dead_code: true,
+            },
           }).on("error", notify.onError())
         )
       )

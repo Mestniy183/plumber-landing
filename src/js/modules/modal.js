@@ -2,7 +2,6 @@ import IMask from "imask";
 import gsap from "gsap";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, push, get, set } from "firebase/database";
-require("dotenv").config();
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
