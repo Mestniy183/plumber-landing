@@ -3,9 +3,19 @@ import gsap from "gsap";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, push, get, set } from "firebase/database";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBR9uFLlMQoMgvPcL6HuZGKzPTz3yhV-Fg",
+  authDomain: "plumber-bot.firebaseapp.com",
+  databaseURL:
+    "https://plumber-bot-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "plumber-bot",
+  storageBucket: "plumber-bot.firebasestorage.app",
+  messagingSenderId: "48772325776",
+  appId: "1:48772325776:web:74d68484e5a392fe535315",
+  measurementId: "G-SLLKJQL09V",
+};
 
-
-const app = initializeApp(window.firebaseConfig);
+const app = initializeApp(firebaseConfig);
 const datebase = getDatabase(app);
 
 export function modal() {
