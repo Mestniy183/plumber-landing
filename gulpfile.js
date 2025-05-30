@@ -19,7 +19,7 @@ const webpCSS = require("gulp-webp-css");
 const fileInclude = require("gulp-file-include");
 const webpack = require("webpack-stream");
 const isProd = process.argv.includes("--build");
-require("dotenv").config();
+
 const clean = () => {
   return del(["dist"]);
 };
