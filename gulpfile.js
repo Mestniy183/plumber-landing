@@ -20,7 +20,7 @@ const fileInclude = require("gulp-file-include");
 const webpack = require("webpack-stream");
 const file = require("gulp-file");
 const isProd = process.argv.includes("--build");
-requre("dotenv").config();
+require("dotenv").config();
 
 const clean = () => {
   return del(["dist"]);
