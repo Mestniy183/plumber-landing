@@ -37,6 +37,10 @@ const assets = () => {
   );
 };
 
+const robot = () => {
+  return src("src/robots.txt").pipe("dist");
+};
+
 const styles = () => {
   return src("src/css/**/index.css")
     .pipe(gulpif(!isProd, sourcemaps.init()))
@@ -237,6 +241,7 @@ exports.build = series(
   clean,
   fonts,
   assets,
+  robot,
   htmlMinify,
   styles,
   scripts,
