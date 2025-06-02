@@ -38,7 +38,9 @@ const assets = () => {
 };
 
 const robot = () => {
-  return src("src/robots.txt").pipe("dist");
+  return src("src/robots.txt", { encoding: false, removeBOM: false }).pipe(
+    dest("dist")
+  );
 };
 
 const styles = () => {
@@ -241,11 +243,11 @@ exports.build = series(
   clean,
   fonts,
   assets,
-  robot,
   htmlMinify,
   styles,
   scripts,
   svgSprites,
   svgSymbols,
-  images
+  images,
+  robot
 );
