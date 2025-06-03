@@ -6,13 +6,11 @@ const config = {
   output: {
     filename: "[name].bundle.js",
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-    ],
+  optimization: {
+    minimize: true,
+    usedExports: true,
+    sideEffects: true,
+    concatenateModules: true,
   },
 };
 

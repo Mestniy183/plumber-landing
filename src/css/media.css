@@ -33,6 +33,37 @@
   .footer__text-link:hover {
     color: #ffd505;
   }
+  .modal__checkbox-link:hover {
+    color: #d8b710;
+  }
+}
+
+@-moz-document url-prefix() {
+  .accordion__icon {
+    background-color: white !important;
+  }
+
+  .burger__line,
+  .burger__line::after,
+  .burger__line::before {
+    background-color: white !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .accordion__icon {
+    background-color: white;
+  }
+
+  .accordion__item.active .accordion__icon {
+    background-color: grey;
+  }
+
+  .burger__line,
+  .burger__line::after,
+  .burger__line::before {
+    background-color: white;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -45,16 +76,11 @@
     height: 50px;
   }
 
-  .example__photo {
-    height: 487px;
-  }
-
   .header__nav {
     padding: 28px 10px 25px;
   }
 
   .header__list {
-    display: flex;
     gap: 8px;
   }
 
@@ -68,37 +94,11 @@
     font-size: 25px;
   }
 
-  .header__contacts-link {
-    font-size: 23px;
-  }
-
   .header__list-item:nth-child(n + 2)::before {
     width: 15px;
     height: 15px;
     background-size: cover;
     margin-right: 8px;
-  }
-
-  /* .hero__list-item {
-        width: 230px;
-        display: flex;
-        gap: 15px;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .hero__img {
-        width: 100px;
-    } */
-
-  .hero__title {
-    font-size: 73px;
-    max-width: 700px;
-  }
-
-  .hero__text {
-    font-size: 28px;
   }
 
   .hero__button {
@@ -108,25 +108,21 @@
   .hero__list {
     gap: 25px;
   }
-
-  .hero__list-item {
-    gap: 10px;
-  }
-
-  .hero__list-text {
-    font-size: 20px;
-  }
 }
 
 @media (max-width: 1024px) {
-  .hero {
-    /* height: 82vh; */
-  }
-
   .hero__list {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 20px;
+  }
+
+  .comment__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    gap: 10px;
   }
 
   .example__slider-buttons {
@@ -232,10 +228,6 @@
     z-index: 12;
   }
 
-  .example__photo {
-    height: 531px;
-  }
-
   .example__slider-content {
     flex-direction: column;
     position: static;
@@ -261,20 +253,11 @@
     justify-content: center;
     max-width: 270px;
   }
-
-  .footer__link-tel {
-    font-size: 23px;
-  }
 }
 
 @media (max-width: 768px) {
   .example__photo {
     width: 100%;
-    height: 100%;
-  }
-
-  .header__contacts-social {
-    gap: 10px;
   }
 
   .header__list {
@@ -282,39 +265,16 @@
     background-color: rgba(0, 0, 0, 1);
   }
 
-  .hero__title {
-    font-size: 65px;
-    max-width: 620px;
-  }
-
-  .request__subtitle {
-    font-size: 28px;
-  }
-
-  .reqest__title {
-    font-size: 80px;
-  }
-
-  .site-title {
-    font-family: var(--third-family);
-    font-weight: 600;
-    font-size: 46px;
-    text-transform: uppercase;
-    color: #1b1b1b;
+  .hero__box {
+    bottom: 34px;
   }
 
   .hero__text {
-    font-size: 24px;
     max-width: 420px;
   }
 
   .site-btn {
     padding: 14.5px 32.5px;
-    font-size: 24px;
-  }
-
-  .hero__list-text {
-    font-size: 21px;
   }
 
   .example__slider-buttons {
@@ -334,10 +294,6 @@
 
   .footer__text-link {
     text-align: center;
-  }
-
-  .accordion__text {
-    font-size: 24px;
   }
 
   .advantages__list {
@@ -374,8 +330,8 @@
 }
 
 @media (max-width: 576px) {
-  .site-title {
-    font-size: 36px;
+  .modal__checkbox-text {
+    font-size: 15px;
   }
 
   .header {
@@ -408,34 +364,20 @@
   }
 
   .header__list {
-    top: -20px;
+    top: -18px;
   }
 
   .hero__title {
-    font-size: 51px;
-    max-width: 370px;
     margin-bottom: 18px;
   }
 
   .hero__text {
     font-weight: 400;
-    font-size: 20px;
-    margin-bottom: 18px;
-    max-width: 305px;
-  }
-
-  .hero__list-text {
-    font-size: 18px;
-  }
-
-  .hero__img {
-    width: 40px;
-    height: 48px;
+    max-width: 280px;
   }
 
   .hero__list-item {
     align-items: center;
-    gap: 8px;
   }
 
   .header__contacts-icon svg {
@@ -443,26 +385,8 @@
     height: 42px;
   }
 
-  .hero {
-    background-position: 52.8%;
-  }
-
-  .hero__list {
-    /* gap: 20px; */
-  }
-
   .about {
     padding: 44px 0;
-  }
-
-  .about__caption {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-
-  .about__text {
-    font-size: 12px;
-    margin-top: 15px;
   }
 
   .about__title {
@@ -471,10 +395,6 @@
 
   .services__title {
     margin-bottom: 25px;
-  }
-
-  .accordion__text {
-    font-size: 18px;
   }
 
   .services {
@@ -499,15 +419,6 @@
 
   .accordion__btn {
     padding: 20px 11px;
-  }
-
-  .advantages__item-title {
-    font-size: 18px;
-    margin-bottom: 11px;
-  }
-
-  .advantages__text {
-    font-size: 12px;
   }
 
   .advantages__item {
@@ -551,8 +462,6 @@
 
   .example__slider-title {
     max-width: 250px;
-    font-size: 28px;
-    margin-bottom: 20px;
   }
 
   .example__slider-list {
@@ -574,15 +483,9 @@
   .reqest__title {
     margin: 0 auto 18px;
     max-width: 380px;
-    font-size: 53px;
-  }
-
-  .request__subtitle {
-    font-size: 20px;
   }
 
   .site-btn {
-    font-size: 18px;
     padding: 18px 63px;
     border-radius: 6px;
   }
@@ -661,17 +564,12 @@
 
 @media (max-width: 499px) {
   .hero__list {
-    display: grid;
     gap: 20px;
   }
 
-  .hero__list-text {
-    font-size: 14px;
-  }
-
   .hero__img {
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
   }
 
   .example__slider-buttons,
@@ -710,7 +608,7 @@
 
   .hero__box {
     position: relative;
-    bottom: 0;
+    bottom: -10px;
   }
 
   .hero__box > .container {
@@ -721,23 +619,17 @@
     gap: 20px 8px;
   }
 
-  .hero__text {
-    font-size: 16px;
-  }
-
   .site-btn {
-    font-size: 16px;
     padding: 14px 44px;
   }
 
   .hero__img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 
   .hero__wrapper {
     padding-top: 73px;
-    gap: 30px;
   }
 
   .header__list {
@@ -748,18 +640,8 @@
     z-index: 11;
   }
 
-  .hero__list-text {
-    font-size: 12px;
-  }
-
   .hero__title {
-    font-size: 39px;
-    max-width: 320px;
     margin-bottom: 18px;
-  }
-
-  .hero__content {
-    /* transform: translateY(140px); */
   }
 
   .container {
@@ -783,7 +665,6 @@
   .comment__box {
     flex-direction: column;
     gap: 12px;
-    align-items: flex-start;
     margin-bottom: 20px;
   }
 }
@@ -792,14 +673,8 @@
   .comment__buttons,
   .example__slider-buttons {
     top: 50px;
-    right: 20px;
-    left: auto;
     width: 86px;
     height: 32px;
     gap: 26px;
-  }
-
-  .example__title {
-    margin-bottom: 35px;
   }
 }

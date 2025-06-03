@@ -36,10 +36,15 @@
   display: flex;
 }
 
+
+.swiper-slide {
+  height: auto !important;
+}
+
 .comment__item {
   border-radius: 22px;
   padding: 20px 22px;
-  min-height: 608px;
+  min-height: clamp(28.125rem, 24.534rem + 17.95vw, 38rem);
   background: #efefef;
   display: flex;
   flex-direction: column;
@@ -47,7 +52,8 @@
 
 .comment__item-content {
   padding-top: 25px;
-  margin-bottom: auto;
+  margin-bottom: 20px;
+  flex: 1;
 }
 
 .comment__item-title {
@@ -76,4 +82,6 @@
 
 .comment__item-img {
   border-radius: 22px;
+  width: 100%;
+  height: 100%;
 }

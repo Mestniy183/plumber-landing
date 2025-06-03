@@ -58,6 +58,7 @@
   left: 0;
   right: 0;
   z-index: 10;
+  will-change: transform;
 }
 
 .header.fixed {
@@ -91,6 +92,7 @@
   max-width: 694px;
   border-radius: 10px;
   padding: 28px 20px 26px;
+  will-change: transform, opacity;
 }
 
 .header__list {
@@ -110,7 +112,7 @@
 
 .header__list-item:nth-child(n + 2):before {
   content: "";
-  background-image: url("../img/sprite.svg#header--gear");
+  background-image: url("../../img/sprite.svg#header--gear");
   width: 20px;
   height: 20px;
   background-size: contain;
@@ -132,6 +134,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 22px 34px 21px 24px;
+  will-change: transform, opacity;
 }
 
 .header__list,
@@ -169,7 +172,7 @@
 .header__contacts-link {
   font-family: var(--second-family);
   font-weight: 500;
-  font-size: 28px;
+  font-size: clamp(1.438rem, 0.5rem + 1.25vw, 1.75rem);
   color: #fff;
   border-bottom: 1px dashed white;
   font-style: normal;

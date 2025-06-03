@@ -1,63 +1,94 @@
-import gsap from 'gsap';
+import gsap from "gsap";
 
 export function headerAnimation() {
   const header = document.querySelector(".header");
   const headerNav = document.querySelector(".header__nav");
   const headerContacts = document.querySelector(".header__contacts");
+  const fixedClass = "fixed";
+  const scrollThreshold = 10;
 
-  const tl = gsap.timeline({ paused: true });
+  const fixedTl = gsap.timeline({ paused: true });
+  const contentTl = gsap.timeline({ paused: true });
+  const animations = {
+    showFixed: () =>
+      fixedTl.fromTo(
+        header,
+        { y: "-100%" },
+        { y: 0, duration: 0.5, ease: "none" }
+      ),
+    hideFixed: () =>
+      fixedTl.fromTo(
+        header,
+        { y: 0 },
+        {
+          y: "-100%",
+          duration: 0.5,
+          ease: "none",
+          onComplete: () => {
+            gsap.set(header, { y: 0 });
+          },
+        }
+      ),
+    showContent: () => {
+      contentTl
+        .fromTo(
+          headerNav,
+          { x: "-10px", autoAlpha: 0 },
+          { x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out" },
+          "content"
+        )
+        .fromTo(
+          headerContacts,
+          { x: "10px", autoAlpha: 0 },
+          { x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out" },
+          "content"
+        );
+    },
+  };
 
-  function headerFixed() {
-    tl.clear();
-    tl.fromTo(".fixed", { y: "-100%" }, { y: 0, duration: 0.5, ease: "none" });
-    tl.play();
-  }
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  let isHeaderFixed = false;
 
-  function showHeaderContent() {
-    tl.fromTo(
-      headerNav,
-      { x: "-10px", autoAlpha: 0 },
-      { x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out" },
-      "contacts"
-    );
-    tl.fromTo(
-      headerContacts,
-      { x: "10px", autoAlpha: 0 },
-      { x: 0, duration: 0.8, delay: 0.5, autoAlpha: 1, ease: "power4.out" },
-      "contacts"
-    );
-    tl.play();
-  }
+  const handleScroll = () => {
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const isScrolled = lastScrollY >= scrollThreshold;
 
-  function hiddenHeaderFixed() {
-    tl.clear();
-    tl.fromTo(".fixed", { y: 0 }, { y: "-100%", duration: 0.5, ease: "none" });
-    tl.to(".fixed", { y: 0, duration: 0 });
-    tl.play();
-  }
-
-  document.addEventListener("scroll", () => {
-    let scroll = window.scrollY;
-    if (scroll >= 10) {
-      if (!header.classList.contains("fixed")) {
-        header.classList.add("fixed");
-        headerFixed();
-      }
-    } else {
-      if (header.classList.contains("fixed")) {
-        hiddenHeaderFixed();
-        setTimeout(() => {
-          header.classList.remove("fixed");
-          showHeaderContent();
-        }, 500);
-      }
+        if (isScrolled && !isHeaderFixed) {
+          isHeaderFixed = true;
+          header.classList.add(fixedClass);
+          fixedTl.clear().add(animations.showFixed()).play();
+        } else if (!isScrolled && isHeaderFixed) {
+          isHeaderFixed = false;
+          fixedTl
+            .clear()
+            .add(animations.hideFixed())
+            .play()
+            .then(() => {
+              header.classList.remove(fixedClass);
+              contentTl.clear().add(animations.showContent()).play();
+            });
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
-  });
+  };
 
-  if (window.scrollY >= 10) {
-    header.classList.add("fixed");
-    headerFixed();
-  } else {
-    showHeaderContent();
-  }
+  const init = () => {
+    isHeaderFixed = window.scrollY >= scrollThreshold;
+    if (isHeaderFixed) {
+      header.classList.add(fixedClass);
+      fixedTl.add(animations.showFixed()).play();
+    } else {
+      contentTl.add(animations.showContent()).play();
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+  };
+  init();
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
 }

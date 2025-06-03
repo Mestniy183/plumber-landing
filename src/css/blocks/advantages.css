@@ -9,10 +9,10 @@
 .advantages__item-title {
   font-family: var(--third-family);
   font-weight: 600;
-  font-size: 30px;
+  font-size: clamp(0.938rem, -1.875rem + 7.81vw, 1.875rem);
   text-transform: uppercase;
   color: #000;
-  margin-bottom: 15px;
+  margin-bottom: clamp(0.688rem, -0.063rem + 2.08vw, 0.938rem);
   text-align: center;
 }
 
@@ -25,6 +25,7 @@
 
 .advantages__img {
   display: block;
+  height: auto;
 }
 
 .advantages__item-wrapper {
@@ -34,7 +35,7 @@
 .advantages__text {
   font-family: var(--second-family);
   font-weight: 400;
-  font-size: 18px;
+  font-size: clamp(0.75rem, -0.375rem + 3.13vw, 1.125rem);
   text-align: center;
   color: var(--seryy);
 }

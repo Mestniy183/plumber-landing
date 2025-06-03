@@ -24,10 +24,32 @@ const clean = () => {
   return del(["dist"]);
 };
 
+const fonts = () => {
+  return src("src/fonts/**", {
+    encoding: false,
+    removeBOM: false,
+  }).pipe(dest("dist/fonts"));
+};
+
+const assets = () => {
+  return src("src/assets/**", { encoding: false, removeBOM: false }).pipe(
+    dest("dist/assets")
+  );
+};
+
+const robot = () => {
+  return src("src/robots.txt", { encoding: false, removeBOM: false }).pipe(
+    dest("dist")
+  );
+};
+
 const styles = () => {
   return src("src/css/**/index.css")
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(!isProd, sourcemaps.init()))
     .pipe(concat("main.css"))
+    .pipe(
+      replace(/url\(['"]?\.\.\/\.\.\/img\/(.*?)['"]?\)/g, 'url("../img/$1")')
+    )
     .pipe(
       gulpif(
         isProd,
@@ -37,27 +59,20 @@ const styles = () => {
     .pipe(autoprefixer({ cascade: false }))
     .pipe(cleanCSS())
     .pipe(gulpif(isProd, webpCSS()))
-    .pipe(sourcemaps.write())
+    .pipe(gulpif(!isProd, sourcemaps.write()))
     .pipe(dest("dist/css"))
     .pipe(browserSync.stream());
 };
 
 const fileIncludeSetting = {
-  prefix: '@@',
-  basepath: '@file',
-}
+  prefix: "@@",
+  basepath: "@file",
+};
 
 const htmlMinify = () => {
   return src("src/**/*.html")
-    .pipe(
-      gulpif(
-        isProd,
-        htmlmin({
-          collapseWhitespace: true,
-        })
-      )
-    )
     .pipe(fileInclude(fileIncludeSetting))
+    .pipe(gulpif(isProd, replace(/\.jpg|\.jpeg|\.png/g, ".webp")))
     .pipe(
       typograf({
         locale: ["ru", "en-US"],
@@ -68,7 +83,17 @@ const htmlMinify = () => {
         ],
       })
     )
-    .pipe(gulpif(isProd, replace(/\.jpg|\.jpeg|\.png/g, ".webp")))
+    .pipe(
+      gulpif(
+        isProd,
+        htmlmin({
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          minifyJS: true,
+        })
+      )
+    )
     .pipe(dest("dist"))
     .pipe(browserSync.stream());
 };
@@ -80,6 +105,7 @@ const images = () => {
       "src/img/**/*.jpeg",
       "src/img/**/*.png",
       "src/img/**/*.webp",
+      "!src/**/*.pdf",
     ],
     {
       encoding: false,
@@ -103,15 +129,19 @@ const scripts = () => {
         )
       )
       // .pipe(concat("index.js"))
+      .pipe(webpack(require("./webpack.config.js")))
       .pipe(
         gulpif(
           isProd,
           uglify({
             toplevel: true,
+            compress: {
+              unused: true,
+              dead_code: true,
+            },
           }).on("error", notify.onError())
         )
       )
-      .pipe(webpack(require("./webpack.config.js")))
       .pipe(gulpif(!isProd, sourcemaps.write()))
       .pipe(dest("dist/js"))
       .pipe(browserSync.stream())
@@ -185,16 +215,21 @@ const watchFiles = () => {
       baseDir: "dist",
     },
   });
+
   watch("src/**/*.html", htmlMinify);
   watch("src/css/**/*.css", styles);
   watch("src/js/**/*.js", scripts);
   watch("src/img/**/*.svg", svgSprites);
   watch("src/img/**/*.svg", svgSymbols);
   watch("src/img/**/*.{jpg,jpeg,png,webp}", images);
+  watch("src/assets/**", assets);
+  watch("src/fonts/**", fonts);
 };
 
 exports.default = series(
   clean,
+  fonts,
+  assets,
   htmlMinify,
   styles,
   scripts,
@@ -202,4 +237,17 @@ exports.default = series(
   svgSymbols,
   images,
   watchFiles
+);
+
+exports.build = series(
+  clean,
+  fonts,
+  assets,
+  htmlMinify,
+  styles,
+  scripts,
+  svgSprites,
+  svgSymbols,
+  images,
+  robot
 );

@@ -1,29 +1,31 @@
+
 .hero {
   display: flex;
   align-items: center;
-  background: grey url("../../img/hero/hero-bg.jpg");
   width: 100%;
-  height: 100dvh;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  height: 100vh;
   position: relative;
-  background-position: center;
+}
+
+.hero__bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}
+
+.hero__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero__wrapper {
   display: flex;
   flex-direction: column;
   gap: 38px;
-}
-
-.hero::after {
-  content: "";
-  background-image: url("../../img/hero/overlay.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  inset: 0;
 }
 
 .hero__content {
@@ -36,25 +38,21 @@
 .hero__title {
   font-family: var(--third-family);
   font-weight: 700;
-  font-size: 113px;
+  font-size: clamp(2.438rem, 0.738rem + 6.32vw, 7.063rem);
   line-height: 92%;
   text-transform: uppercase;
-  background: linear-gradient(178deg, #fff 0%, #ededed 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   letter-spacing: 0.03em;
-  text-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.15);
   margin-bottom: 14px;
+  color: white;
 }
 
 .hero__text {
   font-family: var(--second-family);
   font-weight: 300;
-  font-size: 36px;
+  font-size: clamp(1rem, 0.541rem + 1.71vw, 2.25rem);
   letter-spacing: 0.02em;
   color: #f0f0f0;
-  margin-bottom: 28px;
+  margin-bottom: clamp(1.125rem, -0.75rem + 5.21vw, 1.75rem);
 }
 
 .hero__box {
@@ -73,7 +71,7 @@
 
 .hero__list-item {
   display: flex;
-  gap: 15px;
+  gap: clamp(0.5rem, 0.254rem + 0.68vw, 0.938rem);
   align-items: center;
 }
 
@@ -85,7 +83,8 @@
 .hero__list-text {
   font-family: var(--third-family);
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(0.75rem, 0.474rem + 1.03vw, 1.5rem);
   text-transform: uppercase;
   color: #e6cf5b;
 }
+    

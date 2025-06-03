@@ -5,70 +5,52 @@ export function beforeAfter() {
     const before = photo.querySelector(".example__before");
     const img = before.querySelector(".example__img");
     const change = photo.querySelector(".example__change");
-    const body = document.body;
     let isActive = false;
 
-      let widthPhoto = photo.offsetWidth;
-
-      img.style.width = `${widthPhoto}px`;
-
-    function pauseEvents(e) {
-      e.stopPropagation();
-      return false;
+    const updateWidth = () => {
+      img.style.width = `${photo.offsetWidth}px`;
     }
 
-    photo.addEventListener("mouseup", () => {
-      isActive = false;
-    });
+    updateWidth();
 
-    photo.addEventListener("mousedown", () => {
-      isActive = true;
-    });
-
-    photo.addEventListener("mouseleave", () => {
-      isActive = false;
-    });
+    window.addEventListener('resize', updateWidth);
 
     function beforeAfterSlider(x) {
-      let shift = Math.max(0, Math.min(x, photo.offsetWidth));
+      const rect = photo.getBoundingClientRect();
+      let shift = Math.max(0, Math.min(x - rect.left, photo.offsetWidth));
       before.style.width = `${shift}px`;
       change.style.left = `${shift}px`;
     }
 
-    body.addEventListener("mousemove", (e) => {
+    function handlePointerDown(e) {
+      isActive = true;
+      beforeAfterSlider(e.clientX)
+      e.preventDefault()
+    }
+
+    function handlePointerMove(e) {
       if (!isActive) return;
-      let x = e.pageX;
-      x -= photo.getBoundingClientRect().left;
-      beforeAfterSlider(x);
-      pauseEvents(e);
-    });
+      beforeAfterSlider(e.clientX)
+      e.preventDefault()
+    }
 
-    photo.addEventListener(
-      "touchstart",
-      () => {
-        isActive = true;
-      },
-      { passive: true }
-    );
-
-    body.addEventListener("touchend", () => {
+    const handlePointerUp = () => {
       isActive = false;
-    });
+    };
 
-    body.addEventListener("touchcancel", () => {
-      isActive = false;
-    });
+    photo.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("pointermove", handlePointerMove);
+    document.addEventListener("pointerup", handlePointerUp);
+    document.addEventListener("pointercancel", handlePointerUp);
 
-    body.addEventListener("touchmove", (event) => {
-      if (!isActive) return;
-      let x;
-      let i;
-      for (i = 0; i < event.changedTouches.length; i++) {
-        x = event.changedTouches[0].pageX;
-      }
-      x -= photo.getBoundingClientRect().left;
-      beforeAfterSlider(x);
-      pauseEvents(event);
-    });
+
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+      photo.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("pointermove", handlePointerMove);
+      document.removeEventListener("pointerup", handlePointerUp);
+      document.removeEventListener("pointercancel", handlePointerUp);
+    }
+
   });
 }

@@ -13,10 +13,11 @@
 
 .example__photo {
   position: relative;
-  height: 531px;
+  height: clamp(21.875rem, -11.4426rem + 123.9726vw, 33.1875rem);
   overflow: hidden;
   width: 533px;
   border-radius: 30px;
+  touch-action: none;
 }
 
 .example__img {
@@ -24,7 +25,6 @@
   width: 100%;
   height: 100%;
   display: block;
-  /* object-fit: cover; */
   user-select: none;
 }
 
@@ -99,9 +99,9 @@
 .example__slider-title {
   font-family: var(--second-family);
   font-weight: 600;
-  font-size: 36px;
+  font-size: clamp(1.75rem, 0.25rem + 4.17vw, 2.25rem);
   color: #000;
-  margin-bottom: 34px;
+  margin-bottom: clamp(1.25rem, -1.375rem + 7.29vw, 2.125rem);
 }
 
 .example__slider-list {

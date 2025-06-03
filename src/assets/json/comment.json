@@ -1,0 +1,37 @@
+[
+    {
+        "img": "img/comment/comment-1.webp 1x, img/comment/comment-1@2x.webp 2x, img/comment/comment-1@3x.webp 3x",
+        "img768": "img/comment/comment-1-250.webp 1x, img/comment/comment-1-250@2x.webp 2x, img/comment/comment-1-250@3x.webp 3x",
+        "img430": "img/comment/comment-1-200.webp 1x, img/comment/comment-1-200@2x.webp 2x, img/comment/comment-1-200@3x.webp 3x",
+        "text": "После перепланировки кухни, во время отделочных работ появилась необходимость в замене радиатора, так как его конфигурация стала препятствовать проходу. Работы были выполнены качественно и в срок. Мастером очень довольна.",
+        "name": "Марина Иванова, ",
+        "city": "Санкт-Петербург, 2021"
+    },
+
+    {
+        "img": "img/comment/comment-2.webp 1x, img/comment/comment-2@2x.webp 2x, img/comment/comment-2@3x.webp 3x",
+        "img768": "img/comment/comment-2-250.webp 1x, img/comment/comment-2-250@2x.webp 2x, img/comment/comment-2-250@3x.webp 3x",
+        "img430": "img/comment/comment-2-200.webp 1x, img/comment/comment-2-200@2x.webp 2x, img/comment/comment-2-200@3x.webp 3x",
+        "text": "Долго решались на установку бойлера, так как ремонт уже был давно сделан и не хотелось ломать кафель. Долго пытались найти специалиста, который сможет это всё сделать и при этом не сломать плитку, потому что запаса плитки совсем не было. И наконец нам повезло, мы нашли Виктора! Он установил бойлер, подвёл трубы в стене и не сломал не одной плитки. Я очень довольна работой. Спасибо вам! ",
+        "name": "Юлия Фомина, ",
+        "city": "Санкт-Петербург, 2019"
+    },
+
+    {
+        "img": "img/comment/comment-3.webp 1x, img/comment/comment-3@2x.webp 2x, img/comment/comment-3@3x.webp 3x",
+        "img768": "img/comment/comment-3-250.webp 1x, img/comment/comment-3-250@2x.webp 2x, img/comment/comment-3-250@3x.webp 3x",
+        "img430": "img/comment/comment-3-200.webp 1x, img/comment/comment-3-200@2x.webp 2x, img/comment/comment-3-200@3x.webp 3x",
+        "text": "Когда начали мне собирать кухну, сборщики сказали, что трубы от застройщика не позволяют установить мойку и подключить её. Потребовались срочные услуги сантехника. На помощь, в этот вечер к нам пришёл Виктор и перенёс трубы и дополнительно установил краны. На следующий день сборщики продолжили сборку, спасибо Виктору, за оперативную и качественную помощь, рекомендую.",
+        "name": "Фёдор Лужин, ",
+        "city": "Санкт-Петербург, 2023"
+    },
+
+    {
+        "img": "img/comment/comment-4.webp 1x, img/comment/comment-4@2x.webp 2x, img/comment/comment-4@3x.webp 3x",
+        "img768": "img/comment/comment-4-250.webp 1x, img/comment/comment-4-250@2x.webp 2x, img/comment/comment-4-250@3x.webp 3x",
+        "img430": "img/comment/comment-4-200.webp 1x, img/comment/comment-4-200@2x.webp 2x, img/comment/comment-4-200@3x.webp 3x",
+        "text": "Хочу выразить благодарность за профессиональную работу по переносу унитаза. Сантехник аккуратно выполнил все необходимые работы, устранив препятствие в проходе. Также качественно смонтировал трубы для раковины и подключил её. Всё сделано быстро и без лишнего беспорядка. Рекомендую этого специалиста!.",
+        "name": "Анастасия Протушная, ",
+        "city": "Санкт-Петербург, 2024"
+    }
+]

@@ -1,6 +1,17 @@
 .request {
   height: 668px;
-  background: grey url("../../img/request/request.jpg");
+  background-color: gray;
+  background-image: url("../../img/request/request.webp");
+  background-image: -webkit-image-set(
+    url("../img/request/request.webp") 1x, 
+    url("../img/request/request@2x.webp") 2x, 
+    url("../img/request/request@3x.webp") 3x 
+  );
+  background-image: image-set(
+    url("../img/request/request.webp") type("image/webp") 1x, 
+    url("../img/request/request@2x.webp") type("image/webp") 2x, 
+    url("../img/request/request@3x.webp") type("image/webp") 3x
+  );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 90%;
@@ -13,7 +24,6 @@
 }
 
 .request__content {
-  max-width: 550px;
   margin: 0 auto;
   text-align: center;
 }
@@ -21,7 +31,7 @@
 .reqest__title {
   font-family: var(--third-family);
   font-weight: 700;
-  font-size: 104px;
+  font-size: clamp(3.313rem, -0.786rem + 11.38vw, 6.5rem);
   line-height: 101%;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -32,7 +42,7 @@
 .request__subtitle {
   font-family: var(--third-family);
   font-weight: 700;
-  font-size: 40px;
+  font-size: clamp(1.25rem, -0.357rem + 4.46vw, 2.5rem);
   line-height: 101%;
   letter-spacing: -0.03em;
   text-transform: uppercase;

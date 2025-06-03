@@ -1,0 +1,130 @@
+{
+    "examples": [
+        {
+            "title": "Замена радиатора отопления",
+            "mobileBeforeImage": "img/example/pairs-1/example-before-mobile.webp 1x, img/example/pairs-1/example-before-mobile@2x.webp 2x, img/example/pairs-1/example-before-mobile@3x.webp 3x",
+            "mobileAfterImage": "img/example/pairs-1/example-after-mobile.webp 1x, img/example/pairs-1/example-after-mobile@2x.webp 2x, img/example/pairs-1/example-after-mobile@3x.webp 3x",
+            "beforeImage": "img/example/pairs-1/example-before.webp 1x, img/example/pairs-1/example-before@2x.webp 2x, img/example/pairs-1/example-before@3x.webp 3x",
+            "afterImage": "img/example/pairs-1/example-after.webp 1x, img/example/pairs-1/example-after@2x.webp 2x, img/example/pairs-1/example-after@3x.webp 3x",
+            "tasks": [
+                {
+                    "title": "Задача:",
+                    "text": "После перепланировки детской комнаты, и объединение её с балконом, появилась потребность, в изменении конструкции стояка отопления и замене радиатора."
+                },
+                {
+                    "title": "Решение:",
+                    "text": "Переварка стояка отопления и замена радиатора вертикальной конструкции, установка запорной арматуры(краны), для удобства будущей эксплуатации. Результат-экономия пространства,увеличения кпд батареи."
+                }
+                
+            ]
+        },
+        {
+            "title": "Замена радиатора отопления",
+            "mobileBeforeImage": "img/example/pairs-2/example-before-mobile.webp 1x, img/example/pairs-2/example-before-mobile@2x.webp 2x, img/example/pairs-2/example-before-mobile@3x.webp 3x",
+            "mobileAfterImage": "img/example/pairs-2/example-after-mobile.webp 1x, img/example/pairs-2/example-after-mobile@2x.webp 2x, img/example/pairs-2/example-after-mobile@3x.webp 3x",
+            "beforeImage": "img/example/pairs-2/example-before.webp 1x, img/example/pairs-2/example-before@2x.webp 2x, img/example/pairs-2/example-before@3x.webp 3x",
+            "afterImage": "img/example/pairs-2/example-after.webp 1x, img/example/pairs-2/example-after@2x.webp 2x, img/example/pairs-2/example-after@3x.webp 3x",
+            "tasks": [
+                {
+                    "title": "Задача:",
+                    "text": "Заменить радиатор, сместить его вправа, для этого требуется демонтировать стяжку пола, так как трубы подводящие и отводящие от радиатора также будут смещаться."
+                },
+                {
+                    "title": "Решение:",
+                    "text": "Новый радиатор вертикальной конструкции установлен и подключен, так же опресован."
+                }
+                
+            ]
+        },
+        {
+            "title": "Замена радиатора отопления",
+            "mobileBeforeImage": "img/example/pairs-3/example-before-mobile.webp 1x, img/example/pairs-3/example-before-mobile@2x.webp 2x, img/example/pairs-3/example-before-mobile@3x.webp 3x",
+            "mobileAfterImage": "img/example/pairs-3/example-after-mobile.webp 1x, img/example/pairs-3/example-after-mobile@2x.webp 2x, img/example/pairs-3/example-after-mobile@3x.webp 3x",
+            "beforeImage": "img/example/pairs-3/example-before.webp 1x, img/example/pairs-3/example-before@2x.webp 2x, img/example/pairs-3/example-before@3x.webp 3x",
+            "afterImage": "img/example/pairs-3/example-after.webp 1x, img/example/pairs-3/example-after@2x.webp 2x, img/example/pairs-3/example-after@3x.webp 3x",
+            "tasks": [
+                {
+                    "title": "Задача:",
+                    "text": "Демонтаж старого смесителя и установка нового с системой тропический душ."
+                },
+                {
+                    "title": "Решение:",
+                    "text": "Произведени замена смесителя с системой тропический душ."
+                }
+                
+            ]
+        },
+        {
+            "title": "Замена радиатора отопления",
+            "mobileBeforeImage": "img/example/pairs-4/example-before-mobile.webp 1x, img/example/pairs-4/example-before-mobile@2x.webp 2x, img/example/pairs-4/example-before-mobile@3x.webp 3x",
+            "mobileAfterImage": "img/example/pairs-4/example-after-mobile.webp 1x, img/example/pairs-4/example-after-mobile@2x.webp 2x, img/example/pairs-4/example-after-mobile@3x.webp 3x",
+            "beforeImage": "img/example/pairs-4/example-before.webp 1x, img/example/pairs-4/example-before@2x.webp 2x, img/example/pairs-4/example-before@3x.webp 3x",
+            "afterImage": "img/example/pairs-4/example-after.webp 1x, img/example/pairs-4/example-after@2x.webp 2x, img/example/pairs-4/example-after@3x.webp 3x",
+            "tasks": [
+                {
+                    "title": "Задача:",
+                    "text": "Установить накопительный водонагреватель, подключить его, подвести трубы в штробе, демонтируя кафель без его повреждения."
+                },
+                {
+                    "title": "Решение:",
+                    "text": "Установлен водонагреватель, подключен трубами скрытого монтажа, без повреждения плитки."
+                }
+                
+            ]
+        },
+        {
+            "title": "Замена радиатора отопления",
+            "mobileBeforeImage": "img/example/pairs-5/example-before-mobile.webp 1x, img/example/pairs-5/example-before-mobile@2x.webp 2x, img/example/pairs-5/example-before-mobile@3x.webp 3x",
+            "mobileAfterImage": "img/example/pairs-5/example-after-mobile.webp 1x, img/example/pairs-5/example-after-mobile@2x.webp 2x, img/example/pairs-5/example-after-mobile@3x.webp 3x",
+            "beforeImage": "img/example/pairs-5/example-before.webp 1x, img/example/pairs-5/example-before@2x.webp 2x, img/example/pairs-5/example-before@3x.webp 3x",
+            "afterImage": "img/example/pairs-5/example-after.webp 1x, img/example/pairs-5/example-after@2x.webp 2x, img/example/pairs-5/example-after@3x.webp 3x",
+            "tasks": [
+                {
+                    "title": "Задача:",
+                    "text": "Перенос инженерных коммуникаций(ХГВС), для организации подключения мойки на кухне и смесителя. Так же установка крана, для подключения питьевого фильтра."
+                },
+                {
+                    "title": "Решение:",
+                    "text": "Перенос труб холодной, горячей воды, для установки и подключения мойки на кухне. Вместе с тем, перенос увеличил пространство внутри."
+                }
+                
+            ]
+        },
+        {
+            "title": "Замена радиатора отопления",
+            "mobileBeforeImage": "img/example/pairs-6/example-before-mobile.webp 1x, img/example/pairs-6/example-before-mobile@2x.webp 2x, img/example/pairs-6/example-before-mobile@3x.webp 3x",
+            "mobileAfterImage": "img/example/pairs-6/example-after-mobile.webp 1x, img/example/pairs-6/example-after-mobile@2x.webp 2x, img/example/pairs-6/example-after-mobile@3x.webp 3x",
+            "beforeImage": "img/example/pairs-6/example-before.webp 1x, img/example/pairs-6/example-before@2x.webp 2x, img/example/pairs-6/example-before@3x.webp 3x",
+            "afterImage": "img/example/pairs-6/example-after.webp 1x, img/example/pairs-6/example-after@2x.webp 2x, img/example/pairs-6/example-after@3x.webp 3x",
+            "tasks": [
+                {
+                    "title": "Задача:",
+                    "text": "Установить и подключить раковину над стиральной машиной."
+                },
+                {
+                    "title": "Решение:",
+                    "text": "Раковина установлена и подключена, задача выполнена, в сан. узле стало просторнее."
+                }
+                
+            ]
+        },
+        {
+            "title": "Замена радиатора отопления",
+            "mobileBeforeImage": "img/example/pairs-7/example-before-mobile.webp 1x, img/example/pairs-7/example-before-mobile@2x.webp 2x, img/example/pairs-7/example-before-mobile@3x.webp 3x",
+            "mobileAfterImage": "img/example/pairs-7/example-after-mobile.webp 1x, img/example/pairs-7/example-after-mobile@2x.webp 2x, img/example/pairs-7/example-after-mobile@3x.webp 3x",
+            "beforeImage": "img/example/pairs-7/example-before.webp 1x, img/example/pairs-7/example-before@2x.webp 2x, img/example/pairs-7/example-before@3x.webp 3x",
+            "afterImage": "img/example/pairs-7/example-after.webp 1x, img/example/pairs-7/example-after@2x.webp 2x, img/example/pairs-7/example-after@3x.webp 3x",
+            "tasks": [
+                {
+                    "title": "Задача:",
+                    "text": "Перенести унитаз, так как он частично препятствовал проходу в сан.узел, монтаж труб для будущей раковины и её подключение"
+                },
+                {
+                    "title": "Решение:",
+                    "text": "Переустановил унитаз(смеслил под 45 градусов), подвёл трубы холодной и горячей воды, канализацию для раковины, подключил её."
+                }
+                
+            ]
+        }
+    ]
+}

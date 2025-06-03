@@ -10,6 +10,8 @@
 .about__img {
   border-radius: 18px;
   object-fit: cover;
+  height: auto;
+  width: 100%;
 }
 
 .about__title {
@@ -22,23 +24,20 @@
   display: block;
   font-family: var(--second-family);
   font-weight: 500;
-  font-size: 26px;
+  font-size: clamp(1rem, -0.875rem + 5.21vw, 1.625rem);
   line-height: 125%;
   color: #272727;
-  margin-bottom: 35px;
+  margin-bottom: clamp(0.938rem, -2.813rem + 10.42vw, 2.188rem);
   max-width: 606px;
 }
 
 .about__text {
   font-family: var(--second-family);
   font-weight: 400;
-  font-size: 20px;
+  font-size: clamp(0.75rem, -0.75rem + 4.17vw, 1.25rem);
   line-height: 129%;
   color: #323232;
   max-width: 573px;
-  margin-top: 21px;
+  margin-top: clamp(0.938rem, -0.188rem + 3.13vw, 1.313rem);
 }
 
-.about__text:first-child {
-  margin-bottom: 30px;
-}
