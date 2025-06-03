@@ -38,9 +38,10 @@ const assets = () => {
 };
 
 const robot = () => {
-  return src("src/robots.txt", { encoding: false, removeBOM: false }).pipe(
-    dest("dist")
-  );
+  return src(["src/robots.txt", "src/sitemap.xml"], {
+    encoding: false,
+    removeBOM: false,
+  }).pipe(dest("dist"));
 };
 
 const styles = () => {
