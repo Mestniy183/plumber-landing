@@ -121,6 +121,10 @@
   margin-right: 14px;
 }
 
+.header__list-link {
+  white-space: nowrap;
+}
+
 .header__contacts {
   backdrop-filter: blur(28.66666603088379px);
   box-shadow: inset -14px 14px 14px 0 rgba(255, 255, 255, 0.1),
