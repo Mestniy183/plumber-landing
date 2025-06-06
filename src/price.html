@@ -96,6 +96,89 @@
             font-size: 14px;
         }
        
+        @media(max-width: 768px){
+            .price-table{
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .header{
+                padding: 15px 10px;
+            }
+
+            h1{
+                font-size: 22px;
+            }
+        }
+
+        @media(max-width: 600px){
+            .price-table{
+                display: block;
+            }
+
+            .price-table thead{
+                display: none;
+            }
+
+            .price-table tr{
+                display: block;
+                margin-bottom: 15px;
+                border-bottom: 2px solid #48cae4;
+            }
+
+            .price-table td{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                border-bottom: 1px dotted #ddd;
+                text-align: right;
+            }
+
+            .price-table td::before{
+                content: attr(data-label);
+                font-weight: bold;
+                color: #0077b6;
+                margin-right: 15px;
+                text-align: left;
+            }
+
+            .price-table td:last-child{
+                border-bottom: none;
+            }
+
+            .service-name, .price{
+                white-space: normal;
+            }
+
+            .note, .footer{
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            @media(max-width: 400px){
+                .price-table td{
+                    flex-direction: column;
+                    align-items: flex-end;
+                    text-align: right;
+                    padding: 8px 5px;
+                }
+
+                .price-table td::before{
+                    margin-right: 0;
+                    margin-bottom: 5px;
+                    align-self: flex-start;
+                }
+
+                .header{
+                    padding: 12px 5px;
+                }
+
+                h1{
+                    font-size: 20px;
+                }
+            }
+        }
     </style>
 </head>
 <body>
@@ -113,45 +196,36 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="service-name">Установка смесителя</td>
-                    <td class="price">1500-3000 <span class="unit">руб.</span></td>
-                    <td>В зависимости от типа смесителя</td>
+                    <td class="service-name" data-label="Услуга">Установка смесителя</td>
+                    <td class="price"  data-label="Цена">1500-3000 <span class="unit">руб.</span></td>
+                    <td  data-label="Примечание">В зависимости от типа смесителя</td>
                 </tr>
                 <tr>
-                    <td class="service-name">Установка смесителя</td>
-                    <td class="price">1500-3000 <span class="unit">руб.</span></td>
-                    <td>В зависимости от типа смесителя</td>
+                    <td class="service-name" data-label="Услуга">Установка смесителя</td>
+                    <td class="price"  data-label="Цена">1500-3000 <span class="unit">руб.</span></td>
+                    <td  data-label="Примечание">В зависимости от типа смесителя</td>
                 </tr>
                 <tr>
-                    <td class="service-name">Установка смесителя</td>
-                    <td class="price">1500-3000 <span class="unit">руб.</span></td>
-                    <td>В зависимости от типа смесителя</td>
+                    <td class="service-name" data-label="Услуга">Установка смесителя</td>
+                    <td class="price"  data-label="Цена">1500-3000 <span class="unit">руб.</span></td>
+                    <td  data-label="Примечание">В зависимости от типа смесителя</td>
                 </tr>
                 <tr>
-                    <td class="service-name">Установка смесителя</td>
-                    <td class="price">1500-3000 <span class="unit">руб.</span></td>
-                    <td>В зависимости от типа смесителя</td>
+                    <td class="service-name" data-label="Услуга">Установка смесителя</td>
+                    <td class="price"  data-label="Цена">1500-3000 <span class="unit">руб.</span></td>
+                    <td  data-label="Примечание">В зависимости от типа смесителя</td>
                 </tr>
                 <tr>
-                    <td class="service-name">Установка смесителя</td>
-                    <td class="price">1500-3000 <span class="unit">руб.</span></td>
-                    <td>В зависимости от типа смесителя</td>
+                    <td class="service-name" data-label="Услуга">Установка смесителя</td>
+                    <td class="price"  data-label="Цена">1500-3000 <span class="unit">руб.</span></td>
+                    <td  data-label="Примечание">В зависимости от типа смесителя</td>
                 </tr>
                 <tr>
-                    <td class="service-name">Установка смесителя</td>
-                    <td class="price">1500-3000 <span class="unit">руб.</span></td>
-                    <td>В зависимости от типа смесителя</td>
+                    <td class="service-name" data-label="Услуга">Установка смесителя</td>
+                    <td class="price"  data-label="Цена">1500-3000 <span class="unit">руб.</span></td>
+                    <td  data-label="Примечание">В зависимости от типа смесителя</td>
                 </tr>
-                <tr>
-                    <td class="service-name">Установка смесителя</td>
-                    <td class="price">1500-3000 <span class="unit">руб.</span></td>
-                    <td>В зависимости от типа смесителя</td>
-                </tr>
-                <tr>
-                    <td class="service-name">Установка смесителя</td>
-                    <td class="price">1500-3000 <span class="unit">руб.</span></td>
-                    <td>В зависимости от типа смесителя</td>
-                </tr>
+              
             </tbody>
         </table>
         <div class="note">
