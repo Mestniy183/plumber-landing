@@ -26,7 +26,7 @@
   max-width: 777px;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.5s ease;
   will-change: max-height;
 }
 
