@@ -1,0 +1,2 @@
+build.yml merge=ours
+config/prod.json merge=ours
