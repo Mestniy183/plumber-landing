@@ -1,2 +1,2 @@
-build.yml merge=ours
+.github/workflows/build.yml merge=ours
 config/prod.json merge=ours
