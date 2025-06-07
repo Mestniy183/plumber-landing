@@ -2,7 +2,7 @@ name: Build and Deploy to HostLand
 
 on:
   push:
-    branches: [dev]
+    branches: [ master ]
 
 jobs:
   deploy:
@@ -19,9 +19,12 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy dev
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+      - name: Upload to Hostland via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          branch: gh-pages
-          folder: dist
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /htdocs/www/
           clean: true
