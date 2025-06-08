@@ -1,4 +1,4 @@
-name: Build and Deploy to HostLand
+name: Build and Deploy
 
 on:
   push:
