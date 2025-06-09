@@ -13,7 +13,14 @@
 .footer__container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 128px;
+  margin-bottom: 136px;
+}
+
+.footer__left-address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .footer__list {
@@ -57,6 +64,7 @@
   border-bottom: 1px dashed white;
   margin-bottom: 23px;
   white-space: nowrap;
+  font-style: normal;
 }
 
 .footer__contacts-social {
