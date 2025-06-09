@@ -39,6 +39,11 @@ img {
   max-width: 100%;
 }
 
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
 .site-title {
   font-family: var(--third-family);
   font-weight: 600;
