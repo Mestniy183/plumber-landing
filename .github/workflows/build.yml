@@ -29,7 +29,7 @@ jobs:
           echo "  SUPABASE_KEY: '${{ secrets.SUPABASEKEY }}'," >> dist/config.js
           echo "};" >> dist/config.js
       - name: Verify config
-        run: car dist/config.js
+        run: cat dist/config.js
 
       - name: Prodaction
         if: github.ref == 'refs/heads/master'
