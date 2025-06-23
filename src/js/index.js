@@ -5,6 +5,7 @@ import { accordion } from "./modules/accordion.js";
 import { getCurrentYear } from "./modules/getCurrentYear.js";
 import {createExamples} from "./modules/example.js";
 import {createComment} from "./modules/comment.js";
+import {supabaseDB} from './api.js'
 
 function loadCode(){
  modal();
@@ -17,7 +18,7 @@ function loadCode(){
 document.addEventListener("DOMContentLoaded", () => {
   headerAnimation();
   burger();
-
+  console.log(supabaseDB);
   if(window.requestIdleCallback){
     window.requestIdleCallback(() =>{
       loadCode();
