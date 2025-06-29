@@ -150,7 +150,7 @@ const scripts = () => {
 };
 
 const svgSprites = () => {
-  const sprite = src("src/img/**/*.svg")
+  const sprite = src(["src/img/**/*.svg", "!src/img/favicon.svg"])
     .pipe(
       svgSprite({
         mode: {
@@ -178,7 +178,7 @@ const svgSprites = () => {
 };
 
 const svgSymbols = () => {
-  const sprite = src("src/img/**/*.svg")
+  const sprite = src(["src/img/**/*.svg", "!src/img/favicon.svg"])
     .pipe(
       svgSprite({
         mode: {
@@ -210,6 +210,11 @@ const svgSymbols = () => {
   return sprite;
 };
 
+const favicon = () => {
+  return src('src/img/favicon.svg')
+  .pipe(dest('dist/img'))
+}
+
 const watchFiles = () => {
   browserSync.init({
     server: {
@@ -234,6 +239,7 @@ exports.default = series(
   htmlMinify,
   styles,
   scripts,
+  favicon,
   svgSprites,
   svgSymbols,
   images,
@@ -247,6 +253,7 @@ exports.build = series(
   htmlMinify,
   styles,
   scripts,
+  favicon,
   svgSprites,
   svgSymbols,
   images,
