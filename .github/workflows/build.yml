@@ -22,6 +22,15 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Config file
+        run: | 
+          echo "window.env = {" > dist/config.js
+          echo "  SUPABASE_URL: '${{ secrets.SUPABASEURL }}'," >> dist/config.js
+          echo "  SUPABASE_KEY: '${{ secrets.SUPABASEKEY }}'," >> dist/config.js
+          echo "};" >> dist/config.js
+      - name: Verify config
+        run: cat dist/config.js
+
       - name: Prodaction
         if: github.ref == 'refs/heads/master'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4

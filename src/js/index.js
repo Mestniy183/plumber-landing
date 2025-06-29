@@ -5,8 +5,11 @@ import { accordion } from "./modules/accordion.js";
 import { getCurrentYear } from "./modules/getCurrentYear.js";
 import {createExamples} from "./modules/example.js";
 import {createComment} from "./modules/comment.js";
+import {supabaseDB} from './api.js'
+import { servicesList } from "./modules/servicesList.js";
 
 function loadCode(){
+  servicesList()
  modal();
   accordion();
   createExamples();
@@ -17,7 +20,6 @@ function loadCode(){
 document.addEventListener("DOMContentLoaded", () => {
   headerAnimation();
   burger();
-
   if(window.requestIdleCallback){
     window.requestIdleCallback(() =>{
       loadCode();

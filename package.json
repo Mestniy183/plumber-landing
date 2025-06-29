@@ -41,6 +41,7 @@
     "yargs": "^17.7.2"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
     "firebase": "^11.8.0",
     "gsap": "^3.12.7",
     "imask": "^7.6.1",
