@@ -9,7 +9,7 @@ export async function servicesList() {
         .from('services')
         .select('title, description')
         .order('id', {ascending: true})
-        if (error)throw error
+        if (error) throw error;
 
         //Очищаем контейнер перед добавлением новых элементов
         servicesSection.innerHTML = ''
