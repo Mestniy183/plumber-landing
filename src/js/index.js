@@ -5,12 +5,13 @@ import { accordion } from "./modules/accordion.js";
 import { getCurrentYear } from "./modules/getCurrentYear.js";
 import {createExamples} from "./modules/example.js";
 import {createComment} from "./modules/comment.js";
-import {supabaseDB} from './api.js'
 import { servicesList } from "./modules/servicesList.js";
+import { questionsList } from "./modules/questionList.js";
 
 function loadCode(){
   servicesList()
- modal();
+  questionsList()
+  modal();
   accordion();
   createExamples();
   createComment();
