@@ -1,25 +1,31 @@
 import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
+import { supabaseDB } from "../api";
 import { createError, removeError } from "./error";
 export async function createComment() {
     const commentList = document.querySelector('.comment__list');
     try {
         removeError();
-        const response = await fetch('./assets/json/comment.json');
+
+        const{data: comments, error} = await supabaseDB
+        .from('questions')
+        .select('comment, name, city, image')
+        .order('id', {ascending: true})
+
+        if (error) throw error;
+
         if (!response.ok) {
             throw new Error(`HTTP ошибка! статус: ${response.status}`);
         }
 
-        const data = await response.json();
-
-        if (!data || !Array(data) || data.length === 0) {
+        if (!comments  || comments.length === 0) {
             throw new Error('Нет доступных отзывов');
         }
-        data.forEach(element => {
+        comments.forEach(element => {
             const slide = document.createElement('li');
             slide.classList.add('comment__item', 'swiper-slide');
-            const source768 = element.img768 ? `<source media="(max-width: 768px)" srcset="${element.img768}">`  : '';
-            const source430 = element.img430 ?  `<source media="(max-width: 430px)" srcset="${element.img430}">` : '';
+            const source768 = element.image ? `<source media="(max-width: 768px)" srcset="${element.img768}">`  : '';
+            const source430 = element.image ?  `<source media="(max-width: 430px)" srcset="${element.img430}">` : '';
             slide.innerHTML = `
             <picture>
             ${source768}
@@ -28,7 +34,7 @@ export async function createComment() {
 <img
         loading="lazy"
         class="comment__item-img"
-        srcset="${element.img}"
+        srcset="${element.image}"
         alt="Фото отзыва"
         width="336"
         height="336"
@@ -38,11 +44,11 @@ export async function createComment() {
       <div class="comment__item-content">
         <h3 class="comment__item-title">Отзыв:</h3>
         <p class="comment__item-text">
-          ${element.text}
+          ${element.comment}
         </p>
       </div>
       <div class="comment__item-address">
-        <span class="comment__item-name">${element.name}</span>
+        <span class="comment__item-name">${element.name}, </span>
         <span class="comment__item-city">${element.city}</span>
       </div>
         `;
