@@ -8,7 +8,7 @@ export async function createComment() {
         removeError();
 
         const{data: comments, error} = await supabaseDB
-        .from('questions')
+        .from('comment')
         .select('comment, name, city, image')
         .order('id', {ascending: true})
 
