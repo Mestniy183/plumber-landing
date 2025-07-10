@@ -14,9 +14,6 @@ export async function createComment() {
 
         if (error) throw error;
 
-        if (!response.ok) {
-            throw new Error(`HTTP ошибка! статус: ${response.status}`);
-        }
 
         if (!comments  || comments.length === 0) {
             throw new Error('Нет доступных отзывов');
