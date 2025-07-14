@@ -1,37 +1,38 @@
 import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
+import { supabaseDB } from "../api";
 import { beforeAfter } from "./beforeAfter";
 import { createError, removeError } from "./error";
 import { escapeHTML } from "./escapeHTML";
 
 export async function createExamples() {
-    const swiperWrapper = document.querySelector('.swiper-wrapper');
-    try {
-        removeError();
-        const response = await fetch("./assets/json/example.json");
+  const swiperWrapper = document.querySelector('.swiper-wrapper');
+  try {
+    removeError();
 
-        if (!response.ok) {
-            throw new Error(`HTTP ошибка! статус: ${response.status}`);
-        }
+    const { data: examples, error } = await supabaseDB
+      .from('example')
+      .select('imageBefore, imageAfter, title, task, solution')
+      .order('id', { ascending: true })
 
-        const { examples } = await response.json();
+    if (error) throw error;
 
-        if (!examples || !Array(examples) || examples.length === 0) {
-            throw new Error('Нет данных примеров');
-        }
+    if (!examples || examples.length === 0) {
+      throw new Error('Нет данных примеров');
+    }
 
-        
 
-        swiperWrapper.innerHTML = '';
 
-        const fragment = document.createDocumentFragment();
+    swiperWrapper.innerHTML = '';
 
-        const createSlide = ({ title, mobileBeforeImage, mobileAfterImage, beforeImage, afterImage, tasks = []}) => {
-            const slide = document.createElement('div');
-            slide.classList.add('example__slider-content', 'swiper-slide');
-            const sourceBefore576 = mobileBeforeImage ? `<source media="(max-width: 576px)" srcset="${escapeHTML(mobileBeforeImage)}">`  : '';
-            const sourceAfter576 = mobileAfterImage ?  `<source media="(max-width: 576px)" srcset="${escapeHTML(mobileAfterImage)}">` : '';
-            slide.innerHTML = `
+    const fragment = document.createDocumentFragment();
+
+    const createSlide = ({ imageBefore, imageAfter, title, task, solution }) => {
+      const slide = document.createElement('div');
+      slide.classList.add('example__slider-content', 'swiper-slide');
+      const sourceBefore576 = imageBefore ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageBefore)}">` : '';
+      const sourceAfter576 = imageAfter ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageAfter)}">` : '';
+      slide.innerHTML = `
     <div class="example__photo">
     <div class="example__before">
     <picture>
@@ -39,7 +40,7 @@ export async function createExamples() {
     <img
         class="example__img"
         draggable="false"
-        srcset="${escapeHTML(beforeImage)}"
+        srcset="${escapeHTML(imageBefore)}"
         alt="Фото до"
         loading="lazy"
         width="533"
@@ -56,7 +57,7 @@ export async function createExamples() {
     <img
     class="example__img"
     draggable="false"
-    srcset="${escapeHTML(afterImage)}"
+    srcset="${escapeHTML(imageAfter)}"
     alt="Фото после"
     loading="lazy"
     width="533"
@@ -84,41 +85,46 @@ export async function createExamples() {
   <div class="example__slider-inner">
   <h3 class="example__slider-title">${escapeHTML(title)}</h3>
   <ul class="example__slider-list list-reset">
-  ${tasks.map(({ title: taskTitle, text }) => `
+
   <li class="example__slider-item">
-      <h4 class="example__slider-item-title">${escapeHTML(taskTitle)}</h4>
+      <h4 class="example__slider-item-title">Задача:</h4>
       <p class="example__slider-item-text">
-        ${escapeHTML(text)}
+        ${escapeHTML(task)}
       </p>
     </li>
-  `).join('')}
+    <li class="example__slider-item">
+    <h4 class="example__slider-item-title">Решение:</h4>
+    <p class="example__slider-item-text">
+      ${escapeHTML(solution)}
+    </p>
+  </li>
   </ul>
 </div>
     `;
-            return slide;
-        }
-        examples.forEach((example) => {
-            fragment.append(createSlide(example));
-        })
-        swiperWrapper.append(fragment);
-        initExampleSwiper()
-        beforeAfter()
-    } catch (error) {
-        swiperWrapper.append(createError(error.message));
+      return slide;
     }
+    examples.forEach((example) => {
+      fragment.append(createSlide(example));
+    })
+    swiperWrapper.append(fragment);
+    initExampleSwiper()
+    beforeAfter()
+  } catch (error) {
+    swiperWrapper.append(createError(error.message));
+  }
 }
 
 function initExampleSwiper() {
-    new Swiper(".swiper-example", {
-        modules: [Navigation],
-        loop: true,
-        lazyPreloadPrevNext: 1,
-        allowTouchMove: false,
-        spaceBetween: 30,
-        speed: 1000,
-        navigation: {
-            nextEl: ".swiper-button-custom-next",
-            prevEl: ".swiper-button-custom-prev",
-        },
-    });
+  new Swiper(".swiper-example", {
+    modules: [Navigation],
+    loop: true,
+    lazyPreloadPrevNext: 1,
+    allowTouchMove: false,
+    spaceBetween: 30,
+    speed: 1000,
+    navigation: {
+      nextEl: ".swiper-button-custom-next",
+      prevEl: ".swiper-button-custom-prev",
+    },
+  });
 }
