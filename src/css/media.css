@@ -2,9 +2,11 @@
   .site-tel:hover {
     transform: scale(1.05);
   }
+
   .site-icon:hover {
     transform: scale(1.2);
   }
+
   .site-btn:hover {
     background: black;
     color: rgb(255, 255, 255);
@@ -21,18 +23,23 @@
   .icon-vk:hover {
     fill: #4c75a3;
   }
+
   .accordion__item:hover {
     background: #cbcbcb;
   }
+
   .example__slider-button:hover .example__slider-arrow {
     fill: #fae668;
   }
+
   .comment__button:hover .comment__slider-arrow {
     fill: black;
   }
+
   .footer__text-link:hover {
     color: #ffd505;
   }
+
   .modal__checkbox-link:hover {
     color: #d8b710;
   }
@@ -147,6 +154,7 @@
   .example__title {
     margin-bottom: 75px;
   }
+
   .header {
     background: rgba(0, 0, 0, 0.77);
     padding: 18px 0;
@@ -250,7 +258,6 @@
   .footer__list {
     gap: 14px;
     flex-wrap: wrap;
-    justify-content: center;
     max-width: 270px;
   }
 }
@@ -326,6 +333,11 @@
 
   .footer {
     padding: 44px 0 34px;
+  }
+
+  .footer__list {
+
+    justify-content: center;
   }
 }
 
@@ -611,7 +623,7 @@
     bottom: -10px;
   }
 
-  .hero__box > .container {
+  .hero__box>.container {
     padding: 0;
   }
 
@@ -670,6 +682,7 @@
 }
 
 @media (max-width: 360px) {
+
   .comment__buttons,
   .example__slider-buttons {
     top: 50px;
