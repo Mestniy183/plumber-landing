@@ -27,7 +27,7 @@ export async function createExamples() {
 
     const fragment = document.createDocumentFragment();
 
-    const createSlide = ({ imageBefore, imageAfter, title, task, solution }) => {
+    const createSlide = ({ imageBefore, imageAfter, imageBefore_2x, imageBefore_3x, imageAfter_2x, imageAfter_3x, title, task, solution }) => {
       const slide = document.createElement('div');
       slide.classList.add('example__slider-content', 'swiper-slide');
       const sourceBefore576 = imageBefore ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageBefore)}">` : '';
