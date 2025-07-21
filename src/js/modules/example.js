@@ -12,7 +12,7 @@ export async function createExamples() {
 
     const { data: examples, error } = await supabaseDB
       .from('example')
-      .select('imageBefore, imageAfter, title, task, solution')
+      .select('*')
       .order('id', { ascending: true })
 
     if (error) throw error;
