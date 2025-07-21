@@ -40,7 +40,8 @@ export async function createExamples() {
     <img
         class="example__img"
         draggable="false"
-        srcset="${escapeHTML(imageBefore)}"
+        src="${escapeHTML(imageBefore)}"
+        srcset="${escapeHTML(imageBefore)} 1x, ${escapeHTML(imageBefore_2x)} 2x, ${escapeHTML(imageBefore_3x)} 3x"
         alt="Фото до"
         loading="lazy"
         width="533"
@@ -57,7 +58,8 @@ export async function createExamples() {
     <img
     class="example__img"
     draggable="false"
-    srcset="${escapeHTML(imageAfter)}"
+    src="${escapeHTML(imageAfter)}"
+        srcset="${escapeHTML(imageAfter)} 1x, ${escapeHTML(imageAfter_2x)} 2x, ${escapeHTML(imageAfter_3x)} 3x"
     alt="Фото после"
     loading="lazy"
     width="533"
