@@ -27,11 +27,11 @@ export async function createExamples() {
 
     const fragment = document.createDocumentFragment();
 
-    const createSlide = ({ imageBefore, imageAfter, imageBefore_2x, imageBefore_3x, imageAfter_2x, imageAfter_3x, title, task, solution }) => {
+    const createSlide = ({ imageBefore, imageAfter, imageBefore_2x, imageBefore_3x, imageAfter_2x, imageAfter_3x, imageBefore_mobile, imageBefore_mobile_2x, imageAfter_mobile, imageAfter_mobile_2x, title, task, solution }) => {
       const slide = document.createElement('div');
       slide.classList.add('example__slider-content', 'swiper-slide');
-      const sourceBefore576 = imageBefore ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageBefore)}">` : '';
-      const sourceAfter576 = imageAfter ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageAfter)}">` : '';
+      const sourceBefore576 = imageBefore ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageBefore_mobile)} 1x, ${escapeHTML(imageBefore_mobile_2x)} 2x">` : '';
+      const sourceAfter576 = imageAfter ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageAfter_mobile)} 1x, ${escapeHTML(imageAfter_mobile_2x)} 2x">` : '';
       slide.innerHTML = `
     <div class="example__photo">
     <div class="example__before">
