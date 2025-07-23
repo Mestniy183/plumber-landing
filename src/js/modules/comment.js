@@ -51,7 +51,7 @@ export async function createComment() {
         `;
             commentList.append(slide);
         });
-        initSwiper(data.length);
+        initSwiper(comments.length);
     } catch (error) {
         commentList.append(createError(error.message));
     }
