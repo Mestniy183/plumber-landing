@@ -9,7 +9,7 @@ export async function createComment() {
 
         const{data: comments, error} = await supabaseDB
         .from('comment')
-        .select('comment, name, city, image')
+        .select('*')
         .order('id', {ascending: true})
 
         if (error) throw error;
@@ -21,8 +21,8 @@ export async function createComment() {
         comments.forEach(element => {
             const slide = document.createElement('li');
             slide.classList.add('comment__item', 'swiper-slide');
-            const source768 = element.image ? `<source media="(max-width: 768px)" srcset="${element.image}">`  : '';
-            const source430 = element.image ?  `<source media="(max-width: 430px)" srcset="${element.image}">` : '';
+            const source768 = element.image ? `<source media="(max-width: 768px)" srcset="${element.image_mobile_1} 1x, ${element.image_mobile_1_2x} 2x">`  : '';
+            const source430 = element.image ?  `<source media="(max-width: 430px)" srcset="${element.image_mobile_2} 1x, ${element.image_mobile_2_2x} 2x">` : '';
             slide.innerHTML = `
             <picture>
             ${source768}
@@ -31,7 +31,7 @@ export async function createComment() {
 <img
         loading="lazy"
         class="comment__item-img"
-        srcset="${element.image}"
+        srcset="${element.image} 1x, ${element.image_2x} 2x, ${element.image_3x} 3x"
         alt="Фото отзыва"
         width="336"
         height="336"
