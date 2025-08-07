@@ -7,19 +7,14 @@ export function accordion() {
     const box = btn.nextElementSibling;
     const isMobile = window.innerWidth < 576;
 
-    if (forceClose) {
+    if (isActive || forceClose) {
       item.classList.remove('active');
       box.style.maxHeight = null;
       box.style.marginBottom = "0";
       return;
     }
 
-    if (isActive) {
-      item.classList.remove('active');
-      box.style.maxHeight = null;
-      box.style.marginBottom = "0";
-    } else {
-        item.classList.add('active');
+    item.classList.add('active');
 
     const contentHeight = box.scrollHeight;
 
@@ -30,9 +25,6 @@ export function accordion() {
 
     void item.offsetHeight;
     box.style.maxHeight = box.scrollHeight + "px";
-    }
-
-  
   }
 
   const handleResize = () => {
@@ -58,9 +50,7 @@ export function accordion() {
     const currentItem = btn.closest('.accordion__item');
 
     accordionItems.forEach(item => {
-      if (item !== currentItem && item.classList.contains('active')) {
-        toggleAccordion(item, true);
-      } 
+      if (item !== currentItem) toggleAccordion(item, true);
     })
     toggleAccordion(currentItem);
   });
