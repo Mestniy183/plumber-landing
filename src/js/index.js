@@ -10,6 +10,7 @@ import { questionsList } from "./modules/questionList.js";
 
 async function loadCode(){
   await Promise.all([servicesList(), questionsList()])
+
   modal();
   accordion();
   createExamples();
