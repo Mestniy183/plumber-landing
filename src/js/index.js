@@ -8,9 +8,9 @@ import {createComment} from "./modules/comment.js";
 import { servicesList } from "./modules/servicesList.js";
 import { questionsList } from "./modules/questionList.js";
 
-function loadCode(){
-  servicesList()
-  questionsList()
+async function loadCode(){
+  await Promise.all([servicesList(), questionsList()])
+
   modal();
   accordion();
   createExamples();
