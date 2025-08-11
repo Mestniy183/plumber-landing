@@ -63,12 +63,10 @@ function initSwiper(slidesCount) {
     const swiperOptions = {
         modules: [Navigation],
         spaceBetween: 30,
-        lazyPreloadPrevNext: 2,
         speed: 1000,
         breakpoints: {
             320: {
                 slidesPerView: 1,
-                spaceBetween: 0,
             },
             576: {
                 slidesPerView: 2,
