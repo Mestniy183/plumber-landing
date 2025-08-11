@@ -7,35 +7,35 @@ export async function createComment() {
     try {
         removeError();
 
-        const{data: comments, error} = await supabaseDB
-        .from('comment')
-        .select('*')
-        .order('id', {ascending: true})
+        const { data: comments, error } = await supabaseDB
+            .from('comment')
+            .select('*')
+            .order('id', { ascending: true })
 
         if (error) throw error;
 
 
-        if (!comments  || comments.length === 0) {
+        if (!comments || comments.length === 0) {
             throw new Error('Нет доступных отзывов');
         }
         comments.forEach(element => {
             const slide = document.createElement('li');
             slide.classList.add('comment__item', 'swiper-slide');
-            const source768 = element.image ? `<source media="(max-width: 768px)" srcset="${element.image_mobile_1} 1x, ${element.image_mobile_1_2x} 2x">`  : '';
-            const source430 = element.image ?  `<source media="(max-width: 430px)" srcset="${element.image_mobile_2} 1x, ${element.image_mobile_2_2x} 2x">` : '';
+            const source768 = element.image ? `<source media="(max-width: 768px)" srcset="${element.image_mobile_1} 1x, ${element.image_mobile_1_2x} 2x">` : '';
+            const source430 = element.image ? `<source media="(max-width: 430px)" srcset="${element.image_mobile_2} 1x, ${element.image_mobile_2_2x} 2x">` : '';
             slide.innerHTML = `
             <picture>
             ${source768}
             ${source430}
   
-<img
-        loading="lazy"
-        class="comment__item-img"
-        srcset="${element.image} 1x, ${element.image_2x} 2x, ${element.image_3x} 3x"
-        alt="Фото отзыва"
-        width="336"
-        height="336"
-      />
+        <img
+            loading="lazy"
+            class="comment__item-img"
+            srcset="${element.image} 1x, ${element.image_2x} 2x, ${element.image_3x} 3x"
+            alt="Фото отзыва"
+            width="336"
+            height="336"
+            />
             </picture>
         
       <div class="comment__item-content">
@@ -51,6 +51,14 @@ export async function createComment() {
         `;
             commentList.append(slide);
         });
+
+        await Promise.all(
+            Array.from(document.querySelectorAll('.comment__item-img')).map(img =>
+                img.complete ? Promise.resolve() : new Promise(resolve => {
+                    img.onload = resolve;
+                    img.onerror = resolve
+                }))
+        );
         initSwiper(comments.length);
     } catch (error) {
         commentList.append(createError(error.message));
@@ -63,12 +71,10 @@ function initSwiper(slidesCount) {
     const swiperOptions = {
         modules: [Navigation],
         speed: 1000,
-        watchSlidesProgress: true,
-        ResizeObserver: true,
         breakpoints: {
             320: {
                 slidesPerView: 1,
-                spaceBetween: 0,
+                spaceBetween: 10,
             },
             576: {
                 slidesPerView: 2,
@@ -85,11 +91,11 @@ function initSwiper(slidesCount) {
         },
     }
 
-    // if (slidesCount >= 4) {
-    //     swiperOptions.loop = true
-    // } else {
-    //     console.warn('Недастаточно слайдов для режима loop')
-    // }
+    if (slidesCount >= 4) {
+        swiperOptions.loop = true
+    } else {
+        console.warn('Недастаточно слайдов для режима loop')
+    }
 
     new Swiper(".swiper-comment", swiperOptions);
 
