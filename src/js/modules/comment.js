@@ -64,6 +64,7 @@ function initSwiper(slidesCount) {
         modules: [Navigation],
         spaceBetween: 30,
         speed: 1000,
+        slidesPerView: 3,
         breakpoints: {
             320: {
                 slidesPerView: 1,
