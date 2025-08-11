@@ -59,8 +59,10 @@ export async function createComment() {
                     img.onerror = resolve
                 }))
         );
-        
-        initSwiper(comments.length);
+        setTimeout(() => {
+
+            initSwiper(comments.length);
+        }, 100)
     } catch (error) {
         commentList.append(createError(error.message));
     }
