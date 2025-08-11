@@ -62,18 +62,21 @@ export async function createComment() {
 function initSwiper(slidesCount) {
     const swiperOptions = {
         modules: [Navigation],
-        spaceBetween: 30,
         speed: 1000,
-        slidesPerView: 3,
+        watchSlidesProgress: true,
+        ResizeObserver: true,
         breakpoints: {
             320: {
                 slidesPerView: 1,
+                spaceBetween: 0,
             },
             576: {
                 slidesPerView: 2,
+                spaceBetween: 20,
             },
             1024: {
                 slidesPerView: 3,
+                spaceBetween: 30,
             },
         },
         navigation: {
@@ -82,11 +85,11 @@ function initSwiper(slidesCount) {
         },
     }
 
-    if (slidesCount >= 4) {
-        swiperOptions.loop = true
-    } else {
-        console.warn('Недастаточно слайдов для режима loop')
-    }
+    // if (slidesCount >= 4) {
+    //     swiperOptions.loop = true
+    // } else {
+    //     console.warn('Недастаточно слайдов для режима loop')
+    // }
 
     new Swiper(".swiper-comment", swiperOptions);
 
