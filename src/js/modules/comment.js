@@ -53,17 +53,7 @@ export async function createComment() {
             commentList.append(slide);
         });
 
-        // await Promise.all([
-        //     ...Array.from(document.querySelectorAll('.comment__item-img')).map(img =>
-        //         img.complete ? Promise.resolve() : new Promise(resolve => {
-        //             img.onload = resolve;
-        //             img.onerror = resolve
-        //         })),
-        //         new Promise(resolve => requestAnimationFrame(resolve))
-        //     ]);
 
-        //     //Добавляем небольшую задержку после загрузки изображения
-        //     await new Promise(resolve => setTimeout(resolve, 50));
 
             initSwiper(comments.length);
     } catch (error) {
@@ -105,5 +95,4 @@ function initSwiper(slidesCount) {
 
      new Swiper(".swiper-comment", swiperOptions);
 
-    //Обнавляем Swiper после инициализации
 }
