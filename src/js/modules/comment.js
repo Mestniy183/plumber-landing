@@ -53,17 +53,17 @@ export async function createComment() {
             commentList.append(slide);
         });
 
-        await Promise.all([
-            ...Array.from(document.querySelectorAll('.comment__item-img')).map(img =>
-                img.complete ? Promise.resolve() : new Promise(resolve => {
-                    img.onload = resolve;
-                    img.onerror = resolve
-                })),
-                new Promise(resolve => requestAnimationFrame(resolve))
-            ]);
+        // await Promise.all([
+        //     ...Array.from(document.querySelectorAll('.comment__item-img')).map(img =>
+        //         img.complete ? Promise.resolve() : new Promise(resolve => {
+        //             img.onload = resolve;
+        //             img.onerror = resolve
+        //         })),
+        //         new Promise(resolve => requestAnimationFrame(resolve))
+        //     ]);
 
-            //Добавляем небольшую задержку после загрузки изображения
-            await new Promise(resolve => setTimeout(resolve, 50));
+        //     //Добавляем небольшую задержку после загрузки изображения
+        //     await new Promise(resolve => setTimeout(resolve, 50));
 
             initSwiper(comments.length);
     } catch (error) {
@@ -77,8 +77,6 @@ function initSwiper(slidesCount) {
     const swiperOptions = {
         modules: [Navigation],
         speed: 1000,
-        observer: true, //Добавляем observer
-        observeParents: true, //Наблюдаем за изменениями родительских элементов
         breakpoints: {
             320: {
                 slidesPerView: 1,
@@ -105,8 +103,7 @@ function initSwiper(slidesCount) {
         console.warn('Недастаточно слайдов для режима loop')
     }
 
-    const swiper = new Swiper(".swiper-comment", swiperOptions);
+     new Swiper(".swiper-comment", swiperOptions);
 
     //Обнавляем Swiper после инициализации
-    setTimeout( () => swiper.update(), 100);
 }
