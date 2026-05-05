@@ -4,9 +4,11 @@ import { supabaseDB } from "../api";
 import { beforeAfter } from "./beforeAfter";
 import { createError, removeError } from "./error";
 import { escapeHTML } from "./escapeHTML";
+import { hideLoader, showLoader } from "./loader";
 
 export async function createExamples() {
   const swiperWrapper = document.querySelector('.swiper-wrapper');
+  const loader = showLoader(swiperWrapper);
   try {
     removeError();
 
@@ -109,9 +111,11 @@ export async function createExamples() {
       fragment.append(createSlide(example));
     })
     swiperWrapper.append(fragment);
+    hideLoader(loader);
     initExampleSwiper()
     beforeAfter()
   } catch (error) {
+    hideLoader(loader);
     swiperWrapper.append(createError(error.message));
   }
 }

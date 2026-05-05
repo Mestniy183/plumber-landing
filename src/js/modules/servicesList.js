@@ -1,10 +1,11 @@
 
 import { supabaseDB } from "../api.js";
 import { escapeHTML } from "./escapeHTML.js";
+import { hideLoader, showLoader } from "./loader.js";
 
 export async function servicesList() {
     const servicesSection = document.querySelector('#services .accordion')
-
+    const loader = showLoader(servicesSection);
     try {
         const{data: services, error} = await supabaseDB
         .from('services')
@@ -29,7 +30,9 @@ export async function servicesList() {
             
             servicesSection.append(accordionItem)
         })
+        hideLoader(loader);
     } catch (error) {
+        hideLoader(loader);
         console.error('Ошибка при загрузке услуги:', error)
         servicesSection.innerHTML = '<li>Не удалось загрузить услуги. Пожалуйста, попробуйте позже.</li>'
     }

@@ -2,8 +2,10 @@ import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
 import { supabaseDB } from "../api";
 import { createError, removeError } from "./error";
+import { hideLoader, showLoader } from "./loader";
 export async function createComment() {
     const commentList = document.querySelector('.comment__list');
+    const loader = showLoader(commentList);
     try {
         removeError();
 
@@ -54,9 +56,10 @@ export async function createComment() {
         });
 
 
-
+        hideLoader(loader);
             initSwiper(comments.length);
     } catch (error) {
+        hideLoader(loader);
         commentList.append(createError(error.message));
     }
 
