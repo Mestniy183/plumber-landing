@@ -36,6 +36,7 @@
     "gulp-webp": "^4.0.1",
     "gulp-webp-css": "^1.1.0",
     "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.5.0",
     "uuid": "^11.1.0",
     "webpack-stream": "^7.0.0",
     "yargs": "^17.7.2"
