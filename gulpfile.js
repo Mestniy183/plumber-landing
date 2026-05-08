@@ -121,28 +121,7 @@ const scripts = () => {
   return (
     src("src/js/*.js")
       .pipe(gulpif(!isProd, sourcemaps.init()))
-      .pipe(
-        gulpif(
-          isProd,
-          babel({
-            presets: ["@babel/env"],
-          })
-        )
-      )
-      // .pipe(concat("index.js"))
       .pipe(webpack(require("./webpack.config.js")))
-      .pipe(
-        gulpif(
-          isProd,
-          uglify({
-            toplevel: true,
-            compress: {
-              unused: true,
-              dead_code: true,
-            },
-          }).on("error", notify.onError())
-        )
-      )
       .pipe(gulpif(!isProd, sourcemaps.write()))
       .pipe(dest("dist/js"))
       .pipe(browserSync.stream())
