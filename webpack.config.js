@@ -17,7 +17,7 @@ const config = {
       chunks: 'all',
       maxInitialRequests: 25,
       maxAsyncRequests: 25,
-      cacheGroup: {
+      cacheGroups: {
         gsap: {
           test: /[\\/]node_modules[\\/]gsap[\\/]/,
           name: "gsap",
