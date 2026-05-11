@@ -1,18 +1,14 @@
 
-import { supabaseDB } from "../api.js";
+
 import { escapeHTML } from "./escapeHTML.js";
 import { hideLoader, showLoader } from "./loader.js";
+import  servicesData from '../../json/services.json';
 
 export async function servicesList() {
     const servicesSection = document.querySelector('#services .accordion')
     const loader = showLoader(servicesSection);
     try {
-        const{data: services, error} = await supabaseDB
-        .from('services')
-        .select('title, description')
-        .order('id', {ascending: true})
-        if (error) throw error;
-
+       const services = servicesData;
         //Очищаем контейнер перед добавлением новых элементов
         servicesSection.innerHTML = ''
         services.forEach(service =>{

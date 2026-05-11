@@ -128,6 +128,13 @@ const scripts = () => {
   );
 };
 
+const json = () => {
+  return src('srs/json/**/*.json', {
+    encoding: false,
+    removeBOM: false
+  }).pipe(dest("dist/json"))
+}
+
 const svgSprites = () => {
   const sprite = src(["src/img/**/*.svg", "!src/img/favicon.svg"])
     .pipe(
@@ -215,6 +222,7 @@ exports.default = series(
   clean,
   fonts,
   assets,
+  json,
   htmlMinify,
   styles,
   scripts,
@@ -229,6 +237,7 @@ exports.build = series(
   clean,
   fonts,
   assets,
+  json,
   htmlMinify,
   styles,
   scripts,

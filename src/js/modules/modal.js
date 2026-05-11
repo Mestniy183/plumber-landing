@@ -83,7 +83,10 @@ export function modal() {
       errorElement.textContent = message;
       errorElement.classList.add("error-message");
       input.parentElement.append(errorElement);
-      input.classList.add("input-invalid");
+      if (input.type !== 'checkbox') {
+        input.classList.add("input-invalid");
+      }
+      
     } else {
       input.classList.remove("input-invalid");
     }

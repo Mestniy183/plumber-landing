@@ -1,16 +1,13 @@
-import { supabaseDB } from "../api.js";
+
 import { escapeHTML } from "./escapeHTML.js";
 import { hideLoader, showLoader } from "./loader.js";
+import  questionsData from '../../json/question.json';
 
 export async function questionsList() {
     const questionsSection = document.querySelector('#questions .accordion')
 const loader = showLoader(questionsSection);
     try {
-        const{data: questions, error} = await supabaseDB
-        .from('questions')
-        .select('title, description')
-        .order('id', {ascending: true})
-        if (error) throw error;
+        const questions = questionsData;
 
         //Очищаем контейнер перед добавлением новых элементов
         questionsSection.innerHTML = ''
