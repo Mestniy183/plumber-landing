@@ -130,8 +130,9 @@ const json = () => {
   return src('srс/json/**/*.json', {
     encoding: false,
     removeBOM: false
-  }).pipe(dest("dist/json"))
+  }).pipe(dest("dist/json"));
 }
+
 
 const svgSprites = () => {
   const sprite = src(["src/img/**/*.svg", "!src/img/favicon.svg"])
