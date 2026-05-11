@@ -127,7 +127,7 @@ const scripts = () => {
 };
 
 const json = () => {
-  return src('srс/json/**/*.json', {
+  return src('src/json/**/*.json', {
     encoding: false,
     removeBOM: false
   }).pipe(dest("dist/json"));
