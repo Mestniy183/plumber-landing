@@ -10,8 +10,6 @@ const typograf = require("gulp-typograf");
 const del = require("del");
 const webp = require("gulp-webp");
 const babel = require("gulp-babel");
-const notify = require("gulp-notify");
-const uglify = require("gulp-uglify-es").default;
 const replace = require("gulp-replace");
 const gulpif = require("gulp-if");
 const svgSprite = require("gulp-svg-sprite");
@@ -129,7 +127,7 @@ const scripts = () => {
 };
 
 const json = () => {
-  return src('srs/json/**/*.json', {
+  return src('srс/json/**/*.json', {
     encoding: false,
     removeBOM: false
   }).pipe(dest("dist/json"))
