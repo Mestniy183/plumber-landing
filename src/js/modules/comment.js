@@ -1,21 +1,15 @@
 import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
-import { supabaseDB } from "../api";
 import { createError, removeError } from "./error";
 import { hideLoader, showLoader } from "./loader";
+import commentData from "../../json/comment.json";
 export async function createComment() {
     const commentList = document.querySelector('.comment__list');
     const loader = showLoader(commentList);
     try {
         removeError();
 
-        const { data: comments, error } = await supabaseDB
-            .from('comment')
-            .select('*')
-            .order('id', { ascending: true })
-
-        if (error) throw error;
-
+       const comments = commentData;
 
         if (!comments || comments.length === 0) {
             throw new Error('Нет доступных отзывов');
