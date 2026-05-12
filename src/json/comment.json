@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "name": "Марина Иванова",
+        "comment": "После перепланировки кухни, во время отделочных работ появилась необходимость в замене радиатора, так как его конфигурация стала препятствовать проходу. Работы были выполнены качественно и в срок. Мастером очень довольна.",
+        "city": "Санкт-Петербург, 2021",
+        "image": "../img/comment/comment-1.webp",
+        "image_2x": "../img/comment/comment-1.webp",
+        "image_3x": "../img/comment/comment-1.webp",
+        "image_mobile_1": "../img/comment/comment-1.webp",
+        "image_mobile_1_2x": "../img/comment/comment-1.webp",
+        "image_mobile_2": "../img/comment/comment-1.webp",
+        "image_mobile_2_2x": "../img/comment/comment-1.webp"
+    }
+]
