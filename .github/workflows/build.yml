@@ -12,11 +12,11 @@ jobs:
     steps:
       - name: Test FTP connection
         run: |
-          echo "Attempting FTP connection..."
-          ftp -n ${{ secrets.FTP_SERVER }} << EOF | grep "230" && echo "✅ Connected" || echo "❌ Failed"
-          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
-          quit
-          EOF
+          if [ -z "${{ secrets.FTP_SERVER }}" ]; then
+            echo "❌ FTP_SERVER is empty or not set"
+          else
+            echo "✅ FTP_SERVER is set (length: ${#FTP_SERVER})"
+          fi
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup Node.js
