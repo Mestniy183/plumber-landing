@@ -1,10 +1,10 @@
 import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
-import { supabaseDB } from "../api";
 import { beforeAfter } from "./beforeAfter";
 import { createError, removeError } from "./error";
 import { escapeHTML } from "./escapeHTML";
 import { hideLoader, showLoader } from "./loader";
+import exampleData from "../../json/exemple.json";
 
 export async function createExamples() {
   const swiperWrapper = document.querySelector('.swiper-wrapper');
@@ -12,12 +12,7 @@ export async function createExamples() {
   try {
     removeError();
 
-    const { data: examples, error } = await supabaseDB
-      .from('example')
-      .select('*')
-      .order('id', { ascending: true })
-
-    if (error) throw error;
+    const examples = exampleData;
 
     if (!examples || examples.length === 0) {
       throw new Error('Нет данных примеров');
