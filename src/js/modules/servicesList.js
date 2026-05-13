@@ -1,12 +1,8 @@
-
-
 import { escapeHTML } from "./escapeHTML.js";
-import { hideLoader, showLoader } from "./loader.js";
 import  servicesData from '../../json/services.json';
 
 export async function servicesList() {
     const servicesSection = document.querySelector('#services .accordion')
-    const loader = showLoader(servicesSection);
     try {
        const services = servicesData;
         //Очищаем контейнер перед добавлением новых элементов
@@ -26,9 +22,7 @@ export async function servicesList() {
             
             servicesSection.append(accordionItem)
         })
-        hideLoader(loader);
     } catch (error) {
-        hideLoader(loader);
         console.error('Ошибка при загрузке услуги:', error)
         servicesSection.innerHTML = '<li>Не удалось загрузить услуги. Пожалуйста, попробуйте позже.</li>'
     }

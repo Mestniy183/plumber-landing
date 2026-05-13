@@ -38,14 +38,6 @@ const config = {
           priority: 25,
           reuseExistingChunk: true,
         },
-
-        supabase: {
-          test: /[\\/]node_modules[\\/]@supabase[\\/]/,
-          name: "supabase",
-          priority: 20,
-          reuseExistingChunk: true,
-        },
-
         swiper: {
           test: /[\\/]node_modules[\\/]swiper[\\/]/,
           name: "swiper",
