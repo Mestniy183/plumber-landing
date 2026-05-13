@@ -38,7 +38,6 @@ jobs:
           git commit -m 'update dist [skip ci]' || echo 'Нечего комитить'
           git push origin master
      
-
       - name: Prodaction
         if: github.ref == 'refs/heads/master'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
