@@ -10,6 +10,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Test FTP connection
+        run: |
+          echo "Attempting FTP connection..."
+          ftp -n ${{ secrets.FTP_SERVER }} << EOF | grep "230" && echo "✅ Connected" || echo "❌ Failed"
+          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
+          quit
+          EOF
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup Node.js
@@ -34,7 +41,7 @@ jobs:
 
       - name: Prodaction
         if: github.ref == 'refs/heads/master'
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
