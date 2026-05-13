@@ -3,6 +3,7 @@ import { burger } from "./modules/burger.js";
 import { getCurrentYear } from "./modules/getCurrentYear.js";
 
 
+
 async function loadCode(){
   const [
     {modal},
