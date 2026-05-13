@@ -22,6 +22,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: dist to master
+        if: github.ref == 'refs/heads/master'
+        run: |
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --local user.name 'github-actions[bot]'
+          git add -f dist/
+          git commit -m 'update dist [skip ci]' || echo 'Нечего комитить'
+          git push origin master
      
 
       - name: Prodaction
