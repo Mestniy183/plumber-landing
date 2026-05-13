@@ -1,0 +1,120 @@
+[
+    {
+        "id": 1,
+        "title": "Замена радиатора отопления",
+        "task": "После перепланировки детской комнаты, и объединение её с балконом, появилась потребность, в изменении конструкции стояка отопления и замене радиатора.",
+        "solution": "Переварка стояка отопления и замена радиатора вертикальной конструкции, установка запорной арматуры(краны), для удобства будущей эксплуатации. Результат-экономия пространства,увеличения кпд батареи.",
+        "imageBefore": "img/example/pairs-1/example-before.webp",
+        "imageBefore_2x": "img/example/pairs-1/example-before@2x.webp",
+        "imageBefore_3x": "img/example/pairs-1/example-before@3x.webp",
+        "imageBefore_mobile": "img/example/pairs-1/example-before-mobile.webp",
+        "imageBefore_mobile_2x": "img/example/pairs-1/example-before-mobile@2x.webp",
+        "imageAfter": "img/example/pairs-1/example-after.webp",
+        "imageAfter_2x": "img/example/pairs-1/example-after@2x.webp",
+        "imageAfter_3x": "img/example/pairs-1/example-after@3x.webp",
+        "imageAfter_mobile": "img/example/pairs-1/example-after-mobile.webp",
+        "imageAfter_mobile_2x": "img/example/pairs-1/example-after-mobile@2x.webp"
+    },
+    {
+        "id": 2,
+        "title": "Замена радиатора отопления",
+        "task": "Заменить радиатор, сместить его вправа, для этого требуется демонтировать стяжку пола, так как трубы подводящие и отводящие от радиатора также будут смещаться.",
+        "solution": "Новый радиатор вертикальной конструкции установлен и подключен, так же опресован.",
+        "imageBefore": "img/example/pairs-2/example-before.webp",
+        "imageBefore_2x": "img/example/pairs-2/example-before@2x.webp",
+        "imageBefore_3x": "img/example/pairs-2/example-before@3x.webp",
+        "imageBefore_mobile": "img/example/pairs-2/example-before-mobile.webp",
+        "imageBefore_mobile_2x": "img/example/pairs-2/example-before-mobile@2x.webp",
+        "imageAfter": "img/example/pairs-2/example-after.webp",
+        "imageAfter_2x": "img/example/pairs-2/example-after@2x.webp",
+        "imageAfter_3x": "img/example/pairs-2/example-after@3x.webp",
+        "imageAfter_mobile": "img/example/pairs-2/example-after-mobile.webp",
+        "imageAfter_mobile_2x": "img/example/pairs-2/example-after-mobile@2x.webp"
+    },
+
+    {
+        "id": 3,
+        "title": "Замена смесителя в ванной",
+        "task": "Демонтаж старого смесителя и установка нового с системой тропический душ",
+        "solution": "Произведена замена смесителя с системой тропический душ.",
+        "imageBefore": "img/example/pairs-3/example-before.webp",
+        "imageBefore_2x": "img/example/pairs-3/example-before@2x.webp",
+        "imageBefore_3x": "img/example/pairs-3/example-before@3x.webp",
+        "imageBefore_mobile": "img/example/pairs-3/example-before-mobile.webp",
+        "imageBefore_mobile_2x": "img/example/pairs-3/example-before-mobile@2x.webp",
+        "imageAfter": "img/example/pairs-3/example-after.webp",
+        "imageAfter_2x": "img/example/pairs-3/example-after@2x.webp",
+        "imageAfter_3x": "img/example/pairs-3/example-after@3x.webp",
+        "imageAfter_mobile": "img/example/pairs-3/example-after-mobile.webp",
+        "imageAfter_mobile_2x": "img/example/pairs-3/example-after-mobile@2x.webp"
+    },
+
+    {
+        "id": 4,
+        "title": "Установка и подключение накопительного водонагревателя",
+        "task": "Установить накопительный водонагреватель, подключить его, подвести трубы в штробе, демонтируя кафель без его повреждения.",
+        "solution": "Установлен водонагреватель, подключен трубами скрытого монтажа, без повреждения плитки.",
+        "imageBefore": "img/example/pairs-4/example-before.webp",
+        "imageBefore_2x": "img/example/pairs-4/example-before@2x.webp",
+        "imageBefore_3x": "img/example/pairs-4/example-before@3x.webp",
+        "imageBefore_mobile": "img/example/pairs-4/example-before-mobile.webp",
+        "imageBefore_mobile_2x": "img/example/pairs-4/example-before-mobile@2x.webp",
+        "imageAfter": "img/example/pairs-4/example-after.webp",
+        "imageAfter_2x": "img/example/pairs-4/example-after@2x.webp",
+        "imageAfter_3x": "img/example/pairs-4/example-after@3x.webp",
+        "imageAfter_mobile": "img/example/pairs-4/example-after-mobile.webp",
+        "imageAfter_mobile_2x": "img/example/pairs-4/example-after-mobile@2x.webp"
+    },
+
+    {
+        "id": 5,
+        "title": "Перенос труб под мойкой и установка кранов",
+        "task": "Перенос инженерных коммуникаций(ХГВС), для организации подключения мойки на кухне и смесителя. Так же установка крана, для подключения питьевого фильтра.",
+        "solution": "Перенос труб холодной, горячей воды, для установки и подключения мойки на кухне. Вместе с тем, перенос увеличил пространство внутри.",
+        "imageBefore": "img/example/pairs-5/example-before.webp",
+        "imageBefore_2x": "img/example/pairs-5/example-before@2x.webp",
+        "imageBefore_3x": "img/example/pairs-5/example-before@3x.webp",
+        "imageBefore_mobile": "img/example/pairs-5/example-before-mobile.webp",
+        "imageBefore_mobile_2x": "img/example/pairs-5/example-before-mobile@2x.webp",
+        "imageAfter": "img/example/pairs-5/example-after.webp",
+        "imageAfter_2x": "img/example/pairs-5/example-after@2x.webp",
+        "imageAfter_3x": "img/example/pairs-5/example-after@3x.webp",
+        "imageAfter_mobile": "img/example/pairs-5/example-after-mobile.webp",
+        "imageAfter_mobile_2x": "img/example/pairs-5/example-after-mobile@2x.webp"
+    },
+
+    {
+        "id": 6,
+        "title": "Установка и подключение раковины над стиральной машиной.",
+        "task": "Установить и подключить раковину над стиральной машиной.",
+        "solution": "Раковина установлена и подключена, задача выполнена, в сан. узле стало просторнее.",
+        "imageBefore": "img/example/pairs-6/example-before.webp",
+        "imageBefore_2x": "img/example/pairs-6/example-before@2x.webp",
+        "imageBefore_3x": "img/example/pairs-6/example-before@3x.webp",
+        "imageBefore_mobile": "img/example/pairs-6/example-before-mobile.webp",
+        "imageBefore_mobile_2x": "img/example/pairs-6/example-before-mobile@2x.webp",
+        "imageAfter": "img/example/pairs-6/example-after.webp",
+        "imageAfter_2x": "img/example/pairs-6/example-after@2x.webp",
+        "imageAfter_3x": "img/example/pairs-6/example-after@3x.webp",
+        "imageAfter_mobile": "img/example/pairs-6/example-after-mobile.webp",
+        "imageAfter_mobile_2x": "img/example/pairs-6/example-after-mobile@2x.webp"
+    },
+
+    {
+        "id": 7,
+        "title": "Перенос унитаза, монтаж труб, установка раковины",
+        "task": "Перенести унитаз, так как он частично препятствовал проходу в сан.узел, монтаж труб для будущей раковины и её подключение",
+        "solution": "Переустановил унитаз(сместил под 45 градусов), подвёл трубы холодной и горячей воды, канализацию для раковины, подключил её.",
+        "imageBefore": "img/example/pairs-7/example-before.webp",
+        "imageBefore_2x": "img/example/pairs-7/example-before@2x.webp",
+        "imageBefore_3x": "img/example/pairs-7/example-before@3x.webp",
+        "imageBefore_mobile": "img/example/pairs-7/example-before-mobile.webp",
+        "imageBefore_mobile_2x": "img/example/pairs-7/example-before-mobile@2x.webp",
+        "imageAfter": "img/example/pairs-7/example-after.webp",
+        "imageAfter_2x": "img/example/pairs-7/example-after@2x.webp",
+        "imageAfter_3x": "img/example/pairs-7/example-after@3x.webp",
+        "imageAfter_mobile": "img/example/pairs-7/example-after-mobile.webp",
+        "imageAfter_mobile_2x": "img/example/pairs-7/example-after-mobile@2x.webp"
+    }
+
+]

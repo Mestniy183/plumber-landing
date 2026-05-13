@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://santechnik178.ru/sitemap.xml

@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Цены | Сантехник178</title><link rel="icon" href="img/favicon.svg" type="image/svg+xml"><style>*{
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       } 
+
+        body{
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .price-container{
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header{
+            background: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1{
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .price-table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .price-table th{
+            background: #48cae4;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .price-table td{
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .price-table tr:ntn-child(even){
+            background-color: #f8f9fa;
+        }
+
+        .price-table tr:hover{
+            background-color: #e9f7fe;
+        }
+
+        .service-name{
+            font-weight: 600;
+            color: #0077b6;
+        }
+
+        .price{
+            font-weight: bold;
+            color: #2b8a3e;
+            white-space: nowrap;
+        }
+
+        .unit{
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .note{
+            padding: 15px;
+            background: #fff3bf;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .footer{
+            text-align: center;
+            padding: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+       
+        @media(max-width: 768px){
+            .price-table{
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .header{
+                padding: 15px 10px;
+            }
+
+            h1{
+                font-size: 22px;
+            }
+        }
+
+        @media(max-width: 600px){
+            .price-table{
+                display: block;
+            }
+
+            .price-table thead{
+                display: none;
+            }
+
+            .price-table tr{
+                display: block;
+                margin-bottom: 15px;
+                border-bottom: 2px solid #48cae4;
+            }
+
+            .price-table td{
+                display: flex;
+                justify-content: space-between;
+               
+                padding: 10px;
+                border-bottom: 1px dotted #ddd;
+             
+            }
+
+            .price-table td::before{
+                content: attr(data-label);
+                font-weight: bold;
+                color: #0077b6;
+                margin-right: 15px;
+                text-align: left;
+            }
+
+            .price-table td:last-child{
+                border-bottom: none;
+            }
+
+            .service-name, .price{
+                white-space: normal;
+            }
+
+            .note, .footer{
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            @media(max-width: 400px){
+                .price-table td{
+                    flex-direction: column;
+                   
+                    padding: 8px 5px;
+                }
+
+                .price-table td::before{
+                    margin-right: 0;
+                    margin-bottom: 5px;
+                    align-self: flex-start;
+                }
+
+                .header{
+                    padding: 12px 5px;
+                }
+
+                h1{
+                    font-size: 20px;
+                }
+            }
+        }</style></head><body><div class="price-container"><div class="header"><h1>Прайс лист</h1></div><table class="price-table"><thead><tr><th>Услуга</th><th>Цена</th><th>Примечание</th></tr></thead><tbody><tr><td class="service-name" data-label="Услуга">Установка смесителя</td><td class="price" data-label="Цена">1500-8000<span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;типа смесителя</td></tr><tr><td class="service-name" data-label="Услуга">Установка водонагревателя</td><td class="price" data-label="Цена">4000-12000<span class="unit">руб.</span></td><td data-label="Примечание">Стоимость может отличаться от&#160;объёма накопителя горячей воды, материалов подключения</td></tr><tr><td class="service-name" data-label="Услуга">Замена счётчика воды</td><td class="price" data-label="Цена">1500-3000 <span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;стеснённости доступа к&#160;замене</td></tr><tr><td class="service-name" data-label="Услуга">Установка/Замена унитаза</td><td class="price" data-label="Цена">5000-15000 <span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;типа, условий и&#160;сопутствующих работ</td></tr><tr><td class="service-name" data-label="Услуга">Подключение стиральной машины</td><td class="price" data-label="Цена">2500-4500 <span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;модели и&#160;сложности подключения</td></tr><tr><td class="service-name" data-label="Услуга">Установка и&#160;подключени фильтра тонкой очистки</td><td class="price" data-label="Цена">2500-10000 <span class="unit">руб.</span></td><td data-label="Примечание">Цена меняется от&#160;объёма работ по&#160;подключению, сложности, сопутствующих работах</td></tr><tr><td class="service-name" data-label="Услуга">Замена фильтрующего элемента фильтра тонкой очистки</td><td class="price" data-label="Цена">1200-3000<span class="unit">руб.</span></td><td data-label="Примечание">Стоимость зависит от&#160;сложности доступа, состояния, модели фильтра</td></tr><tr><td class="service-name" data-label="Услуга">Замена стояка воды в&#160;квартире без прохождения перекрытия</td><td class="price" data-label="Цена">8500-20000<span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;диаметра трубы, материала трубы, условий замены</td></tr><tr><td class="service-name" data-label="Услуга">Замена радиатора отопления</td><td class="price" data-label="Цена">12000-25000<span class="unit">руб.</span></td><td data-label="Примечание">Цена зависит от&#160;материала радиатора и&#160;труб, условий</td></tr><tr><td class="service-name" data-label="Услуга">Замена труб воды и&#160;канализации (точка)</td><td class="price" data-label="Цена">8500-14000<span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;материала и&#160;необходимости демонтажа</td></tr><tr><td class="service-name" data-label="Услуга">Установка питьевого фильтра</td><td class="price" data-label="Цена">4500-15000<span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;модели, стеснённости доступа, других работ</td></tr><tr><td class="service-name" data-label="Услуга">Замена или ремонт арматуры бачка инсталяции</td><td class="price" data-label="Цена">4500-9000<span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;модели и&#160;объёма работ</td></tr><tr><td class="service-name" data-label="Услуга">Замена или ремонт арматуры бачка унитаза</td><td class="price" data-label="Цена">2500-5000<span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;модели</td></tr><tr><td class="service-name" data-label="Услуга">Установка измельчителя (мойка)</td><td class="price" data-label="Цена">4500-12000<span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;модели и&#160;доступа</td></tr><tr><td class="service-name" data-label="Услуга">Установка раковины с&#160;тумбой</td><td class="price" data-label="Цена">5500-18000<span class="unit">руб.</span></td><td data-label="Примечание">Цена зависит от&#160;модели установка и&#160;сложности подключения</td></tr><tr><td class="service-name" data-label="Услуга">Установка или замена водяного полотенцесушителя</td><td class="price" data-label="Цена">6000-20000<span class="unit">руб.</span></td><td data-label="Примечание">В&#160;зависимости от&#160;материала и&#160;подключения</td></tr></tbody></table><div class="note">*Выезд мастера- от&#160;900&#160;руб. (включается в&#160;стоимость работ при заказе услуги)<br>*Окончательная стоимость определяется после осмотра объекта.<br>*Минимальная стоимость общей стоимости заказа- от&#160;4500&#160;руб.</div><div class="footer">Работаем круглосуточно | Гарантия на&#160;работы | Тел.: +7&#160;905&#160;287-77-22</div></div></body></html>
