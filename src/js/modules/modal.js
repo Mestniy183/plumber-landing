@@ -231,9 +231,9 @@ export function modal() {
   };
 
   const init = () => {
-    openBtns.forEach((btn) => {
-      btn.addEventListener("click", openModal);
-    });
+    // openBtns.forEach((btn) => {
+    //   btn.addEventListener("click", openModal);
+    // });
 
     if (modalBox) {
       modalBox.addEventListener("click", (e) => {
@@ -255,5 +255,5 @@ export function modal() {
     }
   };
 
-  init();
+  // init();
 }
