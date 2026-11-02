@@ -4,6 +4,7 @@ import { beforeAfter } from "./beforeAfter";
 import { createError, removeError } from "./error";
 import { escapeHTML } from "./escapeHTML";
 import exampleData from "../../json/exemple.json";
+import { getValidImagePath } from "./imagePath";
 
 export async function createExamples() {
   const swiperWrapper = document.querySelector('.swiper-wrapper');
@@ -23,8 +24,24 @@ export async function createExamples() {
     const createSlide = ({ imageBefore, imageAfter, imageBefore_2x, imageBefore_3x, imageAfter_2x, imageAfter_3x, imageBefore_mobile, imageBefore_mobile_2x, imageAfter_mobile, imageAfter_mobile_2x, title, task, solution }) => {
       const slide = document.createElement('div');
       slide.classList.add('example__slider-content', 'swiper-slide');
-      const sourceBefore576 = imageBefore ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageBefore_mobile)} 1x, ${escapeHTML(imageBefore_mobile_2x)} 2x">` : '';
-      const sourceAfter576 = imageAfter ? `<source media="(max-width: 576px)" srcset="${escapeHTML(imageAfter_mobile)} 1x, ${escapeHTML(imageAfter_mobile_2x)} 2x">` : '';
+
+      const srcBefore = getValidImagePath(imageBefore);
+      const srcBefore2x = getValidImagePath(imageBefore_2x);
+      const srcBefore3x = getValidImagePath(imageBefore_3x);
+      const srcBeforeMobile = getValidImagePath(imageBefore_mobile);
+      const srcBeforeMobile2x = getValidImagePath(imageBefore_mobile_2x);
+
+      const srcAfter = getValidImagePath(imageAfter);
+      const srcAfter2x = getValidImagePath(imageAfter_2x);
+      const srcAfter3x = getValidImagePath(imageAfter_3x);
+      const srcAfterMobile = getValidImagePath(imageAfter_mobile);
+      const srcAfterMobile2x = getValidImagePath(imageAfter_mobile_2x);
+
+
+
+
+      const sourceBefore576 = imageBefore ? `<source media="(max-width: 576px)" srcset="${escapeHTML(srcBeforeMobile)} 1x, ${escapeHTML(srcBeforeMobile2x)} 2x">` : '';
+      const sourceAfter576 = imageAfter ? `<source media="(max-width: 576px)" srcset="${escapeHTML(srcAfterMobile)} 1x, ${escapeHTML(srcAfterMobile2x)} 2x">` : '';
       slide.innerHTML = `
     <div class="example__photo">
     <div class="example__before">
@@ -33,8 +50,8 @@ export async function createExamples() {
     <img
         class="example__img"
         draggable="false"
-        src="${escapeHTML(imageBefore)}"
-        srcset="${escapeHTML(imageBefore)} 1x, ${escapeHTML(imageBefore_2x)} 2x, ${escapeHTML(imageBefore_3x)} 3x"
+        src="${escapeHTML(srcBefore)}"
+        srcset="${escapeHTML(srcBefore)} 1x, ${escapeHTML(srcBefore2x)} 2x, ${escapeHTML(srcBefore3x)} 3x"
         alt="Фото до"
         loading="lazy"
         width="533"
@@ -51,8 +68,8 @@ export async function createExamples() {
     <img
     class="example__img"
     draggable="false"
-    src="${escapeHTML(imageAfter)}"
-        srcset="${escapeHTML(imageAfter)} 1x, ${escapeHTML(imageAfter_2x)} 2x, ${escapeHTML(imageAfter_3x)} 3x"
+    src="${escapeHTML(srcAfter)}"
+        srcset="${escapeHTML(srcAfter)} 1x, ${escapeHTML(srcAfter2x)} 2x, ${escapeHTML(srcAfter3x)} 3x"
     alt="Фото после"
     loading="lazy"
     width="533"
@@ -66,12 +83,12 @@ export async function createExamples() {
       <div class="example__btns">
         <button class="example__btn btn-reset">
           <svg class="example__slider-arrow slider-arrow">
-            <use xlink:href="img/sprite.svg#example--left-arrow"></use>
+            <use xlink:href="#example/left-arrow"></use>
           </svg>
         </button>
         <button class="example__btn btn-reset">
           <svg class="example__slider-arrow slider-arrow">
-            <use xlink:href="img/sprite.svg#example--right-arrow"></use>
+            <use xlink:href="#example/right-arrow"></use>
           </svg>
         </button>   
       </div>

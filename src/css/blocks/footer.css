@@ -76,7 +76,7 @@
   content: "";
   width: 211px;
   height: 211px;
-  background-image: url("../../img/sprite.svg#footer--ellipse");
+  background-image: url("/footer/ellipse.svg");
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
@@ -92,7 +92,7 @@
   content: "";
   width: 145px;
   height: 181px;
-  background-image: url("../../img/sprite.svg#footer--human");
+  background-image: url("/footer/human.svg");
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;

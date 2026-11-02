@@ -2,6 +2,8 @@ import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
 import { createError, removeError } from "./error";
 import commentData from "../../json/comment.json";
+import { getValidImagePath } from "./imagePath";
+
 export async function createComment() {
     const commentList = document.querySelector('.comment__list');
     try {
@@ -13,11 +15,25 @@ export async function createComment() {
             throw new Error('Нет доступных отзывов');
         }
 
+        commentList.innerHTML = '';
+
         comments.forEach(element => {
             const slide = document.createElement('li');
             slide.classList.add('comment__item', 'swiper-slide');
-            const source768 = element.image ? `<source media="(max-width: 768px)" srcset="${element.image_mobile_1} 1x, ${element.image_mobile_1_2x} 2x">` : '';
-            const source430 = element.image ? `<source media="(max-width: 430px)" srcset="${element.image_mobile_2} 1x, ${element.image_mobile_2_2x} 2x">` : '';
+
+            const imgMain = getValidImagePath(element.image);
+            const img2x = getValidImagePath(element.image_2x);
+            const img3x = getValidImagePath(element.image_3x);
+
+            const imgMobile1 = getValidImagePath(element.image_mobile_1);
+            const imgMobile1_2x = getValidImagePath(element.image_mobile_1_2x);
+
+            const imgMobile2 = getValidImagePath(element.image_mobile_2);
+            const imgMobile2_2x = getValidImagePath(element.image_mobile_2_2x);
+
+
+            const source768 = element.image ? `<source media="(max-width: 768px)" srcset="${imgMobile1} 1x, ${imgMobile1_2x} 2x">` : '';
+            const source430 = element.image ? `<source media="(max-width: 430px)" srcset="${imgMobile2} 1x, ${imgMobile2_2x} 2x">` : '';
             slide.innerHTML = `
             <picture>
             ${source768}
@@ -26,7 +42,7 @@ export async function createComment() {
         <img
             loading="lazy"
             class="comment__item-img"
-            srcset="${element.image} 1x, ${element.image_2x} 2x, ${element.image_3x} 3x"
+            srcset="${imgMain} 1x, ${img2x} 2x, ${img3x} 3x"
             alt="Фото отзыва"
             width="336"
             height="336"
