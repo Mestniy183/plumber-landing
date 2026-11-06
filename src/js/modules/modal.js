@@ -16,7 +16,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const datebase = getDatabase(app);
+const database = getDatabase(app);
 
 export function modal() {
   const modal = document.querySelector(".modal");
@@ -179,9 +179,9 @@ export function modal() {
     ].join("");
 
     const phoneLast4 = orderData.phone.replace(/\D/g, "").slice(-4);
-    const nameInitial = orderData.name.charAt(0).toUpperCase();
+    const districtInitial = orderData.district ? orderData.district.charAt(0).toUpperCase() : "X";
 
-    return `${datePart}-${timePart}-${nameInitial}${phoneLast4}`;
+    return `${datePart}-${timePart}-${districtInitial}${phoneLast4}`;
   };
 
   const submitForm = async (e) => {
@@ -190,10 +190,10 @@ export function modal() {
     if (!validateForm()) return;
 
     try {
-      const [name, tel, mes] = formInputs;
+      const [district, tel, mes] = formInputs;
 
       const orderData = {
-        name: name.value,
+        district: district.value,
         phone: tel.value,
         message: mes.value,
         date: getCurrentDateTime(),
@@ -201,7 +201,7 @@ export function modal() {
       };
 
       const customOrderId = generateOrderId(orderData);
-      const orderRef = ref(datebase, `orders/${customOrderId}`);
+      const orderRef = ref(database, `orders/${customOrderId}`);
 
       if ((await get(orderRef)).exists()) {
         orderData._originalId = customOrderId;
@@ -211,12 +211,12 @@ export function modal() {
         await set(orderRef, orderData);
       }
 
-      // const ordersRef = ref(datebase, "orders");
-      // const newOrder = await push(ordersRef, orderData);
+      const ordersRef = ref(database, "orders");
+      const newOrder = await push(ordersRef, orderData);
 
-      // if (!newOrder.key) {
-      //   throw new Error("Не удалось создать запись в базе данных");
-      // }
+      if (!newOrder.key) {
+        throw new Error("Не удалось создать запись в базе данных");
+      }
 
       showNotification("Данные отправлены", "green");
       closeModal();
@@ -231,9 +231,9 @@ export function modal() {
   };
 
   const init = () => {
-    // openBtns.forEach((btn) => {
-    //   btn.addEventListener("click", openModal);
-    // });
+    openBtns.forEach((btn) => {
+      btn.addEventListener("click", openModal);
+    });
 
     if (modalBox) {
       modalBox.addEventListener("click", (e) => {
@@ -255,5 +255,5 @@ export function modal() {
     }
   };
 
-  // init();
+  init();
 }

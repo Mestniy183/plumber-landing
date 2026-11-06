@@ -402,7 +402,12 @@
     </div>
     <form class="modal__form">
       <label class="modal__label">
-        <input name="name" class="modal__input form-data" placeholder="Имя">
+        <select name="district" class="modal__input form-data" required>
+          <option value="" disabled="disabled" selected="selected">Выберете район</option>
+          <option value="Выборгский(Парнас)">Выборсгский (Парнас)</option>
+          <option value="Приморский">Приморский</option>
+          <option value="Калининский">Калининский</option>
+        </select>
       </label>
       <label class="modal__label">
         <input name="tel" class="modal__input form-data" id="tel" placeholder="+7(000)000-00-00">
