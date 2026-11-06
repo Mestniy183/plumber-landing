@@ -498,7 +498,7 @@
   }
 
   .site-btn {
-    padding: 18px 63px;
+    padding: 18px 50px;
     border-radius: 6px;
   }
 
@@ -615,7 +615,7 @@
 
 @media (max-width: 430px) {
   .hero {
-    height: 480px;
+    height: 600px;
   }
 
   .hero__box {

@@ -29,7 +29,7 @@
 }
 
 .hero__content {
-  max-width: 812px;
+  max-width: clamp(15.125rem, 1.61rem + 49.14vw, 50.75rem);
   width: 100%;
   position: relative;
   z-index: 9;
@@ -39,7 +39,7 @@
   font-family: var(--third-family);
   font-weight: 700;
   font-size: clamp(2.438rem, 0.738rem + 6.32vw, 7.063rem);
-  line-height: 92%;
+  line-height: 100%;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 14px;
