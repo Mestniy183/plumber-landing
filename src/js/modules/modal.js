@@ -211,12 +211,12 @@ export function modal() {
         await set(orderRef, orderData);
       }
 
-      const ordersRef = ref(database, "orders");
-      const newOrder = await push(ordersRef, orderData);
+      // const ordersRef = ref(database, "orders");
+      // const newOrder = await push(ordersRef, orderData);
 
-      if (!newOrder.key) {
-        throw new Error("Не удалось создать запись в базе данных");
-      }
+      // if (!newOrder.key) {
+      //   throw new Error("Не удалось создать запись в базе данных");
+      // }
 
       showNotification("Данные отправлены", "green");
       closeModal();
