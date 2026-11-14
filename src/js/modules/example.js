@@ -43,7 +43,7 @@ export async function createExamples() {
       const sourceBefore576 = imageBefore ? `<source media="(max-width: 576px)" srcset="${escapeHTML(srcBeforeMobile)} 1x, ${escapeHTML(srcBeforeMobile2x)} 2x">` : '';
       const sourceAfter576 = imageAfter ? `<source media="(max-width: 576px)" srcset="${escapeHTML(srcAfterMobile)} 1x, ${escapeHTML(srcAfterMobile2x)} 2x">` : '';
       slide.innerHTML = `
-    <div class="example__photo">
+    <div class="example__photo swiper-no-swiping">
     <div class="example__before">
     <picture>
     ${sourceBefore576}
@@ -131,7 +131,7 @@ function initExampleSwiper() {
     modules: [Navigation],
     loop: true,
     lazyPreloadPrevNext: 1,
-    allowTouchMove: false,
+    allowTouchMove: true,
     spaceBetween: 30,
     speed: 1000,
     navigation: {
