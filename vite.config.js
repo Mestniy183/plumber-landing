@@ -80,7 +80,8 @@ export default defineConfig(({ command, mode }) => {
                 input: {
                     index: resolve(process.cwd(), "index.html"),
                     policy: resolve(process.cwd(), "policy.html"),
-                    price: resolve(process.cwd(), "price.html")
+                    price: resolve(process.cwd(), "price.html"),
+                    yandex: resolve(process.cwd(), "yandex_4c41d9965c1dacf4.html")
                 },
                 output: {
                     entryFileNames: "js/[name].bundle.js",
